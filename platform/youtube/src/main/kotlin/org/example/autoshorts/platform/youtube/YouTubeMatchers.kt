@@ -4,8 +4,9 @@ package org.example.autoshorts.platform.youtube
  * Every YouTube-specific matcher lives in this file, as data. When a YouTube update breaks
  * detection, this is the only file to edit.
  *
- * STATUS: none of these ids or labels has been verified against a real YouTube build yet
- * (no device was available when this was written). They are candidates. See docs/TESTED_VERSIONS.md
+ * STATUS: the feed, comments, ad and other-screen ids below are still unverified candidates. A real dump of
+ * YouTube 19.17.42 (Shorts tab in an error state only) was taken; see docs/YOUTUBE_OBSERVED_IDS.md. Note that
+ * `pivot_bar` exists on the Shorts tab, so it must never be used as a non-feed marker. See docs/TESTED_VERSIONS.md
  * and docs/OPEN_ITEMS.md. Until verified, the adapter answers `Unknown` rather than guessing.
  */
 object YouTubeMatchers {
