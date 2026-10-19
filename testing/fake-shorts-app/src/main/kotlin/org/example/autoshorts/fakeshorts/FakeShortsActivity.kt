@@ -63,7 +63,9 @@ class FakeShortsActivity : Activity() {
             }
         }
         overlay.addView(adBadge); overlay.addView(skip); overlay.addView(skipCounter); overlay.addView(toggle)
-        root.addView(overlay, FrameLayout.LayoutParams(-1, -2))
+        // Edge-to-edge is forced on recent targetSdk: keep the controls below the status and title bars,
+        // otherwise they are not "visible to user" and the accessibility tree leaves them out.
+        root.addView(overlay, FrameLayout.LayoutParams(-1, -2).apply { topMargin = 400 })
 
         val detector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
             override fun onDown(e: MotionEvent): Boolean {

@@ -5,9 +5,7 @@ import android.content.Intent
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.uiautomator.By
-import androidx.test.uiautomator.UiDevice
-import androidx.test.uiautomator.Until
+import android.view.accessibility.AccessibilityNodeInfo
 import kotlinx.coroutines.runBlocking
 import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.SessionState
@@ -29,16 +27,18 @@ import org.junit.runner.RunWith
 class FakeShortsEndToEndTest {
     private val instrumentation = InstrumentationRegistry.getInstrumentation()
     private val container get() = ApplicationProvider.getApplicationContext<AutoshortsApp>().container
-    private lateinit var device: UiDevice
+    private lateinit var automation: UiAutomation
     private val fake = "org.example.autoshorts.fakeshorts"
 
     @Before fun setUp() {
         // Without this flag UiAutomation suppresses every other accessibility service, including ours.
-        val automation = instrumentation.getUiAutomation(UiAutomation.FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES)
-        device = UiDevice.getInstance(instrumentation)
+        // Do not use UiDevice here: it re-registers UiAutomation with flags=0 and suppresses our service again.
+        automation = instrumentation.getUiAutomation(UiAutomation.FLAG_DONT_SUPPRESS_ACCESSIBILITY_SERVICES)
         val service = "${BuildConfig.APPLICATION_ID}/org.example.autoshorts.service.AutoScrollService"
-        automation.executeShellCommand("settings put secure enabled_accessibility_services $service").close()
-        automation.executeShellCommand("settings put secure accessibility_enabled 1").close()
+        // Toggle off and on: after the instrumentation restart the system may have marked the service as crashed.
+        shell(automation, "settings put secure enabled_accessibility_services ''")
+        shell(automation, "settings put secure enabled_accessibility_services $service")
+        shell(automation, "settings put secure accessibility_enabled 1")
         runBlocking {
             container.settings.update {
                 it.copy(
@@ -47,11 +47,11 @@ class FakeShortsEndToEndTest {
                 )
             }
         }
-        waitUntil(10_000) { container.host.serviceConnected.value }
+        waitUntil(20_000) { container.host.serviceConnected.value }
         val launch = instrumentation.context.packageManager.getLaunchIntentForPackage(fake)!!
         launch.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         instrumentation.context.startActivity(launch)
-        device.wait(Until.hasObject(By.pkg(fake)), 5_000)
+        waitUntil(10_000) { automation.rootInActiveWindow?.packageName == fake }
     }
 
     @After fun tearDown() {
@@ -62,26 +62,41 @@ class FakeShortsEndToEndTest {
         instrumentation.runOnMainSync { container.host.start() }
         waitUntil(20_000) { container.host.engine.stats.value.lastStopReason == StopReason.SCROLL_LIMIT_REACHED }
         assertEquals(SessionState.Idle, container.host.engine.model.value.state)
-        val page = device.findObject(By.res(fake, "page_counter")).text
+        val page = text("page_counter")
         assertEquals("Page 3", page) // started on page 1, two scrolls
     }
 
     @Test fun pausesOnAnAdAndDoesNotTapSkipByDefault() {
         instrumentation.runOnMainSync { container.host.start() }
-        device.findObject(By.res(fake, "toggle_ad")).click()
+        click("toggle_ad")
         waitUntil(10_000) { container.host.engine.model.value.state == SessionState.PausedByAd }
 
         Thread.sleep(8_000) // more than two intervals
-        assertEquals("Page 1", device.findObject(By.res(fake, "page_counter")).text)
-        assertEquals("Skip clicks: 0", device.findObject(By.res(fake, "skip_clicks")).text)
+        assertEquals("Page 1", text("page_counter"))
+        assertEquals("Skip clicks: 0", text("skip_clicks"))
     }
 
     @Test fun tapsSkipOnlyWhenTheUserOptedIn() {
         runBlocking { container.settings.update { it.copy(autoSkipAds = true) } }
         instrumentation.runOnMainSync { container.host.start() }
-        device.findObject(By.res(fake, "toggle_ad")).click()
-        waitUntil(10_000) { device.findObject(By.res(fake, "skip_clicks"))?.text?.let { it != "Skip clicks: 0" } == true }
+        click("toggle_ad")
+        waitUntil(10_000) { text("skip_clicks") != "Skip clicks: 0" }
         runBlocking { container.settings.update { it.copy(autoSkipAds = false) } }
+    }
+
+    /** Reads the output to the end: closing the stream early can cancel the command before it ran. */
+    private fun shell(automation: UiAutomation, command: String) {
+        android.os.ParcelFileDescriptor.AutoCloseInputStream(automation.executeShellCommand(command)).use { it.readBytes() }
+    }
+
+    private fun node(id: String): AccessibilityNodeInfo? =
+        automation.rootInActiveWindow?.findAccessibilityNodeInfosByViewId("$fake:id/$id")?.firstOrNull()
+
+    private fun text(id: String): String? = node(id)?.text?.toString()
+
+    private fun click(id: String) {
+        waitUntil(5_000) { node(id) != null } // the first frame may not be laid out yet
+        assertTrue("view $id not found", node(id)?.performAction(AccessibilityNodeInfo.ACTION_CLICK) == true)
     }
 
     private fun waitUntil(timeoutMs: Long, condition: () -> Boolean) {
