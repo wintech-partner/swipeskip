@@ -35,5 +35,5 @@ class AppContainer(app: Application) {
     val entitlements: Entitlements = createEntitlements(app)
     // Debug builds also accept the fake Shorts test app so the service can be exercised without YouTube.
     val adapter = YouTubeShortsAdapter(if (BuildConfig.DEBUG) setOf(FAKE_SHORTS_PACKAGE) else emptySet())
-    val host = SessionHost(app, scope, settings, adapter)
+    val host = SessionHost(app, scope, settings, adapter, policy.adSkipAllowed)
 }

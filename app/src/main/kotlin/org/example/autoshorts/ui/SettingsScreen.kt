@@ -29,6 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.core.os.LocaleListCompat
 import org.example.autoshorts.R
 import org.example.autoshorts.core.model.AutomationMode
+import org.example.autoshorts.core.model.MotionSensitivity
 import org.example.autoshorts.core.model.ScrollDirection
 import org.example.autoshorts.core.model.SettingsLimits
 import org.example.autoshorts.core.model.ThemeMode
@@ -144,6 +145,31 @@ fun SettingsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit, onPriv
             vm.update { it.copy(adNotifications = on) }
         }
         SwitchRow(stringResource(R.string.settings_haptics), settings.haptics) { on -> vm.update { it.copy(haptics = on) } }
+        SwitchRow(stringResource(R.string.settings_motion_next), settings.motionNext, stringResource(R.string.settings_motion_next_desc)) { on ->
+            vm.update { it.copy(motionNext = on) }
+        }
+        if (settings.motionNext) {
+            val levels = listOf(
+                MotionSensitivity.LOW to R.string.settings_level_low,
+                MotionSensitivity.MEDIUM to R.string.settings_level_medium,
+                MotionSensitivity.HIGH to R.string.settings_level_high,
+            )
+            Text(stringResource(R.string.settings_motion_sensitivity))
+            SingleChoiceSegmentedButtonRow(Modifier.fillMaxWidth()) {
+                levels.forEachIndexed { i, (lvl, label) ->
+                    SegmentedButton(
+                        selected = settings.motionSensitivity == lvl,
+                        onClick = { vm.update { it.copy(motionSensitivity = lvl) } },
+                        shape = SegmentedButtonDefaults.itemShape(i, levels.size),
+                    ) { Text(stringResource(label)) }
+                }
+            }
+        }
+        if (state.adSkipAllowed) {
+            SwitchRow(stringResource(R.string.settings_auto_skip), settings.autoSkipAds, stringResource(R.string.settings_auto_skip_desc)) { on ->
+                vm.update { it.copy(autoSkipAds = on) }
+            }
+        }
         HorizontalDivider()
 
         // Appearance

@@ -15,9 +15,14 @@
 - Durdur düğmeli kalıcı bildirim. Ekran kapanınca, YouTube'dan 60 sn uzak kalınca veya sınırlar dolunca oturum biter.
 - Tanılama ekranı ve ekran içeriği içermeyen kopyalanabilir rapor.
 
+## Ekstralar
+
+- **Hareket:** telefonu sağa-sola ya da öne-arkaya hızlıca oynatın, sonraki Short'a geçer (varsayılan kapalı).
+- **Reklamı geç:** “Reklamı geç” düğmesi, görünür olduğu düşünülürse YouTube'un kendi Atla düğmesine dokunur. İsteğe bağlı “Atla'ya otomatik dokun” ayarı yalnızca `foss` sürümündedir (varsayılan kapalı).
+
 ## Asla yapmaz
 
-Reklamlara veya Atla'ya dokunmaz, otomatik beğeni/abonelik/yorum/izlenme üretmez, reklamları aşmaz, tespitten kaçınma hileleri yapmaz, kimlik bilgisi, geçmiş veya ekran içeriği toplamaz. Analiz yok, reklam yok; `foss` sürümünde ağ izni yok.
+Reklamların kendisine dokunmaz (yalnızca yukarıdaki biçimde YouTube'un kendi Atla düğmesine), otomatik beğeni/abonelik/yorum/izlenme üretmez, reklamları aşmaz, tespitten kaçınma hileleri yapmaz, kimlik bilgisi, geçmiş veya ekran içeriği toplamaz. Analiz yok, reklam yok; `foss` sürümünde ağ izni yok.
 
 ## Kurulum
 

@@ -13,7 +13,11 @@
 - [ ] Run `FakeShortsEndToEndTest` on an emulator.
 - [ ] RTL and long-string visual check on a device (only automated checks exist).
 
+- [ ] Motion thresholds (8/11/14 m/s^2, 1.2 s cooldown) and whether walking causes false triggers.
+- [ ] Skip control: verify the real Skip button label/ids and that `ACTION_CLICK` works on it. Run `tapsSkipOnlyWhenTheUserOptedIn`.
+
 ## Decisions
+- [ ] Confirm you accept the ADR 9 risk (automatic Skip tapping may conflict with YouTube's terms; Play will likely reject it, so it exists in `foss` only).
 - [ ] Play submission; whether `AUTO_TIMER` may ship there (`AUTO_TIMER_ENABLED` flag in `app/build.gradle.kts`); accessibility-tool declaration (default: no).
 - [ ] Release signing keys, repo creation/push, F-Droid/IzzyOnDroid submissions, pricing, Play product id (`-PpremiumProductId`). The purchase flow UI is not implemented, only restore.
 - [ ] Optional floating on-screen indicator/control is not implemented (the notification is the control).

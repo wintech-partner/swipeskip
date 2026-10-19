@@ -5,6 +5,7 @@ import android.accessibilityservice.GestureDescription
 import android.graphics.Path
 import android.graphics.Rect
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityNodeInfo
 import kotlinx.coroutines.suspendCancellableCoroutine
 import org.example.autoshorts.AutoshortsApp
 import org.example.autoshorts.core.model.ScrollDirection
@@ -49,6 +50,36 @@ class AutoScrollService : AccessibilityService() {
         val root = rootInActiveWindow ?: return null
         val r = Rect().also { root.getBoundsInScreen(it) }
         return ScreenBounds(r.left, r.top, r.right, r.bottom)
+    }
+
+    /**
+     * Taps the platform's own Skip control, if one is visible. Only a node whose label category is the adapter's
+     * skip category is eligible; ads, badges and everything else are never touched. Returns true if a click was sent.
+     */
+    internal fun clickSkipControl(): Boolean {
+        val category = host.adapter.skipControlCategory ?: return false
+        val root = rootInActiveWindow ?: return false
+        if (root.packageName?.toString() !in host.adapter.packageNames) return false
+        val budget = intArrayOf(500)
+        val target = findSkip(root, category, budget) ?: return false
+        var node: AccessibilityNodeInfo? = target
+        var hops = 0
+        while (node != null && hops < 4) {
+            if (node.isClickable && node.isVisibleToUser) return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            node = node.parent
+            hops++
+        }
+        return false
+    }
+
+    private fun findSkip(node: AccessibilityNodeInfo, category: String, budget: IntArray): AccessibilityNodeInfo? {
+        if (budget[0]-- <= 0) return null
+        if (node.isVisibleToUser && node.contentDescription?.toString()?.let(host.adapter::categorizeDescription) == category) return node
+        for (i in 0 until node.childCount) {
+            val child = node.getChild(i) ?: continue
+            findSkip(child, category, budget)?.let { return it }
+        }
+        return null
     }
 
     /** Dispatches one swipe and suspends until the system reports the result. */

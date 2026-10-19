@@ -54,6 +54,14 @@ data class AppSettings(
     val theme: ThemeMode = ThemeMode.SYSTEM,
     val adNotifications: Boolean = true,
     val haptics: Boolean = true,
+    /** Shake/tilt the phone to go to the next Short. Off by default. */
+    val motionNext: Boolean = false,
+    val motionSensitivity: MotionSensitivity = MotionSensitivity.MEDIUM,
+    /**
+     * Opt-in: tap YouTube's own Skip button when it is likely on screen. Never taps the ad itself.
+     * Forced off in flavors whose policy does not allow it. See docs/DECISIONS.md (ADR 9).
+     */
+    val autoSkipAds: Boolean = false,
     /** True once the user pressed the consent button on the disclosure screen. */
     val consentGiven: Boolean = false,
 )
@@ -62,6 +70,8 @@ data class AppSettings(
 data class AutomationPolicy(
     val allowedModes: Set<AutomationMode>,
     val defaultMode: AutomationMode,
+    /** Whether the Skip-ad control (manual button and opt-in automatic tap) exists in this flavor. */
+    val adSkipAllowed: Boolean = false,
 ) {
     init {
         require(defaultMode in allowedModes) { "default mode must be allowed" }

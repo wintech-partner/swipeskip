@@ -59,7 +59,7 @@
     <string name="onb_sees_title">O que ele pode ver</string>
     <string name="onb_sees">Somente a estrutura da interface do YouTube: nomes de views, posições e rótulos usados para reconhecer, por exemplo, uma etiqueta de anúncio. Nada é guardado, registrado ou enviado.</string>
     <string name="onb_never_title">O que ele nunca faz</string>
-    <string name="onb_never">Nunca toca em anúncios nem no botão Pular, nunca curte, comenta ou se inscreve, nunca lê títulos, comentários ou nomes de usuário e nunca se esconde.</string>
+    <string name="onb_never">Nunca toca em anúncios, nunca curte, comenta ou se inscreve, nunca lê títulos, comentários ou nomes de usuário e nunca se esconde. Só toca no botão Pular do próprio YouTube se você tocar em “Pular anúncio” ou ativar você mesmo o salto automático.</string>
     <string name="onb_control_title">Você continua no controle</string>
     <string name="onb_control">As sessões têm limite de tempo. Uma notificação com botão Parar fica sempre visível enquanto ele funciona. Você pode desligar o serviço a qualquer momento nas configurações do Android.</string>
     <string name="onb_consent">Entendi e concordo</string>
@@ -136,6 +136,16 @@
     <string name="nav_back">Voltar</string>
     <string name="privacy_title">Privacidade e permissões</string>
     <string name="privacy_body">Serviço de acessibilidade: desliza dentro do YouTube e lê a estrutura da tela, somente durante uma sessão que você iniciou.\n\nNotificações: mostram a sessão em andamento e o botão Parar.\n\nVibração: um lembrete opcional.\n\nAs configurações ficam neste dispositivo. Sem contas, sem análises, sem anúncios. A versão de código aberto não tem permissão de internet.</string>
+    <string name="home_skip_ad">Pular anúncio</string>
+    <string name="notif_action_skip_ad">Pular anúncio</string>
+    <string name="settings_motion_next">Mexer o celular para o próximo Short</string>
+    <string name="settings_motion_next_desc">Um movimento rápido do celular (de lado ou para frente e para trás) vai para o próximo Short durante uma sessão</string>
+    <string name="settings_motion_sensitivity">Sensibilidade do movimento</string>
+    <string name="settings_level_low">Baixa</string>
+    <string name="settings_level_medium">Média</string>
+    <string name="settings_level_high">Alta</string>
+    <string name="settings_auto_skip">Tocar em Pular automaticamente</string>
+    <string name="settings_auto_skip_desc">Quando o botão Pular do YouTube provavelmente estiver visível, toca nele por mim. Desativado por padrão. Nunca toca no anúncio em si.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d rolagem</item>
         <item quantity="many">%d de rolagens</item>

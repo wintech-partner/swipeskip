@@ -60,7 +60,7 @@
     <string name="onb_sees_title">What it can see</string>
     <string name="onb_sees">Only YouTube\'s interface structure: view names, positions and labels used to recognise things like an ad badge. Nothing is stored, logged or sent anywhere.</string>
     <string name="onb_never_title">What it never does</string>
-    <string name="onb_never">It never taps ads or the Skip button, never likes, comments or subscribes, never reads titles, comments or usernames, and never hides itself.</string>
+    <string name="onb_never">It never taps ads, never likes, comments or subscribes, never reads titles, comments or usernames, and never hides itself. It only taps YouTube\'s own Skip button if you press “Skip ad” or switch on automatic skipping yourself.</string>
     <string name="onb_control_title">You stay in control</string>
     <string name="onb_control">Sessions have a time limit. A notification with a Stop button is always visible while it runs. You can turn the service off any time in Android settings.</string>
     <string name="onb_consent">I understand and agree</string>
@@ -137,6 +137,16 @@
     <string name="nav_back">Back</string>
     <string name="privacy_title">Privacy and permissions</string>
     <string name="privacy_body">Accessibility service: swipes inside YouTube and reads the screen\'s structure, only during a session you started.\n\nNotifications: show the running session and its Stop button.\n\nVibration: an optional reminder buzz.\n\nSettings stay on this device. No accounts, no analytics, no ads. The open-source build has no internet permission.</string>
+    <string name="home_skip_ad">Skip ad</string>
+    <string name="notif_action_skip_ad">Skip ad</string>
+    <string name="settings_motion_next">Move the phone for next Short</string>
+    <string name="settings_motion_next_desc">A quick flick of the phone (sideways or back and forth) goes to the next Short during a session</string>
+    <string name="settings_motion_sensitivity">Motion sensitivity</string>
+    <string name="settings_level_low">Low</string>
+    <string name="settings_level_medium">Medium</string>
+    <string name="settings_level_high">High</string>
+    <string name="settings_auto_skip">Tap Skip automatically</string>
+    <string name="settings_auto_skip_desc">When YouTube\'s own Skip button is likely visible, tap it for me. Off by default. Never taps the ad itself.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d scroll</item>
         <item quantity="other">%d scrolls</item>

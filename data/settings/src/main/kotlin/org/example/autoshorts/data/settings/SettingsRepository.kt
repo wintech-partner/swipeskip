@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.map
 import org.example.autoshorts.core.model.AppSettings
 import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.AutomationPolicy
+import org.example.autoshorts.core.model.MotionSensitivity
 import org.example.autoshorts.core.model.ScrollDirection
 import org.example.autoshorts.core.model.SessionSettings
 import org.example.autoshorts.core.model.ThemeMode
@@ -35,6 +36,9 @@ class SettingsRepository(
         val adNotifications = booleanPreferencesKey("ad_notifications")
         val haptics = booleanPreferencesKey("haptics")
         val consent = booleanPreferencesKey("consent_given")
+        val motionNext = booleanPreferencesKey("motion_next")
+        val motionSensitivity = stringPreferencesKey("motion_sensitivity")
+        val autoSkipAds = booleanPreferencesKey("auto_skip_ads")
     }
 
     val settings: Flow<AppSettings> = store.data.map { it.toSettings() }
@@ -54,6 +58,9 @@ class SettingsRepository(
             prefs[Keys.adNotifications] = next.adNotifications
             prefs[Keys.haptics] = next.haptics
             prefs[Keys.consent] = next.consentGiven
+            prefs[Keys.motionNext] = next.motionNext
+            prefs[Keys.motionSensitivity] = next.motionSensitivity.name
+            prefs[Keys.autoSkipAds] = next.autoSkipAds && policy.adSkipAllowed
         }
     }
 
@@ -74,6 +81,9 @@ class SettingsRepository(
             adNotifications = this[Keys.adNotifications] ?: true,
             haptics = this[Keys.haptics] ?: true,
             consentGiven = this[Keys.consent] ?: false,
+            motionNext = this[Keys.motionNext] ?: false,
+            motionSensitivity = enumOr(this[Keys.motionSensitivity], MotionSensitivity.MEDIUM),
+            autoSkipAds = (this[Keys.autoSkipAds] ?: false) && policy.adSkipAllowed,
         )
     }
 
@@ -82,7 +92,7 @@ class SettingsRepository(
 
     companion object {
         val MANUAL_ONLY = AutomationPolicy(setOf(AutomationMode.MANUAL_TAP), AutomationMode.MANUAL_TAP)
-        val BOTH_AUTO_DEFAULT = AutomationPolicy(AutomationMode.entries.toSet(), AutomationMode.AUTO_TIMER)
+        val BOTH_AUTO_DEFAULT = AutomationPolicy(AutomationMode.entries.toSet(), AutomationMode.AUTO_TIMER, adSkipAllowed = true)
         val BOTH_MANUAL_DEFAULT = AutomationPolicy(AutomationMode.entries.toSet(), AutomationMode.MANUAL_TAP)
     }
 }

@@ -9,3 +9,5 @@ enum class ScrollDirection { UP, DOWN }
 enum class AutomationMode { AUTO_TIMER, MANUAL_TAP }
 
 enum class ThemeMode { SYSTEM, LIGHT, DARK }
+
+enum class MotionSensitivity { LOW, MEDIUM, HIGH }

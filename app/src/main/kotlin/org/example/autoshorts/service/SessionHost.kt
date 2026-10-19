@@ -19,7 +19,13 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
+import android.hardware.Sensor
+import android.hardware.SensorEvent
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import org.example.autoshorts.core.automation.AdSkipGate
 import org.example.autoshorts.core.automation.EngineEvent
+import org.example.autoshorts.core.automation.MotionDetector
 import org.example.autoshorts.core.automation.Scroller
 import org.example.autoshorts.core.automation.SessionEngine
 import org.example.autoshorts.core.model.AdState
@@ -46,6 +52,7 @@ class SessionHost(
     private val scope: CoroutineScope,
     private val settings: SettingsRepository,
     val adapter: PlatformAdapter,
+    private val adSkipAllowed: Boolean,
 ) {
     private var service: AutoScrollService? = null
 
@@ -64,6 +71,18 @@ class SessionHost(
     )
 
     private val notifier = SessionNotifier(context)
+    private val skipGate = AdSkipGate()
+    private var motionDetector: MotionDetector? = null
+    private var motionRegistered = false
+    private val sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    private val motionListener = object : SensorEventListener {
+        override fun onSensorChanged(event: SensorEvent) {
+            val d = motionDetector ?: return
+            if (d.onSample(System.currentTimeMillis(), event.values[0], event.values[1], event.values[2])) engine.userScroll()
+        }
+
+        override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) = Unit
+    }
     private var snapshotJob: Job? = null
 
     private val screenOffReceiver = object : BroadcastReceiver() {
@@ -77,6 +96,10 @@ class SessionHost(
             transitions.record(model.state)
             val s = settings.settings.first()
             notifier.update(model.state, engine.stats.value, s.session.mode, _observation.value.adState)
+            // The accelerometer is only listened to while a session is live and the user turned this on.
+            val live = model.state.isActive
+            if (live && s.motionNext) startMotion(s.motionSensitivity) else stopMotion()
+            if (!live) skipGate.onAdCleared()
         }.launchIn(scope)
 
         engine.events.onEach { event ->
@@ -85,7 +108,13 @@ class SessionHost(
 
         _observation.onEach { obs ->
             val s = settings.settings.first()
-            if (s.adNotifications) notifier.updateAd(engine.model.value.state, obs.adState)
+            if (s.adNotifications) notifier.updateAd(engine.model.value.state, obs.adState, adSkipAllowed)
+            if (!obs.adState.isAdPresent) skipGate.onAdCleared()
+            if (obs.adState is AdState.SkipLikelyAvailable && s.autoSkipAds && adSkipAllowed &&
+                engine.model.value.state.isActive && skipGate.tryAcquire(System.currentTimeMillis())
+            ) {
+                service?.clickSkipControl()
+            }
         }.launchIn(scope)
     }
 
@@ -106,6 +135,7 @@ class SessionHost(
         snapshotJob?.cancel()
         snapshotJob = null
         _observation.value = LiveObservation()
+        stopMotion()
         engine.onServiceUnbound()
         notifier.cancelAll()
     }
@@ -128,6 +158,26 @@ class SessionHost(
     fun pause() = engine.pause()
     fun resume() = engine.resume()
     fun manualScroll() = engine.manualScroll()
+
+    /** The user pressed "Skip ad": tap the platform's own Skip control if one is visible. Needs a live session. */
+    fun skipAd() {
+        if (!adSkipAllowed || !engine.model.value.state.isActive) return
+        service?.clickSkipControl()
+    }
+
+    private fun startMotion(sensitivity: org.example.autoshorts.core.model.MotionSensitivity) {
+        if (motionRegistered) return
+        val accel = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) ?: return
+        motionDetector = MotionDetector.forSensitivity(sensitivity)
+        motionRegistered = sensorManager.registerListener(motionListener, accel, SensorManager.SENSOR_DELAY_GAME)
+    }
+
+    private fun stopMotion() {
+        if (!motionRegistered) return
+        sensorManager.unregisterListener(motionListener)
+        motionRegistered = false
+        motionDetector = null
+    }
 
     // ---- Events from the service ----
 

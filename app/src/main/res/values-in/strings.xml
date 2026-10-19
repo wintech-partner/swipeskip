@@ -59,7 +59,7 @@
     <string name="onb_sees_title">Apa yang bisa dilihat</string>
     <string name="onb_sees">Hanya struktur antarmuka YouTube: nama tampilan, posisi, dan label yang dipakai untuk mengenali, misalnya, lencana iklan. Tidak ada yang disimpan, dicatat, atau dikirim.</string>
     <string name="onb_never_title">Apa yang tidak pernah dilakukan</string>
-    <string name="onb_never">Tidak pernah mengetuk iklan atau tombol Lewati, tidak pernah menyukai, berkomentar, atau berlangganan, tidak pernah membaca judul, komentar, atau nama pengguna, dan tidak pernah menyembunyikan diri.</string>
+    <string name="onb_never">Tidak pernah mengetuk iklan, tidak pernah menyukai, berkomentar, atau berlangganan, tidak pernah membaca judul, komentar, atau nama pengguna, dan tidak pernah menyembunyikan diri. Tombol Lewati milik YouTube hanya diketuk jika Anda menekan “Lewati iklan” atau menyalakan lewati otomatis sendiri.</string>
     <string name="onb_control_title">Anda tetap memegang kendali</string>
     <string name="onb_control">Sesi punya batas waktu. Notifikasi dengan tombol Berhenti selalu terlihat selama berjalan. Anda dapat mematikan layanan kapan saja di pengaturan Android.</string>
     <string name="onb_consent">Saya mengerti dan setuju</string>
@@ -136,6 +136,16 @@
     <string name="nav_back">Kembali</string>
     <string name="privacy_title">Privasi dan izin</string>
     <string name="privacy_body">Layanan aksesibilitas: menggeser di dalam YouTube dan membaca struktur layar, hanya selama sesi yang Anda mulai.\n\nNotifikasi: menampilkan sesi yang berjalan dan tombol Berhentinya.\n\nGetar: bunyi pengingat opsional.\n\nPengaturan tetap di perangkat ini. Tanpa akun, tanpa analitik, tanpa iklan. Versi sumber terbuka tidak memiliki izin internet.</string>
+    <string name="home_skip_ad">Lewati iklan</string>
+    <string name="notif_action_skip_ad">Lewati</string>
+    <string name="settings_motion_next">Gerakkan ponsel untuk Short berikutnya</string>
+    <string name="settings_motion_next_desc">Gerakan cepat ponsel (ke samping atau maju-mundur) berpindah ke Short berikutnya selama sesi</string>
+    <string name="settings_motion_sensitivity">Sensitivitas gerakan</string>
+    <string name="settings_level_low">Rendah</string>
+    <string name="settings_level_medium">Sedang</string>
+    <string name="settings_level_high">Tinggi</string>
+    <string name="settings_auto_skip">Ketuk Lewati secara otomatis</string>
+    <string name="settings_auto_skip_desc">Saat tombol Lewati milik YouTube kemungkinan terlihat, ketuk untuk saya. Mati secara default. Tidak pernah mengetuk iklan itu sendiri.</string>
     <plurals name="scroll_count">
         <item quantity="other">%d gulir</item>
     </plurals>

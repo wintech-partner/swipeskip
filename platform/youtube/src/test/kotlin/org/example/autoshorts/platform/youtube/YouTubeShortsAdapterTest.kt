@@ -121,6 +121,11 @@ class YouTubeShortsAdapterTest {
         YouTubeMatchers.labels.values.forEach { assertTrue(it.size >= 9) }
     }
 
+    @Test fun `skip control category matches the skip label category`() {
+        assertEquals(adapter.skipControlCategory, adapter.categorizeDescription("Skip ad"))
+        assertTrue(adapter.skipControlCategory != adapter.categorizeDescription("Ad"))
+    }
+
     // ---- ad monitor ----
 
     @Test fun `feed without ad signals is NoAdEvidence`() =

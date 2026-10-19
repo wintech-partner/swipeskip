@@ -59,7 +59,7 @@
     <string name="onb_sees_title">Neleri görebilir</string>
     <string name="onb_sees">Yalnızca YouTube arayüzünün yapısını: görünüm adları, konumlar ve reklam rozeti gibi şeyleri tanımak için kullanılan etiketler. Hiçbir şey saklanmaz, günlüğe yazılmaz veya bir yere gönderilmez.</string>
     <string name="onb_never_title">Asla yapmadıkları</string>
-    <string name="onb_never">Reklamlara veya Atla düğmesine asla dokunmaz; beğenmez, yorum yapmaz, abone olmaz; başlıkları, yorumları veya kullanıcı adlarını okumaz ve kendini asla gizlemez.</string>
+    <string name="onb_never">Reklamlara asla dokunmaz; beğenmez, yorum yapmaz, abone olmaz; başlıkları, yorumları veya kullanıcı adlarını okumaz ve kendini asla gizlemez. YouTube\'un kendi Atla düğmesine yalnızca siz “Reklamı geç”e bastığınızda ya da otomatik atlamayı kendiniz açtığınızda dokunur.</string>
     <string name="onb_control_title">Kontrol sizde</string>
     <string name="onb_control">Oturumların bir süre sınırı vardır. Çalışırken Durdur düğmeli bir bildirim her zaman görünür. Hizmeti istediğiniz an Android ayarlarından kapatabilirsiniz.</string>
     <string name="onb_consent">Anladım ve kabul ediyorum</string>
@@ -136,6 +136,16 @@
     <string name="nav_back">Geri</string>
     <string name="privacy_title">Gizlilik ve izinler</string>
     <string name="privacy_body">Erişilebilirlik hizmeti: YouTube içinde kaydırır ve ekranın yapısını okur; yalnızca başlattığınız bir oturum sırasında.\n\nBildirimler: çalışan oturumu ve Durdur düğmesini gösterir.\n\nTitreşim: isteğe bağlı hatırlatma titreşimi.\n\nAyarlar bu cihazda kalır. Hesap, analiz ve reklam yok. Açık kaynak sürümünde internet izni yoktur.</string>
+    <string name="home_skip_ad">Reklamı geç</string>
+    <string name="notif_action_skip_ad">Reklamı geç</string>
+    <string name="settings_motion_next">Telefonu hareket ettirince sonraki Short</string>
+    <string name="settings_motion_next_desc">Oturum sırasında telefonu hızlıca sağa-sola ya da öne-arkaya oynatmak bir sonraki Short\'a geçirir</string>
+    <string name="settings_motion_sensitivity">Hareket duyarlılığı</string>
+    <string name="settings_level_low">Düşük</string>
+    <string name="settings_level_medium">Orta</string>
+    <string name="settings_level_high">Yüksek</string>
+    <string name="settings_auto_skip">Atla\'ya otomatik dokun</string>
+    <string name="settings_auto_skip_desc">YouTube\'un kendi Atla düğmesi büyük olasılıkla görünürken benim yerime dokunur. Varsayılan olarak kapalı. Reklamın kendisine asla dokunmaz.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d kaydırma</item>
         <item quantity="other">%d kaydırma</item>

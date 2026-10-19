@@ -59,7 +59,7 @@
     <string name="onb_sees_title">ماذا يستطيع أن يرى</string>
     <string name="onb_sees">بنية واجهة YouTube فقط: أسماء العناصر ومواضعها والتسميات المستخدمة للتعرّف مثلًا على شارة الإعلان. لا شيء يُحفظ أو يُسجَّل أو يُرسَل.</string>
     <string name="onb_never_title">ما لا يفعله أبدًا</string>
-    <string name="onb_never">لا ينقر على الإعلانات ولا على زر التخطي، ولا يعجب ولا يعلّق ولا يشترك، ولا يقرأ العناوين أو التعليقات أو أسماء المستخدمين، ولا يختبئ أبدًا.</string>
+    <string name="onb_never">لا ينقر على الإعلانات أبدًا، ولا يعجب ولا يعلّق ولا يشترك، ولا يقرأ العناوين أو التعليقات أو أسماء المستخدمين، ولا يختبئ أبدًا. ولا ينقر على زر التخطي الخاص بـ YouTube إلا إذا ضغطت أنت على «تخطي الإعلان» أو فعّلت التخطي التلقائي بنفسك.</string>
     <string name="onb_control_title">التحكم بيدك</string>
     <string name="onb_control">للجلسات حد زمني. يظهر دائمًا إشعار فيه زر إيقاف أثناء التشغيل. يمكنك إيقاف الخدمة في أي وقت من إعدادات أندرويد.</string>
     <string name="onb_consent">فهمت وأوافق</string>
@@ -136,6 +136,16 @@
     <string name="nav_back">رجوع</string>
     <string name="privacy_title">الخصوصية والأذونات</string>
     <string name="privacy_body">خدمة إمكانية الوصول: تسحب داخل YouTube وتقرأ بنية الشاشة، فقط أثناء جلسة بدأتها أنت.\n\nالإشعارات: تعرض الجلسة الجارية وزر الإيقاف.\n\nالاهتزاز: تنبيه تذكير اختياري.\n\nتبقى الإعدادات على هذا الجهاز. بلا حسابات ولا تحليلات ولا إعلانات. النسخة المفتوحة المصدر لا تملك إذن الإنترنت.</string>
+    <string name="home_skip_ad">تخطي الإعلان</string>
+    <string name="notif_action_skip_ad">تخطي</string>
+    <string name="settings_motion_next">حرّك الهاتف للمقطع التالي</string>
+    <string name="settings_motion_next_desc">حركة سريعة للهاتف (جانبية أو للأمام والخلف) تنتقل إلى المقطع التالي أثناء الجلسة</string>
+    <string name="settings_motion_sensitivity">حساسية الحركة</string>
+    <string name="settings_level_low">منخفضة</string>
+    <string name="settings_level_medium">متوسطة</string>
+    <string name="settings_level_high">عالية</string>
+    <string name="settings_auto_skip">النقر على «تخطي» تلقائيًا</string>
+    <string name="settings_auto_skip_desc">عندما يُحتمل أن زر التخطي الخاص بـ YouTube ظاهر، ينقر عليه نيابةً عني. متوقف افتراضيًا. لا ينقر على الإعلان نفسه أبدًا.</string>
     <plurals name="scroll_count">
         <item quantity="zero">%d تمريرة</item>
         <item quantity="one">تمريرة واحدة</item>

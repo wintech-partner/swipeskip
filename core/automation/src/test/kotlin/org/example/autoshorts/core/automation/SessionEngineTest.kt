@@ -432,6 +432,57 @@ class SessionEngineSkippedTest {
     }
 }
 
+@OptIn(ExperimentalCoroutinesApi::class)
+class SessionEngineUserScrollTest {
+    private val settings = SessionSettings(intervalSeconds = 10, maxDurationMinutes = 15)
+    private val ad = AdState.AdLikely(Evidence(listOf("t"), Confidence.MEDIUM))
+
+    private class Counting : Scroller {
+        var n = 0
+        override suspend fun scroll(direction: ScrollDirection): GestureResult { n++; return GestureResult.COMPLETED }
+    }
+
+    private fun TestScope.engine(s: Scroller) = SessionEngine(backgroundScope, s, { testScheduler.currentTime }).also {
+        it.onPermissionChanged(true); it.onForegroundChanged(true)
+    }
+
+    @Test fun `user scroll works in auto mode and restarts the interval`() = runTest {
+        val s = Counting(); val e = engine(s)
+        e.start(settings)
+        advanceTimeBy(8_000); runCurrent()
+        e.userScroll(); runCurrent()
+        assertEquals(1, s.n)
+        advanceTimeBy(9_000); runCurrent()
+        assertEquals(1, s.n) // the old interval would have fired at 10 s
+        advanceTimeBy(1_000); runCurrent()
+        assertEquals(2, s.n)
+    }
+
+    @Test fun `user scroll works while an ad pause holds`() = runTest {
+        val s = Counting(); val e = engine(s)
+        e.start(settings)
+        e.onAdState(ad)
+        e.userScroll(); runCurrent()
+        assertEquals(1, s.n)
+        assertEquals(SessionState.PausedByAd, e.model.value.state)
+    }
+
+    @Test fun `user scroll is ignored when idle or paused by the user`() = runTest {
+        val s = Counting(); val e = engine(s)
+        e.userScroll(); runCurrent()
+        e.start(settings); e.pause()
+        e.userScroll(); runCurrent()
+        assertEquals(0, s.n)
+    }
+
+    @Test fun `user scroll counts toward the scroll limit`() = runTest {
+        val s = Counting(); val e = engine(s)
+        e.start(settings.copy(maxScrolls = 1))
+        e.userScroll(); runCurrent()
+        assertEquals(StopReason.SCROLL_LIMIT_REACHED, e.stats.value.lastStopReason)
+    }
+}
+
 private fun kotlinx.coroutines.CoroutineScope.launchCollect(e: SessionEngine, into: MutableList<EngineEvent>) {
     launch(start = kotlinx.coroutines.CoroutineStart.UNDISPATCHED) { e.events.collect { into += it } }
 }

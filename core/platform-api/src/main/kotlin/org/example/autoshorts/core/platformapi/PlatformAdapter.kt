@@ -29,4 +29,7 @@ interface PlatformAdapter {
      * snapshot mapper; the raw text is discarded right after this call.
      */
     fun categorizeDescription(description: String): String?
+
+    /** Category name of the platform's own skip-ad control, or null if the platform has none. */
+    val skipControlCategory: String?
 }

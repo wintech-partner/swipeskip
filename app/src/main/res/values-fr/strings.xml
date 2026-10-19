@@ -59,7 +59,7 @@
     <string name="onb_sees_title">Ce qu\'il peut voir</string>
     <string name="onb_sees">Uniquement la structure de l\'interface de YouTube : noms de vues, positions et libellés servant à reconnaître par exemple un badge de publicité. Rien n\'est stocké, journalisé ni envoyé.</string>
     <string name="onb_never_title">Ce qu\'il ne fait jamais</string>
-    <string name="onb_never">Il n\'appuie jamais sur les publicités ni sur le bouton Ignorer, n\'aime, ne commente et ne s\'abonne jamais, ne lit ni titres, ni commentaires, ni noms d\'utilisateur, et ne se cache jamais.</string>
+    <string name="onb_never">Il n\'appuie jamais sur les publicités, n\'aime, ne commente et ne s\'abonne jamais, ne lit ni titres, ni commentaires, ni noms d\'utilisateur, et ne se cache jamais. Il n\'appuie sur le bouton Ignorer de YouTube que si vous touchez « Ignorer la pub » ou activez vous-même l\'ignorance automatique.</string>
     <string name="onb_control_title">Vous gardez le contrôle</string>
     <string name="onb_control">Les sessions ont une limite de durée. Une notification avec un bouton Arrêter reste toujours visible pendant l\'exécution. Vous pouvez désactiver le service à tout moment dans les réglages d\'Android.</string>
     <string name="onb_consent">J\'ai compris et j\'accepte</string>
@@ -136,6 +136,16 @@
     <string name="nav_back">Retour</string>
     <string name="privacy_title">Confidentialité et autorisations</string>
     <string name="privacy_body">Service d\'accessibilité : balaie dans YouTube et lit la structure de l\'écran, uniquement pendant une session que vous avez lancée.\n\nNotifications : affichent la session en cours et son bouton Arrêter.\n\nVibration : un rappel facultatif.\n\nLes réglages restent sur cet appareil. Pas de compte, pas d\'analyse, pas de publicité. La version open source n\'a pas d\'autorisation internet.</string>
+    <string name="home_skip_ad">Ignorer la pub</string>
+    <string name="notif_action_skip_ad">Ignorer la pub</string>
+    <string name="settings_motion_next">Bouger le téléphone pour le Short suivant</string>
+    <string name="settings_motion_next_desc">Un mouvement vif du téléphone (sur le côté ou d\'avant en arrière) passe au Short suivant pendant une session</string>
+    <string name="settings_motion_sensitivity">Sensibilité du mouvement</string>
+    <string name="settings_level_low">Faible</string>
+    <string name="settings_level_medium">Moyenne</string>
+    <string name="settings_level_high">Élevée</string>
+    <string name="settings_auto_skip">Appuyer sur Ignorer automatiquement</string>
+    <string name="settings_auto_skip_desc">Quand le bouton Ignorer de YouTube est probablement visible, appuie dessus à ma place. Désactivé par défaut. N\'appuie jamais sur la publicité elle-même.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d défilement</item>
         <item quantity="many">%d de défilements</item>

@@ -115,4 +115,25 @@ class SettingsRepositoryTest {
         r.update { it.copy(session = it.session.copy(maxScrolls = null)) }
         assertNull(r.settings.first().session.maxScrolls)
     }
+
+    @Test fun `motion and ad skip defaults are off`() = runTest {
+        val s = repo(SettingsRepository.BOTH_AUTO_DEFAULT).settings.first()
+        assertFalse(s.motionNext)
+        assertFalse(s.autoSkipAds)
+    }
+
+    @Test fun `motion and ad skip round trip where allowed`() = runTest {
+        val r = repo(SettingsRepository.BOTH_AUTO_DEFAULT)
+        r.update { it.copy(motionNext = true, autoSkipAds = true, motionSensitivity = org.example.autoshorts.core.model.MotionSensitivity.HIGH) }
+        val s = r.settings.first()
+        assertTrue(s.motionNext)
+        assertTrue(s.autoSkipAds)
+        assertEquals(org.example.autoshorts.core.model.MotionSensitivity.HIGH, s.motionSensitivity)
+    }
+
+    @Test fun `auto skip is forced off in a flavor that does not allow it`() = runTest {
+        val r = repo(SettingsRepository.MANUAL_ONLY)
+        r.update { it.copy(autoSkipAds = true) }
+        assertFalse(r.settings.first().autoSkipAds)
+    }
 }

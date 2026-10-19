@@ -31,6 +31,7 @@ data class UiState(
     val serviceConnected: Boolean = false,
     val allowedModes: Set<AutomationMode> = AutomationMode.entries.toSet(),
     val storeAvailable: Boolean = false,
+    val adSkipAllowed: Boolean = false,
 )
 
 class MainViewModel(app: Application) : AndroidViewModel(app) {
@@ -52,6 +53,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
             serviceConnected = connected,
             allowedModes = container.policy.allowedModes,
             storeAvailable = container.entitlements.isStoreAvailable,
+            adSkipAllowed = container.policy.adSkipAllowed,
         )
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), UiState())
 
@@ -68,6 +70,7 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun pause() = host.pause()
     fun resume() = host.resume()
     fun manualScroll() = host.manualScroll()
+    fun skipAd() = host.skipAd()
 
     fun restorePurchases(onResult: (RestoreResult) -> Unit) {
         viewModelScope.launch { onResult(container.entitlements.restorePurchases()) }

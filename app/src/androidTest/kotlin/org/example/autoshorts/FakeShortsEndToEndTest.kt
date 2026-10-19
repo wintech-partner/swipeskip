@@ -66,7 +66,7 @@ class FakeShortsEndToEndTest {
         assertEquals("Page 3", page) // started on page 1, two scrolls
     }
 
-    @Test fun pausesOnAnAdAndNeverTapsSkip() {
+    @Test fun pausesOnAnAdAndDoesNotTapSkipByDefault() {
         instrumentation.runOnMainSync { container.host.start() }
         device.findObject(By.res(fake, "toggle_ad")).click()
         waitUntil(10_000) { container.host.engine.model.value.state == SessionState.PausedByAd }
@@ -74,6 +74,14 @@ class FakeShortsEndToEndTest {
         Thread.sleep(8_000) // more than two intervals
         assertEquals("Page 1", device.findObject(By.res(fake, "page_counter")).text)
         assertEquals("Skip clicks: 0", device.findObject(By.res(fake, "skip_clicks")).text)
+    }
+
+    @Test fun tapsSkipOnlyWhenTheUserOptedIn() {
+        runBlocking { container.settings.update { it.copy(autoSkipAds = true) } }
+        instrumentation.runOnMainSync { container.host.start() }
+        device.findObject(By.res(fake, "toggle_ad")).click()
+        waitUntil(10_000) { device.findObject(By.res(fake, "skip_clicks"))?.text?.let { it != "Skip clicks: 0" } == true }
+        runBlocking { container.settings.update { it.copy(autoSkipAds = false) } }
     }
 
     private fun waitUntil(timeoutMs: Long, condition: () -> Boolean) {

@@ -16,9 +16,14 @@ Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, 
 - Diagnostics screen and a copyable report with no screen content.
 - Languages: English, Turkish, German, Spanish, French, Brazilian Portuguese, Russian, Arabic, Indonesian (non-English texts are machine-drafted, see open items).
 
+## Extras
+
+- **Motion:** flick the phone sideways or back and forth to go to the next Short (off by default).
+- **Skip ad:** a "Skip ad" button taps YouTube's own Skip control when it is likely visible. An opt-in "Tap Skip automatically" setting exists in the `foss` build only (off by default). See ADR 9; unverified on a real device.
+
 ## What it will never do
 
-No tapping ads or Skip, no automated likes/subscriptions/comments/views, no bypassing ads, no anti-detection tricks, no collecting credentials, history or screen content. No analytics, no ads, and the `foss` build has no network permission.
+No tapping ads (only YouTube's own Skip control, and only as above), no automated likes/subscriptions/comments/views, no bypassing ads, no anti-detection tricks, no collecting credentials, history or screen content. No analytics, no ads, and the `foss` build has no network permission.
 
 ## Install
 

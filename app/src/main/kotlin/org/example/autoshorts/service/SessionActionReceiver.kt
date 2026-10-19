@@ -14,6 +14,7 @@ class SessionActionReceiver : BroadcastReceiver() {
             ACTION_SCROLL -> host.manualScroll()
             ACTION_PAUSE -> host.pause()
             ACTION_RESUME -> host.resume()
+            ACTION_SKIP_AD -> host.skipAd()
         }
     }
 
@@ -22,5 +23,6 @@ class SessionActionReceiver : BroadcastReceiver() {
         const val ACTION_SCROLL = "org.example.autoshorts.action.SCROLL"
         const val ACTION_PAUSE = "org.example.autoshorts.action.PAUSE"
         const val ACTION_RESUME = "org.example.autoshorts.action.RESUME"
+        const val ACTION_SKIP_AD = "org.example.autoshorts.action.SKIP_AD"
     }
 }

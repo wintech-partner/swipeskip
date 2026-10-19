@@ -100,9 +100,19 @@ class SessionEngine(
 
     /** MANUAL_TAP: one scroll per call. Ignored in AUTO_TIMER and whenever the session is not running. */
     fun manualScroll() {
-        if (settings.mode != AutomationMode.MANUAL_TAP || _model.value.state != SessionState.Running) return
+        if (settings.mode != AutomationMode.MANUAL_TAP) return
+        userScroll()
+    }
+
+    /**
+     * One scroll requested by the user (motion gesture). Works in both modes while running, and while an ad
+     * pause holds, because swiping past an ad is what the user would do by hand. The interval restarts after it.
+     */
+    fun userScroll() {
+        val state = _model.value.state
+        if (state != SessionState.Running && state != SessionState.PausedByAd) return
         scope.launch {
-            if (performScroll()) restartReminderLoop()
+            if (performScroll()) restartLoop()
         }
     }
 
@@ -285,9 +295,10 @@ class SessionEngine(
         }
     }
 
-    private fun restartReminderLoop() {
+    private fun restartLoop() {
+        if (_model.value.state != SessionState.Running) return
         loopJob?.cancel()
-        loopJob = scope.launch { reminderLoop() }
+        loopJob = scope.launch { if (settings.mode == AutomationMode.AUTO_TIMER) autoLoop() else reminderLoop() }
     }
 
     private fun startWatchdog() {
