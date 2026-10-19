@@ -17,13 +17,17 @@ private fun NodeSnapshot.shortId(): String? = viewId?.substringAfter(":id/", mis
 
 private fun Sequence<NodeSnapshot>.visible() = filter { it.visibleToUser }
 
-class YouTubeShortsAdapter : PlatformAdapter {
+/**
+ * [extraPackages] exists only so debug builds can point the adapter at the fake Shorts test app.
+ * Release builds never pass it.
+ */
+class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAdapter {
     override val id = PlatformId.YOUTUBE_SHORTS
-    override val packageNames = setOf(YouTubeMatchers.PACKAGE)
-    override val adMonitor: AdvertisementMonitor = YouTubeAdMonitor()
+    override val packageNames = setOf(YouTubeMatchers.PACKAGE) + extraPackages
+    override val adMonitor: AdvertisementMonitor = YouTubeAdMonitor(packageNames)
 
     override fun classify(snapshot: NodeSnapshot): ScreenState {
-        if (snapshot.packageName != YouTubeMatchers.PACKAGE) return ScreenState.Unknown
+        if (snapshot.packageName !in packageNames) return ScreenState.Unknown
         val ids = snapshot.walk().visible().mapNotNull { it.shortId() }.toSet()
         return when {
             ids.any { it in YouTubeMatchers.Ids.commentsPanelMarkers } -> ScreenState.CommentsOpen
@@ -50,9 +54,9 @@ class YouTubeShortsAdapter : PlatformAdapter {
     }
 }
 
-class YouTubeAdMonitor : AdvertisementMonitor {
+class YouTubeAdMonitor(private val packageNames: Set<String> = setOf(YouTubeMatchers.PACKAGE)) : AdvertisementMonitor {
     override fun evaluate(snapshot: NodeSnapshot): AdState {
-        if (snapshot.packageName != YouTubeMatchers.PACKAGE) return AdState.Unknown
+        if (snapshot.packageName !in packageNames) return AdState.Unknown
         val nodes = snapshot.walk().visible().toList()
         val signals = mutableListOf<String>()
 

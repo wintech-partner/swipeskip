@@ -11,6 +11,8 @@ import org.example.autoshorts.data.settings.SettingsRepository
 import org.example.autoshorts.platform.youtube.YouTubeShortsAdapter
 import org.example.autoshorts.service.SessionHost
 
+const val FAKE_SHORTS_PACKAGE = "org.example.autoshorts.fakeshorts"
+
 private val Context.settingsStore by preferencesDataStore(name = "settings")
 
 class AutoshortsApp : Application() {
@@ -31,6 +33,7 @@ class AppContainer(app: Application) {
 
     val settings = SettingsRepository(app.settingsStore, policy)
     val entitlements: Entitlements = createEntitlements(app)
-    val adapter = YouTubeShortsAdapter()
+    // Debug builds also accept the fake Shorts test app so the service can be exercised without YouTube.
+    val adapter = YouTubeShortsAdapter(if (BuildConfig.DEBUG) setOf(FAKE_SHORTS_PACKAGE) else emptySet())
     val host = SessionHost(app, scope, settings, adapter)
 }

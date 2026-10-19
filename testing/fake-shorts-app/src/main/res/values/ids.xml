@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Same short names as the YouTube matchers, so the real adapter recognises this app. -->
+    <item name="reel_recycler" type="id" />
+    <item name="ad_badge" type="id" />
+    <item name="page_counter" type="id" />
+    <item name="skip_clicks" type="id" />
+    <item name="toggle_ad" type="id" />
+    <item name="skip_button" type="id" />
+</resources>
