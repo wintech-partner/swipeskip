@@ -108,7 +108,8 @@ class SessionHost(
 
         _observation.onEach { obs ->
             val s = settings.settings.first()
-            if (s.adNotifications) notifier.updateAd(engine.model.value.state, obs.adState, adSkipAllowed)
+            // With automatic skipping on, the app handles the Skip control itself and a hint would be noise.
+            if (s.adNotifications && !s.autoSkipAds) notifier.updateAd(engine.model.value.state, obs.adState)
             if (!obs.adState.isAdPresent) skipGate.onAdCleared()
             if (obs.adState is AdState.SkipLikelyAvailable && s.autoSkipAds && adSkipAllowed &&
                 engine.model.value.state.isActive && skipGate.tryAcquire(System.currentTimeMillis())
@@ -158,12 +159,6 @@ class SessionHost(
     fun pause() = engine.pause()
     fun resume() = engine.resume()
     fun manualScroll() = engine.manualScroll()
-
-    /** The user pressed "Skip ad": tap the platform's own Skip control if one is visible. Needs a live session. */
-    fun skipAd() {
-        if (!adSkipAllowed || !engine.model.value.state.isActive) return
-        service?.clickSkipControl()
-    }
 
     private fun startMotion(sensitivity: org.example.autoshorts.core.model.MotionSensitivity) {
         if (motionRegistered) return

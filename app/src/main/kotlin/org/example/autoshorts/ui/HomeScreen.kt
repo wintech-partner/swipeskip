@@ -18,7 +18,6 @@ import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import org.example.autoshorts.R
-import org.example.autoshorts.core.model.AdState
 import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.SessionState
 
@@ -89,10 +88,6 @@ fun HomeScreen(
             } else if (session is SessionState.Running) {
                 OutlinedButton(onClick = vm::pause, Modifier.fillMaxWidth()) { Text(stringResource(R.string.home_pause)) }
             }
-        }
-
-        if (state.adSkipAllowed && live && state.observation.adState is AdState.SkipLikelyAvailable) {
-            OutlinedButton(onClick = vm::skipAd, Modifier.fillMaxWidth()) { Text(stringResource(R.string.home_skip_ad)) }
         }
 
         if (s.mode == AutomationMode.MANUAL_TAP) Text(stringResource(R.string.home_manual_hint), style = MaterialTheme.typography.bodySmall)

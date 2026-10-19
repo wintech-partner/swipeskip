@@ -13,7 +13,7 @@ Open-source Android app (Kotlin, Compose, Material 3, Gradle KTS) that scrolls Y
 ## Product scope and hard prohibitions (every flavor, forever)
 - No automated tapping of ads, sponsored links or advertiser pages.
 - No artificial engagement: no automated likes, subscriptions, comments, views or watch-time inflation.
-- No bypassing ads or timers. **Amended 2026-10-19 at the human's explicit request (ADR 9):** the app may tap the platform's own Skip control, only (a) when the user presses a "Skip ad" button, or (b) when the user switched on the opt-in "Tap Skip automatically" setting (off by default, `foss` only). It never taps the ad itself, a badge, a sponsored link or anything but a node categorised as the skip control, at most 3 taps per ad, 2 s apart.
+- No bypassing ads or timers. **Amended 2026-10-19 at the human's explicit request (ADR 9):** the app may tap the platform's own Skip control only when the user switched on the opt-in "Tap Skip automatically" setting (off by default, `foss` only). There is no manual Skip button (removed 2026-10-19: it added nothing over YouTube's own button). It never taps the ad itself, a badge, a sponsored link or anything but a node categorised as the skip control, at most 3 taps per ad, 2 s apart.
 - No anti-detection or human-mimicking behavior (no evasion jitter, no hiding the service or notification).
 - No collection of credentials, tokens, watch history or on-screen content.
 
@@ -23,7 +23,7 @@ Open-source Android app (Kotlin, Compose, Material 3, Gradle KTS) that scrolls Y
 3. Visible: ongoing notification with Stop while a session runs.
 4. Motion-to-next (accelerometer, user-initiated flick, only during a live session, off by default) is allowed: each flick is one user action.
 5. Two modes (`AUTO_TIMER`, `MANUAL_TAP`) behind one interface, chosen per flavor by ONE build flag (`AUTO_TIMER_ENABLED`). `play` stays manual-only until a human decides.
-6. Never set `isAccessibilityTool="true"` unless a human truthfully decides it is one.
+6. Never set `isAccessibilityTool="true"` unless a human truthfully decides it is one. Be honest about audience: the primary goal is convenience; helping people with visual, motor or other physical disabilities is a welcome secondary goal, not the primary one (`docs/ACCESSIBILITY_STATEMENT.md`). Never call the app "accessible" or a disability tool in listings until it has been tested with TalkBack/Switch Access and real users.
 7. Minimum scope: service limited to `com.google.android.youtube`; never read, store or log screen text; only structural info in memory.
 8. Dedicated disclosure + explicit consent before sending the user to system settings.
 9. Trademarks: no YouTube name/logo in app name or icon; keep the "not affiliated" notices.

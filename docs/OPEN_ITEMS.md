@@ -22,5 +22,10 @@
 - [ ] Release signing keys, repo creation/push, F-Droid/IzzyOnDroid submissions, pricing, Play product id (`-PpremiumProductId`). The purchase flow UI is not implemented, only restore.
 - [ ] Optional floating on-screen indicator/control is not implemented (the notification is the control).
 
+## Accessibility (see ACCESSIBILITY_STATEMENT.md)
+- [ ] Test the app UI with TalkBack and Switch Access; check 200% font scale, contrast ratios and touch-target sizes.
+- [ ] Ask people with motor/visual disabilities for feedback before making any accessibility claim in listings.
+- [ ] Human decision: keep `isAccessibilityTool` unset (default) unless the audience truly changes.
+
 ## Translations
 All non-English strings (tr, de, es, fr, pt-BR, ru, ar, id) are **machine-drafted** and need native review. The Turkish text was written to read naturally but is unreviewed. YouTube's own localized labels in the matchers are also from general knowledge, unverified.

@@ -15,6 +15,9 @@ Source for the announcement: https://support.google.com/googleplay/android-devel
 
 Consequence: `play` flavor defaults to `MANUAL_TAP`. Whether `AUTO_TIMER` may be submitted is a human decision. Similar apps existing on Play does not imply approval.
 
+## Audience and the accessibility-tool flag
+Our stance is in `ACCESSIBILITY_STATEMENT.md`: convenience first, people with visual/motor/physical disabilities a welcome secondary audience. Because the primary purpose is not assisting people with disabilities, `isAccessibilityTool` stays unset and the app must pass Play's prominent-disclosure route if ever submitted.
+
 ## IzzyOnDroid
 Source: https://izzyondroid.org/docs/general/AppInclusionPolicy/
 

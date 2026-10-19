@@ -109,24 +109,6 @@ class ScreensTest {
         compose.onNodeWithText("Manual tap").performScrollTo().performClick()
     }
 
-    @Test fun skipButtonAppearsOnlyWhenASkipControlIsLikelyAndAllowed() {
-        val ad = org.example.autoshorts.core.model.AdState.SkipLikelyAvailable(
-            org.example.autoshorts.core.model.Evidence(listOf("desc:SKIP_AD"), org.example.autoshorts.core.model.Confidence.LOW),
-        )
-        val obs = org.example.autoshorts.service.LiveObservation(adState = ad)
-        compose.setContent { HomeScreen(vm(), consented.copy(session = SessionState.PausedByAd, observation = obs, adSkipAllowed = true), {}, {}, {}, {}) }
-        compose.onNodeWithText("Skip ad").assertIsDisplayed()
-    }
-
-    @Test fun skipButtonIsHiddenWhenTheFlavorDoesNotAllowIt() {
-        val ad = org.example.autoshorts.core.model.AdState.SkipLikelyAvailable(
-            org.example.autoshorts.core.model.Evidence(listOf("desc:SKIP_AD"), org.example.autoshorts.core.model.Confidence.LOW),
-        )
-        val obs = org.example.autoshorts.service.LiveObservation(adState = ad)
-        compose.setContent { HomeScreen(vm(), consented.copy(session = SessionState.PausedByAd, observation = obs, adSkipAllowed = false), {}, {}, {}, {}) }
-        compose.onNodeWithText("Skip ad").assertDoesNotExist()
-    }
-
     @Test fun settingsShowsMotionAndAutoSkipOnlyWhereAllowed() {
         compose.setContent { SettingsScreen(vm(), consented.copy(adSkipAllowed = true), {}, {}, {}) }
         compose.onNodeWithText("Move the phone for next Short").performScrollTo().assertIsDisplayed()

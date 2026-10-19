@@ -19,7 +19,11 @@ Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, 
 ## Extras
 
 - **Motion:** flick the phone sideways or back and forth to go to the next Short (off by default).
-- **Skip ad:** a "Skip ad" button taps YouTube's own Skip control when it is likely visible. An opt-in "Tap Skip automatically" setting exists in the `foss` build only (off by default). See ADR 9; unverified on a real device.
+- **Skip ad:** an opt-in "Tap Skip automatically" setting taps YouTube's own Skip control when it is likely visible. `foss` build only, off by default. See ADR 9; unverified on a real device.
+
+## Who it is for
+
+Mainly anyone who wants hands-free Shorts. It may also help people with motor, visual or other physical disabilities (less swiping), but they are not the primary audience and the app is not declared or tested as an accessibility tool. See [docs/ACCESSIBILITY_STATEMENT.md](docs/ACCESSIBILITY_STATEMENT.md).
 
 ## What it will never do
 

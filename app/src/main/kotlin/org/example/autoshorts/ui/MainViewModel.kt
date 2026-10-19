@@ -70,7 +70,6 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
     fun pause() = host.pause()
     fun resume() = host.resume()
     fun manualScroll() = host.manualScroll()
-    fun skipAd() = host.skipAd()
 
     fun restorePurchases(onResult: (RestoreResult) -> Unit) {
         viewModelScope.launch { onResult(container.entitlements.restorePurchases()) }

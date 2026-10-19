@@ -59,7 +59,7 @@
     <string name="onb_sees_title">Was die App sehen kann</string>
     <string name="onb_sees">Nur die Struktur der YouTube-Oberfläche: Ansichtsnamen, Positionen und Beschriftungen, mit denen z. B. ein Werbe-Label erkannt wird. Nichts wird gespeichert, protokolliert oder gesendet.</string>
     <string name="onb_never_title">Was die App nie tut</string>
-    <string name="onb_never">Sie tippt nie auf Werbung, vergibt keine Likes, kommentiert nicht, abonniert nicht, liest keine Titel, Kommentare oder Nutzernamen und versteckt sich nie. Die eigene Überspringen-Taste von YouTube tippt sie nur an, wenn Sie „Werbung überspringen“ drücken oder das automatische Überspringen selbst einschalten.</string>
+    <string name="onb_never">Sie tippt nie auf Werbung, vergibt keine Likes, kommentiert nicht, abonniert nicht, liest keine Titel, Kommentare oder Nutzernamen und versteckt sich nie. Die eigene Überspringen-Taste von YouTube tippt sie nur an, wenn Sie das automatische Überspringen selbst einschalten.</string>
     <string name="onb_control_title">Sie behalten die Kontrolle</string>
     <string name="onb_control">Sitzungen haben ein Zeitlimit. Eine Benachrichtigung mit Stopp-Taste ist während der Sitzung immer sichtbar. Den Dienst können Sie jederzeit in den Android-Einstellungen ausschalten.</string>
     <string name="onb_consent">Verstanden und einverstanden</string>
@@ -136,8 +136,6 @@
     <string name="nav_back">Zurück</string>
     <string name="privacy_title">Datenschutz und Berechtigungen</string>
     <string name="privacy_body">Bedienungshilfen-Dienst: wischt in YouTube und liest die Struktur des Bildschirms, nur während einer von Ihnen gestarteten Sitzung.\n\nBenachrichtigungen: zeigen die laufende Sitzung und ihre Stopp-Taste.\n\nVibration: ein optionaler Erinnerungsimpuls.\n\nEinstellungen bleiben auf diesem Gerät. Keine Konten, keine Analyse, keine Werbung. Die Open-Source-Version hat keine Internetberechtigung.</string>
-    <string name="home_skip_ad">Werbung überspringen</string>
-    <string name="notif_action_skip_ad">Überspringen</string>
     <string name="settings_motion_next">Handy bewegen für nächsten Short</string>
     <string name="settings_motion_next_desc">Eine schnelle Bewegung des Handys (seitlich oder vor und zurück) wechselt während einer Sitzung zum nächsten Short</string>
     <string name="settings_motion_sensitivity">Bewegungsempfindlichkeit</string>

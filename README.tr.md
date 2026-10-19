@@ -18,7 +18,11 @@
 ## Ekstralar
 
 - **Hareket:** telefonu sağa-sola ya da öne-arkaya hızlıca oynatın, sonraki Short'a geçer (varsayılan kapalı).
-- **Reklamı geç:** “Reklamı geç” düğmesi, görünür olduğu düşünülürse YouTube'un kendi Atla düğmesine dokunur. İsteğe bağlı “Atla'ya otomatik dokun” ayarı yalnızca `foss` sürümündedir (varsayılan kapalı).
+- **Reklamı geç:** isteğe bağlı “Atla'ya otomatik dokun” ayarı, görünür olduğu düşünülürse YouTube'un kendi Atla düğmesine dokunur. Yalnızca `foss` sürümünde, varsayılan kapalı.
+
+## Kimin için
+
+Öncelikle elleri serbest Shorts izlemek isteyen herkes için. Hareket, görme veya diğer fiziksel engeli olanlara da yardımcı olabilir (daha az kaydırma), ama asıl hedef kitle onlar değildir; uygulama erişilebilirlik aracı olarak beyan edilmemiş ve öyle sınanmamıştır. Bkz. [docs/ACCESSIBILITY_STATEMENT.md](docs/ACCESSIBILITY_STATEMENT.md).
 
 ## Asla yapmaz
 

@@ -77,21 +77,20 @@ class SessionNotifier(private val context: Context) {
 
     /** Tells the user a skip control is likely on screen. The app never taps it. */
     @SuppressLint("MissingPermission") // canPost() checks POST_NOTIFICATIONS right before notify
-    fun updateAd(state: SessionState, ad: AdState, offerSkipButton: Boolean) {
+    fun updateAd(state: SessionState, ad: AdState) {
         if (!(state.isActive) || ad !is AdState.SkipLikelyAvailable) {
             manager.cancel(ID_AD)
             return
         }
         if (!canPost()) return
-        val builder = NotificationCompat.Builder(context, CHANNEL_ADS)
+        val n = NotificationCompat.Builder(context, CHANNEL_ADS)
             .setSmallIcon(R.drawable.ic_notification)
             .setContentTitle(context.getString(R.string.notif_ad_skip_title))
             .setContentText(context.getString(R.string.notif_ad_skip_text))
             .setTimeoutAfter(15_000)
             .setOnlyAlertOnce(true)
-        // Only the user pressing this button makes the app tap Skip (unless the opt-in automatic setting is on).
-        if (offerSkipButton) builder.addAction(action(SessionActionReceiver.ACTION_SKIP_AD, R.string.notif_action_skip_ad, 5))
-        manager.notify(ID_AD, builder.build())
+            .build()
+        manager.notify(ID_AD, n)
     }
 
     fun cancelAll() {

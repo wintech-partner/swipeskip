@@ -59,7 +59,7 @@
     <string name="onb_sees_title">Qué puede ver</string>
     <string name="onb_sees">Solo la estructura de la interfaz de YouTube: nombres de vistas, posiciones y etiquetas que sirven para reconocer, por ejemplo, una insignia de anuncio. Nada se guarda, se registra ni se envía.</string>
     <string name="onb_never_title">Qué nunca hace</string>
-    <string name="onb_never">Nunca toca anuncios, no da «me gusta», no comenta ni se suscribe, no lee títulos, comentarios ni nombres de usuario, y nunca se oculta. Solo toca el botón Omitir de YouTube si pulsas «Omitir anuncio» o activas tú mismo la omisión automática.</string>
+    <string name="onb_never">Nunca toca anuncios, no da «me gusta», no comenta ni se suscribe, no lee títulos, comentarios ni nombres de usuario, y nunca se oculta. Solo toca el botón Omitir de YouTube si activas tú mismo la omisión automática.</string>
     <string name="onb_control_title">Tú tienes el control</string>
     <string name="onb_control">Las sesiones tienen un límite de tiempo. Una notificación con un botón Detener siempre está visible mientras funciona. Puedes apagar el servicio cuando quieras en los ajustes de Android.</string>
     <string name="onb_consent">Entiendo y acepto</string>
@@ -136,8 +136,6 @@
     <string name="nav_back">Atrás</string>
     <string name="privacy_title">Privacidad y permisos</string>
     <string name="privacy_body">Servicio de accesibilidad: desliza dentro de YouTube y lee la estructura de la pantalla, solo durante una sesión que tú iniciaste.\n\nNotificaciones: muestran la sesión en curso y su botón Detener.\n\nVibración: un aviso opcional.\n\nLos ajustes se quedan en este dispositivo. Sin cuentas, sin analíticas, sin anuncios. La versión de código abierto no tiene permiso de internet.</string>
-    <string name="home_skip_ad">Omitir anuncio</string>
-    <string name="notif_action_skip_ad">Omitir anuncio</string>
     <string name="settings_motion_next">Mover el teléfono para el siguiente Short</string>
     <string name="settings_motion_next_desc">Un movimiento rápido del teléfono (de lado o de atrás hacia delante) pasa al siguiente Short durante una sesión</string>
     <string name="settings_motion_sensitivity">Sensibilidad del movimiento</string>
