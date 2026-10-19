@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Scope is deliberately narrow (docs/DECISIONS.md, ADR 3):
+  - only the YouTube package,
+  - only the event types the session needs,
+  - isAccessibilityTool is NOT set: this is an automation tool, not an accessibility tool for people with disabilities.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeViewScrolled|typeViewClicked|typeTouchInteractionStart"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/service_description"
+    android:notificationTimeout="100"
+    android:packageNames="com.google.android.youtube"
+    android:settingsActivity="org.example.autoshorts.ui.MainActivity" />

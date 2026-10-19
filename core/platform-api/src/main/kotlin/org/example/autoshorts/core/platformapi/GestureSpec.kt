@@ -9,4 +9,11 @@ data class GestureSpec(
     val durationMs: Long,
 )
 
-enum class GestureResult { COMPLETED, CANCELLED, FAILED }
+enum class GestureResult {
+    COMPLETED,
+    CANCELLED,
+    FAILED,
+
+    /** Nothing was dispatched because the target app was not the active window. Neither success nor failure. */
+    SKIPPED,
+}

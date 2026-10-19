@@ -243,7 +243,13 @@ class SessionEngine(
             if (loopJob == null) {
                 loopJob = scope.launch { if (settings.mode == AutomationMode.AUTO_TIMER) autoLoop() else reminderLoop() }
             }
-            if (watchdogJob == null && settings.mode == AutomationMode.AUTO_TIMER) startWatchdog()
+            // The watchdog only judges a session that is really working in the target app.
+            if (targetInForeground && watchdogJob == null && settings.mode == AutomationMode.AUTO_TIMER) {
+                startWatchdog()
+            } else if (!targetInForeground) {
+                watchdogJob?.cancel()
+                watchdogJob = null
+            }
         } else {
             loopJob?.cancel()
             loopJob = null
@@ -314,6 +320,10 @@ class SessionEngine(
     private fun record(result: GestureResult) {
         if (!_model.value.state.isActive) return
         val s = _stats.value
+        if (result == GestureResult.SKIPPED) {
+            _stats.value = s.copy(lastGestureResult = result)
+            return
+        }
         if (result == GestureResult.COMPLETED) {
             val count = s.scrollCount + 1
             _stats.value = s.copy(scrollCount = count, consecutiveFailures = 0, lastGestureResult = result)
@@ -332,6 +342,6 @@ class SessionEngine(
 
     private companion object {
         /** Accessibility events right after our own swipe are not the user touching the screen. */
-        const val OWN_GESTURE_GRACE_MILLIS = 600L
+        const val OWN_GESTURE_GRACE_MILLIS = 1_000L
     }
 }

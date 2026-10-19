@@ -403,6 +403,35 @@ class SessionEngineTest {
     }
 }
 
+@OptIn(ExperimentalCoroutinesApi::class)
+class SessionEngineSkippedTest {
+    private val settings = SessionSettings(intervalSeconds = 5, maxDurationMinutes = 15)
+
+    @Test fun `skipped gestures are neither success nor failure`() = runTest {
+        val e = SessionEngine(backgroundScope, { GestureResult.SKIPPED }, { testScheduler.currentTime })
+        e.onPermissionChanged(true)
+        e.onForegroundChanged(true)
+        e.start(settings)
+        advanceTimeBy(20_000); runCurrent()
+        assertEquals(0, e.stats.value.consecutiveFailures)
+        assertEquals(0, e.stats.value.scrollCount)
+        assertEquals(GestureResult.SKIPPED, e.stats.value.lastGestureResult)
+        assertTrue(e.model.value.state.isActive)
+    }
+
+    @Test fun `watchdog does not fire while the target app is in the background`() = runTest {
+        val e = SessionEngine(backgroundScope, { GestureResult.SKIPPED }, { testScheduler.currentTime })
+        e.onPermissionChanged(true)
+        e.onForegroundChanged(true)
+        e.start(settings)
+        e.onForegroundChanged(false)
+        advanceTimeBy(45_000); runCurrent()
+        assertTrue(e.model.value.state.isActive)
+        advanceTimeBy(15_000); runCurrent()
+        assertEquals(StopReason.APP_LEFT_FOREGROUND, e.stats.value.lastStopReason)
+    }
+}
+
 private fun kotlinx.coroutines.CoroutineScope.launchCollect(e: SessionEngine, into: MutableList<EngineEvent>) {
     launch(start = kotlinx.coroutines.CoroutineStart.UNDISPATCHED) { e.events.collect { into += it } }
 }

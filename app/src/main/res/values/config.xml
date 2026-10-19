@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Placeholders: replace before release (docs/OPEN_ITEMS.md). Not translatable. -->
+    <string name="url_issues" translatable="false">https://github.com/OWNER/autoshorts/issues</string>
+    <string name="url_source" translatable="false">https://github.com/OWNER/autoshorts</string>
+</resources>
