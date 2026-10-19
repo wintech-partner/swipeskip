@@ -1,0 +1,11 @@
+Autoshorts, başlattığınız bir oturum boyunca YouTube Shorts videolarını seçtiğiniz zamanlayıcıyla sizin yerinize kaydırır.
+
+• 3-120 saniye aralık, oturum süre sınırı, isteğe bağlı kaydırma sınırı
+• Bildirimde her zaman görünen Durdur düğmesi
+• Ekrana dokununca, yorumlar açılınca veya büyük olasılıkla reklam varken duraklar
+• Bir şeyin neden çalışmadığını bulmak için tanılama ekranı
+• Ücretsiz, açık kaynak, reklamsız, analizsiz, ağ izni yok
+
+Reklamlara veya Atla düğmesine asla dokunmaz, beğenmez, yorum yapmaz, abone olmaz; ekran metnini okumaz veya saklamaz. Android erişilebilirlik hizmetini kullanır; uygulama içi kurulum bunun tam olarak ne demek olduğunu anlatır.
+
+YouTube veya Google ile bağlantılı değildir. Yapay zekâ desteğiyle geliştirilmiş, insan tarafından gözden geçirilmiştir.

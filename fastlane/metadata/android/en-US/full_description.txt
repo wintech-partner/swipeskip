@@ -1,0 +1,11 @@
+Autoshorts scrolls YouTube Shorts for you, on a timer you choose, during a session you start.
+
+• Intervals from 3 to 120 seconds, session limits, optional scroll cap
+• Always-visible Stop button in a notification
+• Pauses when you touch the screen, open comments, or an ad is likely showing
+• Diagnostics screen to find out why something does not work
+• Free, open source, no ads, no analytics, no network permission
+
+It never taps ads or the Skip button, never likes, comments or subscribes, and never reads or stores screen text. Uses the Android accessibility service; the in-app setup explains exactly what that means.
+
+Not affiliated with or endorsed by YouTube or Google. Developed with AI assistance and human review.

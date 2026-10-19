@@ -1,0 +1,8 @@
+name: Feature request
+description: Suggest an improvement (automated engagement, ad tapping or evasion features will be declined)
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes: {label: What would you like, and why?}
+    validations: {required: true}

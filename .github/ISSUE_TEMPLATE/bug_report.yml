@@ -1,0 +1,31 @@
+name: Bug report
+description: Something does not work
+labels: [bug]
+body:
+  - type: input
+    id: android
+    attributes: {label: Android version, placeholder: "e.g. Android 15"}
+    validations: {required: true}
+  - type: input
+    id: device
+    attributes: {label: Device, placeholder: "e.g. Pixel 8"}
+    validations: {required: true}
+  - type: input
+    id: youtube
+    attributes: {label: YouTube app version}
+    validations: {required: true}
+  - type: input
+    id: app
+    attributes: {label: Autoshorts version and flavor, placeholder: "0.1.0 foss"}
+    validations: {required: true}
+  - type: textarea
+    id: what
+    attributes: {label: What happened, and what did you expect?}
+    validations: {required: true}
+  - type: textarea
+    id: report
+    attributes:
+      label: Diagnostics report
+      description: In the app open Help, then Copy report. It contains no screen content.
+      render: text
+    validations: {required: true}

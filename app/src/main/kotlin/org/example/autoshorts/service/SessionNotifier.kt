@@ -1,6 +1,7 @@
 package org.example.autoshorts.service
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -27,15 +28,13 @@ class SessionNotifier(private val context: Context) {
     private val manager = NotificationManagerCompat.from(context)
 
     init {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val nm = context.getSystemService(NotificationManager::class.java)
-            nm.createNotificationChannel(
-                NotificationChannel(CHANNEL_SESSION, context.getString(R.string.notif_channel_session), NotificationManager.IMPORTANCE_LOW),
-            )
-            nm.createNotificationChannel(
-                NotificationChannel(CHANNEL_ADS, context.getString(R.string.notif_channel_ads), NotificationManager.IMPORTANCE_DEFAULT),
-            )
-        }
+        val nm = context.getSystemService(NotificationManager::class.java)
+        nm.createNotificationChannel(
+            NotificationChannel(CHANNEL_SESSION, context.getString(R.string.notif_channel_session), NotificationManager.IMPORTANCE_LOW),
+        )
+        nm.createNotificationChannel(
+            NotificationChannel(CHANNEL_ADS, context.getString(R.string.notif_channel_ads), NotificationManager.IMPORTANCE_DEFAULT),
+        )
     }
 
     private fun canPost() = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
@@ -47,6 +46,7 @@ class SessionNotifier(private val context: Context) {
         return NotificationCompat.Action.Builder(0, context.getString(titleRes), pi).build()
     }
 
+    @SuppressLint("MissingPermission") // canPost() checks POST_NOTIFICATIONS right before notify
     fun update(state: SessionState, stats: EngineStats, mode: AutomationMode, ad: AdState) {
         val live = state.isActive || state is SessionState.Starting
         if (!live) {
@@ -76,6 +76,7 @@ class SessionNotifier(private val context: Context) {
     }
 
     /** Tells the user a skip control is likely on screen. The app never taps it. */
+    @SuppressLint("MissingPermission") // canPost() checks POST_NOTIFICATIONS right before notify
     fun updateAd(state: SessionState, ad: AdState) {
         if (!(state.isActive) || ad !is AdState.SkipLikelyAvailable) {
             manager.cancel(ID_AD)

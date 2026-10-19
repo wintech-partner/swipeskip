@@ -24,6 +24,7 @@ import org.example.autoshorts.diagnostics.DiagnosticsReport
 @Composable
 fun DiagnosticsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit) {
     val context = LocalContext.current
+    val issuesUrl = stringResource(R.string.url_issues)
     val youtube = vm.youtubeVersion()
     val checks = listOf(
         Triple(R.string.diag_check_service, state.serviceConnected, R.string.diag_fix_service),
@@ -53,7 +54,7 @@ fun DiagnosticsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit) {
             },
             Modifier.fillMaxWidth(),
         ) { Text(stringResource(if (copied) R.string.diag_copied else R.string.diag_copy)) }
-        OutlinedButton(onClick = { context.openUrl(context.getString(R.string.url_issues)) }, Modifier.fillMaxWidth()) {
+        OutlinedButton(onClick = { context.openUrl(issuesUrl) }, Modifier.fillMaxWidth()) {
             Text(stringResource(R.string.diag_report_problem))
         }
     }
@@ -62,13 +63,14 @@ fun DiagnosticsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit) {
 @Composable
 fun AboutScreen(onBack: () -> Unit) {
     val context = LocalContext.current
+    val sourceUrl = stringResource(R.string.url_source)
     ScreenScaffold(stringResource(R.string.about_title), onBack) {
         Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineSmall)
         Text(stringResource(R.string.about_version, BuildConfig.VERSION_NAME))
         Text(stringResource(R.string.about_license))
         Text(stringResource(R.string.about_not_affiliated))
         Text(stringResource(R.string.about_ai))
-        OutlinedButton(onClick = { context.openUrl(context.getString(R.string.url_source)) }, Modifier.fillMaxWidth()) {
+        OutlinedButton(onClick = { context.openUrl(sourceUrl) }, Modifier.fillMaxWidth()) {
             Text(stringResource(R.string.about_source))
         }
     }
