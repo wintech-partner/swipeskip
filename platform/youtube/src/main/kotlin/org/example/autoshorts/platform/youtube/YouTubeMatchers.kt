@@ -4,27 +4,31 @@ package org.example.autoshorts.platform.youtube
  * Every YouTube-specific matcher lives in this file, as data. When a YouTube update breaks
  * detection, this is the only file to edit.
  *
- * STATUS: the feed, comments, ad and other-screen ids below are still unverified candidates. A real dump of
- * YouTube 19.17.42 (Shorts tab in an error state only) was taken; see docs/YOUTUBE_OBSERVED_IDS.md. Note that
- * `pivot_bar` exists on the Shorts tab, so it must never be used as a non-feed marker. See docs/TESTED_VERSIONS.md
- * and docs/OPEN_ITEMS.md. Until verified, the adapter answers `Unknown` rather than guessing.
+ * STATUS: the ids below were observed on a real phone (YouTube 21.41.525, Android 14, German UI, 2026-10-19,
+ * see docs/YOUTUBE_OBSERVED_IDS.md and the fixtures in platform/youtube/src/test/resources). Verified there:
+ * the Shorts feed, the open comments panel, the Home screen and two Shorts ads. NOT verified: other YouTube
+ * versions, other UI languages (labels for non-German languages are from general knowledge), skippable ads
+ * (no Skip button appeared in either Shorts ad), a regular full-screen watch page.
  */
 object YouTubeMatchers {
     const val PACKAGE = "com.google.android.youtube"
 
     /** Resource ids are matched on their short name, after the "package:id/" prefix. */
     object Ids {
-        /** Present only on the Shorts feed. */
+        /** Present on the Shorts feed (and nowhere on Home). Observed. */
         val feedMarkers = setOf("reel_recycler", "reel_player_page_container", "reel_watch_fragment_root")
 
-        /** Present only on the comments panel while it is open. */
-        val commentsPanelMarkers = setOf("engagement_panel_container", "comment_list", "comments_entry_point_header")
+        /** Present only while the comments panel is open. Observed; `reel_recycler` stays in the tree underneath. */
+        val commentsPanelMarkers = setOf("app_engagement_panel", "engagement_panel_content", "panel_header")
 
-        /** Positive evidence of a non-Shorts screen (regular watch page, search results, home). */
-        val otherScreenMarkers = setOf("watch_player", "results", "browse_results")
+        /**
+         * Positive evidence of a non-Shorts screen (observed on Home). `results` also appears inside the comments
+         * panel, so comments are checked first. `pivot_bar` exists on the Shorts tab too and must NOT be listed here.
+         */
+        val otherScreenMarkers = setOf("watch_player", "results", "filter_bar")
 
-        /** Ad overlay structure inside the Shorts player. */
-        val adMarkers = setOf("ad_badge", "ad_progress_text", "shorts_ad_overlay", "reel_ad_info")
+        /** Overlay that appeared on both observed Shorts ads and on none of ~28 normal Shorts pages. */
+        val adMarkers = setOf("reel_player_delegated_overlay", "reel_progress_bar")
     }
 
     object Categories {

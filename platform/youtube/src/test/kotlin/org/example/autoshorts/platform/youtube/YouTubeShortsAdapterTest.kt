@@ -36,7 +36,7 @@ class YouTubeShortsAdapterTest {
     @Test fun `comments panel wins over feed`() =
         assertEquals(
             ScreenState.CommentsOpen,
-            adapter.classify(root(node("reel_recycler"), node("comment_list"))),
+            adapter.classify(root(node("reel_recycler"), node("app_engagement_panel"))),
         )
 
     @Test fun `invisible markers are ignored`() =
@@ -135,10 +135,23 @@ class YouTubeShortsAdapterTest {
         assertEquals(AdState.Unknown, adapter.adMonitor.evaluate(root(node("other"))))
 
     @Test fun `ad id plus badge is AdLikely with medium confidence`() {
-        val state = adapter.adMonitor.evaluate(root(node("reel_recycler"), node("ad_badge", YouTubeMatchers.Categories.AD_BADGE)))
+        val state = adapter.adMonitor.evaluate(root(node("reel_recycler"), node("reel_player_delegated_overlay", YouTubeMatchers.Categories.AD_BADGE)))
         assertTrue(state is AdState.AdLikely)
-        assertEquals(Confidence.MEDIUM, (state as AdState.AdLikely).evidence.confidence)
-        assertTrue("id:ad_badge" in state.evidence.signals)
+        assertEquals(Confidence.HIGH, (state as AdState.AdLikely).evidence.confidence)
+        assertTrue("id:reel_player_delegated_overlay" in state.evidence.signals)
+    }
+
+    @Test fun `ad label alone is low confidence and overlay id alone is medium`() {
+        val labelOnly = adapter.adMonitor.evaluate(root(node("reel_recycler"), node(null, YouTubeMatchers.Categories.AD_BADGE)))
+        assertEquals(Confidence.LOW, (labelOnly as AdState.AdLikely).evidence.confidence)
+        val idOnly = adapter.adMonitor.evaluate(root(node("reel_recycler"), node("reel_player_delegated_overlay")))
+        assertEquals(Confidence.MEDIUM, (idOnly as AdState.AdLikely).evidence.confidence)
+    }
+
+    @Test fun `ad label is found on the last line of a multi line description`() {
+        assertEquals(YouTubeMatchers.Categories.AD_BADGE, adapter.categorizeDescription("Some Brand - great game\nAnzeige"))
+        assertNull(adapter.categorizeDescription("Anzeige for something else entirely"))
+        assertNull(adapter.categorizeDescription("Some title\nSome other last line"))
     }
 
     @Test fun `single weak signal is low confidence`() {
@@ -155,11 +168,11 @@ class YouTubeShortsAdapterTest {
     @Test fun `invisible ad nodes do not count`() =
         assertEquals(
             AdState.NoAdEvidence,
-            adapter.adMonitor.evaluate(root(node("reel_recycler"), node("ad_badge", visible = false))),
+            adapter.adMonitor.evaluate(root(node("reel_recycler"), node("reel_player_delegated_overlay", visible = false))),
         )
 
     @Test fun `evidence never contains free text`() {
-        val state = adapter.adMonitor.evaluate(root(node("ad_badge", YouTubeMatchers.Categories.AD_BADGE))) as AdState.AdLikely
+        val state = adapter.adMonitor.evaluate(root(node("reel_player_delegated_overlay", YouTubeMatchers.Categories.AD_BADGE))) as AdState.AdLikely
         state.evidence.signals.forEach { assertTrue(it.startsWith("id:") || it.startsWith("desc:")) }
     }
 }

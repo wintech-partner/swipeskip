@@ -6,7 +6,7 @@
 - [ ] Launcher icon/logo is a placeholder vector.
 
 ## Needs a physical device with real YouTube
-- [ ] (Partly started 2026-10-19, see `YOUTUBE_OBSERVED_IDS.md`: only shell ids seen; Shorts would not load on the old emulator build.) Every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
+- [~] Matchers verified from real dumps on YouTube 21.41.525 (German, 2026-10-19): feed, comments, Home, Shorts ad. Still open: other versions/languages, regular watch page, skippable ads, and running the app itself on a phone. Original item: every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
 - [ ] Does `TYPE_TOUCH_INTERACTION_START` arrive? Is the 1 s own-gesture grace right? Does the swipe geometry (75%→25% height, 250 ms) reliably advance a Short?
 - [ ] Notification behavior on OEMs; restricted-settings flow on a real sideloaded install.
 - [ ] Battery numbers (method in COMPETITOR_RESEARCH checklist). None published.

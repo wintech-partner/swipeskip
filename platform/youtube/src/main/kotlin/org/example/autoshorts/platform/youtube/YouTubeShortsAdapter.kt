@@ -49,9 +49,15 @@ class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAd
         return GestureSpec(x, startY, x, endY, YouTubeMatchers.SWIPE_DURATION_MS)
     }
 
+    /**
+     * Matches the whole description, or only its last line: on a real Shorts ad the description is
+     * "<advertiser and title>\nAnzeige", so the ad label is the last line. Only the last line is compared and
+     * nothing of the rest is kept.
+     */
     override fun categorizeDescription(description: String): String? {
-        val normalized = description.trim().lowercase(Locale.ROOT)
-        return YouTubeMatchers.labels.entries.firstOrNull { normalized in it.value }?.key
+        val whole = description.trim().lowercase(Locale.ROOT)
+        val lastLine = whole.substringAfterLast('\n').trim()
+        return YouTubeMatchers.labels.entries.firstOrNull { whole in it.value || lastLine in it.value }?.key
     }
 }
 
@@ -70,8 +76,10 @@ class YouTubeAdMonitor(private val packageNames: Set<String> = setOf(YouTubeMatc
 
         return when {
             skip -> AdState.SkipLikelyAvailable(Evidence(signals, if (idHits.isNotEmpty()) Confidence.MEDIUM else Confidence.LOW))
-            idHits.isNotEmpty() && badge -> AdState.AdLikely(Evidence(signals, Confidence.MEDIUM))
-            idHits.isNotEmpty() || badge -> AdState.AdLikely(Evidence(signals, Confidence.LOW))
+            // Observed on real ads: the overlay id and the "<name>\nAnzeige" label appear together.
+            idHits.isNotEmpty() && badge -> AdState.AdLikely(Evidence(signals, Confidence.HIGH))
+            idHits.isNotEmpty() -> AdState.AdLikely(Evidence(signals, Confidence.MEDIUM))
+            badge -> AdState.AdLikely(Evidence(signals, Confidence.LOW))
             // Only claim "no evidence" when we positively see the Shorts feed, otherwise we simply cannot tell.
             nodes.mapNotNull { it.shortId() }.any { it in YouTubeMatchers.Ids.feedMarkers } -> AdState.NoAdEvidence
             else -> AdState.Unknown
