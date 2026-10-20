@@ -36,7 +36,7 @@ No tapping ads (only YouTube's own Skip control, and only as above), no automate
 2. Open it. If Android refuses to let you turn the accessibility service on, open **App info → ⋮ → Allow restricted settings** (the option may only appear after you have tried to switch the service on once), then try again.
 3. Follow the in-app setup: read the disclosure, consent, enable the service, allow notifications.
 
-Obtainium: add the repository URL; release assets are named `autoshorts-<version>-foss-release.apk`.
+Obtainium: add the repository URL; release assets are named `swipeskip-<version>-foss-release.apk`.
 
 ## Build
 
