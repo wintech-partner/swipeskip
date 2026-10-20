@@ -32,4 +32,10 @@ interface PlatformAdapter {
 
     /** Category name of the platform's own skip-ad control, or null if the platform has none. */
     val skipControlCategory: String?
+
+    /**
+     * Short view-id names of containers that hold an advertisement. A skip control is only ever clicked when it sits
+     * inside one of these subtrees, so a look-alike label elsewhere on screen can never trigger a click.
+     */
+    val adContainerIds: Set<String>
 }

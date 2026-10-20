@@ -26,6 +26,7 @@ class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAd
     override val packageNames = setOf(YouTubeMatchers.PACKAGE) + extraPackages
     override val adMonitor: AdvertisementMonitor = YouTubeAdMonitor(packageNames)
     override val skipControlCategory: String = YouTubeMatchers.Categories.SKIP_AD
+    override val adContainerIds: Set<String> = YouTubeMatchers.Ids.adMarkers
 
     override fun classify(snapshot: NodeSnapshot): ScreenState {
         if (snapshot.packageName !in packageNames) return ScreenState.Unknown
@@ -50,14 +51,17 @@ class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAd
     }
 
     /**
-     * Matches the whole description, or only its last line: on a real Shorts ad the description is
-     * "<advertiser and title>\nAnzeige", so the ad label is the last line. Only the last line is compared and
-     * nothing of the rest is kept.
+     * Whole-string match for every category. Only the AD_BADGE category also matches on the last line, because on a
+     * real Shorts ad the description is "<advertiser and title>\nAnzeige". SKIP_AD never gets the relaxed match:
+     * descriptions carry text that creators and advertisers control, and a skip match can lead to an automatic click.
+     * Nothing of the description is kept.
      */
     override fun categorizeDescription(description: String): String? {
         val whole = description.trim().lowercase(Locale.ROOT)
         val lastLine = whole.substringAfterLast('\n').trim()
-        return YouTubeMatchers.labels.entries.firstOrNull { whole in it.value || lastLine in it.value }?.key
+        return YouTubeMatchers.labels.entries.firstOrNull { (category, labels) ->
+            whole in labels || (category == YouTubeMatchers.Categories.AD_BADGE && lastLine in labels)
+        }?.key
     }
 }
 

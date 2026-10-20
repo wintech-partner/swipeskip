@@ -148,6 +148,15 @@ class YouTubeShortsAdapterTest {
         assertEquals(Confidence.MEDIUM, (idOnly as AdState.AdLikely).evidence.confidence)
     }
 
+    @Test fun `skip label is never matched on the last line of a longer description`() {
+        assertNull(adapter.categorizeDescription("Creator title\nSkip ad"))
+        assertNull(adapter.categorizeDescription("Great video - skip ad"))
+        assertEquals(YouTubeMatchers.Categories.SKIP_AD, adapter.categorizeDescription("Skip ad"))
+    }
+
+    @Test fun `ad containers are the ad marker ids`() =
+        assertEquals(YouTubeMatchers.Ids.adMarkers, adapter.adContainerIds)
+
     @Test fun `ad label is found on the last line of a multi line description`() {
         assertEquals(YouTubeMatchers.Categories.AD_BADGE, adapter.categorizeDescription("Some Brand - great game\nAnzeige"))
         assertNull(adapter.categorizeDescription("Anzeige for something else entirely"))

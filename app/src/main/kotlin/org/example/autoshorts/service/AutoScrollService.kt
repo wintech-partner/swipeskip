@@ -53,23 +53,30 @@ class AutoScrollService : AccessibilityService() {
     }
 
     /**
-     * Taps the platform's own Skip control, if one is visible. Only a node whose label category is the adapter's
-     * skip category is eligible; ads, badges and everything else are never touched. Returns true if a click was sent.
+     * Taps the platform's own Skip control, if one is visible, and only if it sits inside an advertisement container
+     * (the adapter's `adContainerIds`). The label must match the skip category exactly. The click goes to the node or to
+     * a clickable ancestor that is still inside that container; it never climbs out of it. Returns true if a click was sent.
      */
     internal fun clickSkipControl(): Boolean {
         val category = host.adapter.skipControlCategory ?: return false
         val root = rootInActiveWindow ?: return false
         if (root.packageName?.toString() !in host.adapter.packageNames) return false
-        val budget = intArrayOf(500)
-        val target = findSkip(root, category, budget) ?: return false
-        var node: AccessibilityNodeInfo? = target
-        var hops = 0
-        while (node != null && hops < 4) {
-            if (node.isClickable && node.isVisibleToUser) return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
-            node = node.parent
-            hops++
+        val budget = intArrayOf(600)
+        return findAdContainer(root, budget)?.let { container ->
+            val target = findSkip(container, category, IntArray(1) { 300 }) ?: return@let false
+            clickWithin(target, container)
+        } ?: false
+    }
+
+    private fun findAdContainer(node: AccessibilityNodeInfo, budget: IntArray): AccessibilityNodeInfo? {
+        if (budget[0]-- <= 0) return null
+        val shortId = node.viewIdResourceName?.substringAfter(":id/")
+        if (node.isVisibleToUser && shortId in host.adapter.adContainerIds) return node
+        for (i in 0 until node.childCount) {
+            val child = node.getChild(i) ?: continue
+            findAdContainer(child, budget)?.let { return it }
         }
-        return false
+        return null
     }
 
     private fun findSkip(node: AccessibilityNodeInfo, category: String, budget: IntArray): AccessibilityNodeInfo? {
@@ -80,6 +87,18 @@ class AutoScrollService : AccessibilityService() {
             findSkip(child, category, budget)?.let { return it }
         }
         return null
+    }
+
+    private fun clickWithin(target: AccessibilityNodeInfo, container: AccessibilityNodeInfo): Boolean {
+        var node: AccessibilityNodeInfo? = target
+        var hops = 0
+        while (node != null && hops < 4) {
+            if (node.isClickable && node.isVisibleToUser) return node.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+            if (node == container) return false // do not climb out of the ad container
+            node = node.parent
+            hops++
+        }
+        return false
     }
 
     /** Dispatches one swipe and suspends until the system reports the result. */

@@ -23,6 +23,7 @@ class FakeShortsActivity : Activity() {
     private lateinit var counter: TextView
     private lateinit var skipCounter: TextView
     private lateinit var adBadge: TextView
+    private lateinit var adBox: LinearLayout
     private lateinit var skip: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,17 +40,16 @@ class FakeShortsActivity : Activity() {
         root.addView(counter, FrameLayout.LayoutParams(-1, -1))
 
         val overlay = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; gravity = Gravity.TOP }
+        adBox = LinearLayout(this).apply { id = R.id.reel_player_delegated_overlay; orientation = LinearLayout.VERTICAL; visibility = View.GONE }
         adBadge = TextView(this).apply {
             id = R.id.ad_badge
             text = "Ad"
             contentDescription = "Ad"
-            visibility = View.GONE
         }
         skip = Button(this).apply {
             id = R.id.skip_button
             text = "Skip ad"
             contentDescription = "Skip ad"
-            visibility = View.GONE
             setOnClickListener { skipClicks++; skipCounter.text = "Skip clicks: $skipClicks" }
         }
         skipCounter = TextView(this).apply { id = R.id.skip_clicks; text = "Skip clicks: 0" }
@@ -57,12 +57,11 @@ class FakeShortsActivity : Activity() {
             id = R.id.toggle_ad
             text = "Toggle ad"
             setOnClickListener {
-                val show = adBadge.visibility != View.VISIBLE
-                adBadge.visibility = if (show) View.VISIBLE else View.GONE
-                skip.visibility = if (show) View.VISIBLE else View.GONE
+                adBox.visibility = if (adBox.visibility != View.VISIBLE) View.VISIBLE else View.GONE
             }
         }
-        overlay.addView(adBadge); overlay.addView(skip); overlay.addView(skipCounter); overlay.addView(toggle)
+        adBox.addView(adBadge); adBox.addView(skip)
+        overlay.addView(adBox); overlay.addView(skipCounter); overlay.addView(toggle)
         // Edge-to-edge is forced on recent targetSdk: keep the controls below the status and title bars,
         // otherwise they are not "visible to user" and the accessibility tree leaves them out.
         root.addView(overlay, FrameLayout.LayoutParams(-1, -2).apply { topMargin = 400 })
