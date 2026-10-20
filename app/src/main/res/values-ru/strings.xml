@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwipeSkipr</string>
+    <string name="app_name">SwipeSkip</string>
     <string name="service_description">Листает YouTube Shorts за вас во время запущенного вами сеанса. Работает только при активном сеансе, только внутри приложения YouTube и никогда не читает и не сохраняет текст с экрана.</string>
     <string name="home_start">Старт</string>
     <string name="home_stop">Стоп</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Вероятно, доступна кнопка «Пропустить»</string>
     <string name="notif_channel_session">Активный сеанс</string>
     <string name="notif_channel_ads">Подсказки о рекламе</string>
-    <string name="notif_title_session">Сеанс SwipeSkipr</string>
+    <string name="notif_title_session">Сеанс SwipeSkip</string>
     <string name="notif_action_stop">Стоп</string>
     <string name="notif_action_scroll">Далее</string>
     <string name="notif_action_pause">Пауза</string>
     <string name="notif_action_resume">Продолжить</string>
     <string name="notif_ad_skip_title">Возможно, можно пропустить</string>
-    <string name="notif_ad_skip_text">Если хотите пропустить, используйте собственную кнопку «Пропустить» в YouTube. SwipeSkipr её никогда не нажимает.</string>
+    <string name="notif_ad_skip_text">Если хотите пропустить, используйте собственную кнопку «Пропустить» в YouTube. SwipeSkip её никогда не нажимает.</string>
     <string name="onb_title">Прежде чем начать</string>
-    <string name="onb_intro">SwipeSkipr переключает на следующий YouTube Short за вас по выбранному вами таймеру. Для этого ему нужна служба специальных возможностей Android.</string>
+    <string name="onb_intro">SwipeSkip переключает на следующий YouTube Short за вас по выбранному вами таймеру. Для этого ему нужна служба специальных возможностей Android.</string>
     <string name="onb_does_title">Что он делает</string>
     <string name="onb_does">Пока идёт запущенный вами сеанс, он смахивает вверх в приложении YouTube с выбранным интервалом и проверяет структуру экрана (не текст), чтобы заметить рекламу, комментарии и другие экраны.</string>
     <string name="onb_sees_title">Что он видит</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">У сеансов есть лимит времени. Уведомление с кнопкой «Стоп» всегда видно, пока он работает. Службу можно отключить в любой момент в настройках Android.</string>
     <string name="onb_consent">Понимаю и согласен</string>
     <string name="onb_step_enable">Включите службу</string>
-    <string name="onb_step_enable_body">Откройте настройки специальных возможностей Android, найдите SwipeSkipr и включите.</string>
+    <string name="onb_step_enable_body">Откройте настройки специальных возможностей Android, найдите SwipeSkip и включите.</string>
     <string name="onb_open_accessibility">Открыть настройки специальных возможностей</string>
     <string name="onb_service_on">Служба включена.</string>
     <string name="onb_service_off">Служба ещё не включена.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">О приложении</string>
     <string name="about_version">Версия %1$s</string>
     <string name="about_license">Открытый исходный код, лицензия Apache 2.0</string>
-    <string name="about_not_affiliated">SwipeSkipr не связано с YouTube или Google и не одобрено ими. «YouTube» — товарный знак Google LLC; здесь он используется лишь для описания того, с чем работает приложение.</string>
+    <string name="about_not_affiliated">SwipeSkip не связано с YouTube или Google и не одобрено ими. «YouTube» — товарный знак Google LLC; здесь он используется лишь для описания того, с чем работает приложение.</string>
     <string name="about_ai">Этот проект разработан с помощью ИИ и проверен человеком.</string>
     <string name="about_source">Исходный код и issues</string>
     <string name="premium_title">Premium</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">Нажимать «Пропустить» автоматически</string>
     <string name="settings_auto_skip_desc">Когда собственная кнопка «Пропустить» YouTube, вероятно, видна, нажимает её за меня. По умолчанию выключено. Саму рекламу никогда не нажимает.</string>
     <string name="home_mode_watch">Просмотр: пропуск рекламы</string>
-    <string name="settings_mode_watch_desc">Ничего не прокручивается. Во время обычного видео SwipeSkipr нажимает собственную кнопку «Пропустить» YouTube, когда она появляется. Саму рекламу никогда не нажимает. Заканчивается по лимиту сеанса, при выключении экрана или через 60 с вне YouTube.</string>
+    <string name="settings_mode_watch_desc">Ничего не прокручивается. Во время обычного видео SwipeSkip нажимает собственную кнопку «Пропустить» YouTube, когда она появляется. Саму рекламу никогда не нажимает. Заканчивается по лимиту сеанса, при выключении экрана или через 60 с вне YouTube.</string>
     <string name="settings_applies_next_session">Сеанс запущен. Изменения интервала, длительности, направления и режима вступят в силу со следующего сеанса.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d прокрутка</item>

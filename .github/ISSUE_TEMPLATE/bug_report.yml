@@ -16,7 +16,7 @@ body:
     validations: {required: true}
   - type: input
     id: app
-    attributes: {label: SwipeSkipr version and flavor, placeholder: "0.1.0 foss"}
+    attributes: {label: SwipeSkip version and flavor, placeholder: "0.1.0 foss"}
     validations: {required: true}
   - type: textarea
     id: what

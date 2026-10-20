@@ -1,8 +1,8 @@
-# SwipeSkipr
+# SwipeSkip
 
 **YouTube Shorts** videolarını, seçtiğiniz bir zamanlayıcıyla elleri serbest kaydıran; her zaman çalışan bir Başlat/Durdur kontrolü sunan ücretsiz, açık kaynaklı Android yardımcısı. İngilizce: [README.md](README.md).
 
-> SwipeSkipr, YouTube veya Google ile bağlantılı değildir ve onlar tarafından onaylanmamıştır. "YouTube", Google LLC'nin ticari markasıdır ve burada yalnızca uygulamanın birlikte çalıştığı şeyi anlatmak için kullanılır.
+> SwipeSkip, YouTube veya Google ile bağlantılı değildir ve onlar tarafından onaylanmamıştır. "YouTube", Google LLC'nin ticari markasıdır ve burada yalnızca uygulamanın birlikte çalıştığı şeyi anlatmak için kullanılır.
 >
 > Bu proje yapay zekâ desteğiyle geliştirildi ve insan tarafından gözden geçirildi.
 

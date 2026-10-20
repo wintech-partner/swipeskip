@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwipeSkipr</string>
+    <string name="app_name">SwipeSkip</string>
     <string name="service_description">Tự động cuộn YouTube Shorts cho bạn trong phiên do bạn bắt đầu. Chỉ chạy khi có phiên đang hoạt động, chỉ hoạt động trong ứng dụng YouTube và không bao giờ đọc hay lưu chữ trên màn hình.</string>
     <string name="home_start">Bắt đầu</string>
     <string name="home_stop">Dừng</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Có thể có nút Bỏ qua</string>
     <string name="notif_channel_session">Phiên đang hoạt động</string>
     <string name="notif_channel_ads">Gợi ý quảng cáo</string>
-    <string name="notif_title_session">Phiên SwipeSkipr</string>
+    <string name="notif_title_session">Phiên SwipeSkip</string>
     <string name="notif_action_stop">Dừng</string>
     <string name="notif_action_scroll">Tiếp</string>
     <string name="notif_action_pause">Tạm dừng</string>
     <string name="notif_action_resume">Tiếp tục</string>
     <string name="notif_ad_skip_title">Có thể bỏ qua được</string>
-    <string name="notif_ad_skip_text">Hãy dùng nút Bỏ qua của chính YouTube nếu bạn muốn bỏ qua. SwipeSkipr không bao giờ chạm vào nút đó.</string>
+    <string name="notif_ad_skip_text">Hãy dùng nút Bỏ qua của chính YouTube nếu bạn muốn bỏ qua. SwipeSkip không bao giờ chạm vào nút đó.</string>
     <string name="onb_title">Trước khi bắt đầu</string>
-    <string name="onb_intro">SwipeSkipr vuốt sang YouTube Short tiếp theo cho bạn, theo bộ hẹn giờ bạn chọn. Để làm được vậy, ứng dụng cần dịch vụ trợ năng của Android.</string>
+    <string name="onb_intro">SwipeSkip vuốt sang YouTube Short tiếp theo cho bạn, theo bộ hẹn giờ bạn chọn. Để làm được vậy, ứng dụng cần dịch vụ trợ năng của Android.</string>
     <string name="onb_does_title">Ứng dụng làm gì</string>
     <string name="onb_does">Trong phiên do bạn bắt đầu, ứng dụng vuốt lên trong YouTube theo khoảng thời gian của bạn, và kiểm tra cấu trúc màn hình (không phải chữ) để nhận biết quảng cáo, bình luận và các màn hình khác.</string>
     <string name="onb_sees_title">Ứng dụng nhìn thấy gì</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Phiên có giới hạn thời gian. Thông báo có nút Dừng luôn hiển thị khi ứng dụng chạy. Bạn có thể tắt dịch vụ bất cứ lúc nào trong cài đặt Android.</string>
     <string name="onb_consent">Tôi hiểu và đồng ý</string>
     <string name="onb_step_enable">Bật dịch vụ</string>
-    <string name="onb_step_enable_body">Mở cài đặt trợ năng của Android, tìm SwipeSkipr và bật lên.</string>
+    <string name="onb_step_enable_body">Mở cài đặt trợ năng của Android, tìm SwipeSkip và bật lên.</string>
     <string name="onb_open_accessibility">Mở cài đặt trợ năng</string>
     <string name="onb_service_on">Dịch vụ đã bật.</string>
     <string name="onb_service_off">Dịch vụ chưa bật.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Giới thiệu</string>
     <string name="about_version">Phiên bản %1$s</string>
     <string name="about_license">Mã nguồn mở, Apache License 2.0</string>
-    <string name="about_not_affiliated">SwipeSkipr không liên kết với hay được YouTube hoặc Google chứng thực. “YouTube” là nhãn hiệu của Google LLC và chỉ được dùng ở đây để mô tả ứng dụng hoạt động với dịch vụ nào.</string>
+    <string name="about_not_affiliated">SwipeSkip không liên kết với hay được YouTube hoặc Google chứng thực. “YouTube” là nhãn hiệu của Google LLC và chỉ được dùng ở đây để mô tả ứng dụng hoạt động với dịch vụ nào.</string>
     <string name="about_ai">Dự án này được phát triển với sự hỗ trợ của AI và có con người rà soát.</string>
     <string name="about_source">Mã nguồn và issue</string>
     <string name="premium_title">Premium</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">Tự động chạm Bỏ qua</string>
     <string name="settings_auto_skip_desc">Khi nút Bỏ qua của chính YouTube có thể đang hiển thị, chạm giúp tôi. Mặc định tắt. Không bao giờ chạm vào chính quảng cáo.</string>
     <string name="home_mode_watch">Xem: bỏ qua quảng cáo</string>
-    <string name="settings_mode_watch_desc">Không có gì được cuộn. Khi xem video thường, SwipeSkipr chạm vào nút Bỏ qua của chính YouTube khi nó xuất hiện. Không bao giờ chạm vào chính quảng cáo. Kết thúc khi hết giới hạn phiên, tắt màn hình hoặc rời YouTube 60 giây.</string>
+    <string name="settings_mode_watch_desc">Không có gì được cuộn. Khi xem video thường, SwipeSkip chạm vào nút Bỏ qua của chính YouTube khi nó xuất hiện. Không bao giờ chạm vào chính quảng cáo. Kết thúc khi hết giới hạn phiên, tắt màn hình hoặc rời YouTube 60 giây.</string>
     <string name="settings_applies_next_session">Đang có một phiên chạy. Thay đổi về khoảng thời gian, thời lượng, hướng và chế độ sẽ áp dụng từ phiên tiếp theo.</string>
     <plurals name="scroll_count">
         <item quantity="other">%d lần cuộn</item>

@@ -1,4 +1,4 @@
-SwipeSkipr, başlattığınız bir oturum boyunca YouTube Shorts videolarını seçtiğiniz zamanlayıcıyla sizin yerinize kaydırır.
+SwipeSkip, başlattığınız bir oturum boyunca YouTube Shorts videolarını seçtiğiniz zamanlayıcıyla sizin yerinize kaydırır.
 
 • 3-120 saniye aralık, oturum süre sınırı, isteğe bağlı kaydırma sınırı
 • Bildirimde her zaman görünen Durdur düğmesi

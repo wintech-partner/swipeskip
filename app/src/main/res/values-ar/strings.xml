@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwipeSkipr</string>
+    <string name="app_name">SwipeSkip</string>
     <string name="service_description">يمرّر مقاطع YouTube Shorts نيابةً عنك أثناء جلسة تبدؤها أنت. يعمل فقط عند وجود جلسة نشطة، وداخل تطبيق YouTube فقط، ولا يقرأ نص الشاشة ولا يحفظه أبدًا.</string>
     <string name="home_start">ابدأ</string>
     <string name="home_stop">إيقاف</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">يُحتمل أن زر التخطي متاح</string>
     <string name="notif_channel_session">الجلسة النشطة</string>
     <string name="notif_channel_ads">تلميحات الإعلانات</string>
-    <string name="notif_title_session">جلسة SwipeSkipr</string>
+    <string name="notif_title_session">جلسة SwipeSkip</string>
     <string name="notif_action_stop">إيقاف</string>
     <string name="notif_action_scroll">التالي</string>
     <string name="notif_action_pause">إيقاف مؤقت</string>
     <string name="notif_action_resume">استئناف</string>
     <string name="notif_ad_skip_title">قد يكون التخطي متاحًا</string>
-    <string name="notif_ad_skip_text">استخدم زر التخطي الخاص بـ YouTube إن أردت التخطي. لا ينقر SwipeSkipr عليه أبدًا.</string>
+    <string name="notif_ad_skip_text">استخدم زر التخطي الخاص بـ YouTube إن أردت التخطي. لا ينقر SwipeSkip عليه أبدًا.</string>
     <string name="onb_title">قبل أن تبدأ</string>
-    <string name="onb_intro">ينتقل SwipeSkipr إلى مقطع YouTube Short التالي نيابةً عنك وفق مؤقّت تختاره. ولهذا يحتاج إلى خدمة إمكانية الوصول في أندرويد.</string>
+    <string name="onb_intro">ينتقل SwipeSkip إلى مقطع YouTube Short التالي نيابةً عنك وفق مؤقّت تختاره. ولهذا يحتاج إلى خدمة إمكانية الوصول في أندرويد.</string>
     <string name="onb_does_title">ماذا يفعل</string>
     <string name="onb_does">أثناء جلسة بدأتها أنت، يسحب لأعلى داخل تطبيق YouTube بالفاصل الذي اخترته، ويفحص بنية الشاشة (لا نصوصها) ليلاحظ الإعلانات والتعليقات والشاشات الأخرى.</string>
     <string name="onb_sees_title">ماذا يستطيع أن يرى</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">للجلسات حد زمني. يظهر دائمًا إشعار فيه زر إيقاف أثناء التشغيل. يمكنك إيقاف الخدمة في أي وقت من إعدادات أندرويد.</string>
     <string name="onb_consent">فهمت وأوافق</string>
     <string name="onb_step_enable">شغّل الخدمة</string>
-    <string name="onb_step_enable_body">افتح إعدادات إمكانية الوصول في أندرويد، وابحث عن SwipeSkipr وشغّله.</string>
+    <string name="onb_step_enable_body">افتح إعدادات إمكانية الوصول في أندرويد، وابحث عن SwipeSkip وشغّله.</string>
     <string name="onb_open_accessibility">فتح إعدادات إمكانية الوصول</string>
     <string name="onb_service_on">الخدمة قيد التشغيل.</string>
     <string name="onb_service_off">الخدمة غير مشغّلة بعد.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">حول</string>
     <string name="about_version">الإصدار %1$s</string>
     <string name="about_license">مفتوح المصدر، رخصة Apache 2.0</string>
-    <string name="about_not_affiliated">SwipeSkipr غير تابع لـ YouTube أو Google ولا يحظى بتأييدهما. «YouTube» علامة تجارية لشركة Google LLC وتُستخدم هنا فقط لوصف ما يعمل معه التطبيق.</string>
+    <string name="about_not_affiliated">SwipeSkip غير تابع لـ YouTube أو Google ولا يحظى بتأييدهما. «YouTube» علامة تجارية لشركة Google LLC وتُستخدم هنا فقط لوصف ما يعمل معه التطبيق.</string>
     <string name="about_ai">طُوِّر هذا المشروع بمساعدة الذكاء الاصطناعي ومراجعة بشرية.</string>
     <string name="about_source">الشيفرة المصدرية والبلاغات</string>
     <string name="premium_title">Premium</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">النقر على «تخطي» تلقائيًا</string>
     <string name="settings_auto_skip_desc">عندما يُحتمل أن زر التخطي الخاص بـ YouTube ظاهر، ينقر عليه نيابةً عني. متوقف افتراضيًا. لا ينقر على الإعلان نفسه أبدًا.</string>
     <string name="home_mode_watch">المشاهدة: تخطي الإعلانات</string>
-    <string name="settings_mode_watch_desc">لا يتم تمرير أي شيء. أثناء فيديو عادي، يضغط SwipeSkipr على زر التخطي الخاص بـ YouTube عند ظهوره. ولا يضغط على الإعلان نفسه أبدًا. تنتهي الجلسة عند حدّها أو عند إطفاء الشاشة أو بعد 60 ثانية خارج YouTube.</string>
+    <string name="settings_mode_watch_desc">لا يتم تمرير أي شيء. أثناء فيديو عادي، يضغط SwipeSkip على زر التخطي الخاص بـ YouTube عند ظهوره. ولا يضغط على الإعلان نفسه أبدًا. تنتهي الجلسة عند حدّها أو عند إطفاء الشاشة أو بعد 60 ثانية خارج YouTube.</string>
     <string name="settings_applies_next_session">هناك جلسة قيد التشغيل. تسري تغييرات الفاصل والمدة والاتجاه والوضع اعتبارًا من الجلسة التالية.</string>
     <plurals name="scroll_count">
         <item quantity="zero">%d تمريرة</item>

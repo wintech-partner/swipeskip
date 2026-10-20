@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwipeSkipr</string>
+    <string name="app_name">SwipeSkip</string>
     <string name="service_description">เลื่อน YouTube Shorts ให้คุณระหว่างเซสชันที่คุณเริ่มเอง ทำงานเฉพาะเมื่อมีเซสชันที่กำลังใช้งาน ทำงานภายในแอป YouTube เท่านั้น และไม่เคยอ่านหรือเก็บข้อความบนหน้าจอ</string>
     <string name="home_start">เริ่ม</string>
     <string name="home_stop">หยุด</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">อาจมีปุ่มข้าม</string>
     <string name="notif_channel_session">เซสชันที่กำลังทำงาน</string>
     <string name="notif_channel_ads">คำใบ้เรื่องโฆษณา</string>
-    <string name="notif_title_session">เซสชัน SwipeSkipr</string>
+    <string name="notif_title_session">เซสชัน SwipeSkip</string>
     <string name="notif_action_stop">หยุด</string>
     <string name="notif_action_scroll">ถัดไป</string>
     <string name="notif_action_pause">หยุดชั่วคราว</string>
     <string name="notif_action_resume">เล่นต่อ</string>
     <string name="notif_ad_skip_title">อาจข้ามได้</string>
-    <string name="notif_ad_skip_text">หากต้องการข้าม ให้ใช้ปุ่มข้ามของ YouTube เอง SwipeSkipr ไม่เคยแตะปุ่มนั้น</string>
+    <string name="notif_ad_skip_text">หากต้องการข้าม ให้ใช้ปุ่มข้ามของ YouTube เอง SwipeSkip ไม่เคยแตะปุ่มนั้น</string>
     <string name="onb_title">ก่อนเริ่มใช้งาน</string>
-    <string name="onb_intro">SwipeSkipr ปัดไปยัง YouTube Short ถัดไปให้คุณตามตัวจับเวลาที่คุณเลือก เพื่อทำเช่นนั้นจึงต้องใช้บริการการช่วยเหลือพิเศษของ Android</string>
+    <string name="onb_intro">SwipeSkip ปัดไปยัง YouTube Short ถัดไปให้คุณตามตัวจับเวลาที่คุณเลือก เพื่อทำเช่นนั้นจึงต้องใช้บริการการช่วยเหลือพิเศษของ Android</string>
     <string name="onb_does_title">ทำอะไรบ้าง</string>
     <string name="onb_does">ระหว่างเซสชันที่คุณเริ่มเอง แอปจะปัดขึ้นในแอป YouTube ตามช่วงเวลาของคุณ และตรวจโครงสร้างของหน้าจอ (ไม่ใช่ข้อความ) เพื่อสังเกตโฆษณา ความคิดเห็น และหน้าจออื่น ๆ</string>
     <string name="onb_sees_title">มองเห็นอะไรได้บ้าง</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">เซสชันมีขีดจำกัดเวลา การแจ้งเตือนที่มีปุ่มหยุดจะแสดงอยู่เสมอขณะทำงาน คุณปิดบริการได้ทุกเมื่อในการตั้งค่า Android</string>
     <string name="onb_consent">ฉันเข้าใจและยอมรับ</string>
     <string name="onb_step_enable">เปิดบริการ</string>
-    <string name="onb_step_enable_body">เปิดการตั้งค่าการช่วยเหลือพิเศษของ Android หา SwipeSkipr แล้วเปิดใช้งาน</string>
+    <string name="onb_step_enable_body">เปิดการตั้งค่าการช่วยเหลือพิเศษของ Android หา SwipeSkip แล้วเปิดใช้งาน</string>
     <string name="onb_open_accessibility">เปิดการตั้งค่าการช่วยเหลือพิเศษ</string>
     <string name="onb_service_on">บริการเปิดอยู่</string>
     <string name="onb_service_off">บริการยังไม่ได้เปิด</string>
@@ -124,7 +124,7 @@
     <string name="about_title">เกี่ยวกับ</string>
     <string name="about_version">เวอร์ชัน %1$s</string>
     <string name="about_license">โอเพนซอร์ส, Apache License 2.0</string>
-    <string name="about_not_affiliated">SwipeSkipr ไม่มีส่วนเกี่ยวข้องหรือได้รับการรับรองจาก YouTube หรือ Google “YouTube” เป็นเครื่องหมายการค้าของ Google LLC และใช้ที่นี่เพื่ออธิบายว่าแอปทำงานกับบริการใดเท่านั้น</string>
+    <string name="about_not_affiliated">SwipeSkip ไม่มีส่วนเกี่ยวข้องหรือได้รับการรับรองจาก YouTube หรือ Google “YouTube” เป็นเครื่องหมายการค้าของ Google LLC และใช้ที่นี่เพื่ออธิบายว่าแอปทำงานกับบริการใดเท่านั้น</string>
     <string name="about_ai">โปรเจกต์นี้พัฒนาด้วยความช่วยเหลือจาก AI และการตรวจทานโดยมนุษย์</string>
     <string name="about_source">ซอร์สโค้ดและ issue</string>
     <string name="premium_title">พรีเมียม</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">แตะข้ามอัตโนมัติ</string>
     <string name="settings_auto_skip_desc">เมื่อปุ่มข้ามของ YouTube น่าจะมองเห็นอยู่ ให้แตะแทนฉัน ปิดไว้เป็นค่าเริ่มต้น ไม่เคยแตะตัวโฆษณา</string>
     <string name="home_mode_watch">ดู: ข้ามโฆษณา</string>
-    <string name="settings_mode_watch_desc">ไม่มีการเลื่อน ระหว่างวิดีโอปกติ SwipeSkipr จะแตะปุ่มข้ามของ YouTube เองเมื่อปรากฏ ไม่แตะตัวโฆษณา สิ้นสุดเมื่อถึงขีดจำกัดเซสชัน หน้าจอดับ หรืออยู่นอก YouTube นาน 60 วินาที</string>
+    <string name="settings_mode_watch_desc">ไม่มีการเลื่อน ระหว่างวิดีโอปกติ SwipeSkip จะแตะปุ่มข้ามของ YouTube เองเมื่อปรากฏ ไม่แตะตัวโฆษณา สิ้นสุดเมื่อถึงขีดจำกัดเซสชัน หน้าจอดับ หรืออยู่นอก YouTube นาน 60 วินาที</string>
     <string name="settings_applies_next_session">มีเซสชันกำลังทำงานอยู่ การเปลี่ยนช่วงเวลา ความยาว ทิศทาง และโหมดจะมีผลตั้งแต่เซสชันถัดไป</string>
     <plurals name="scroll_count">
         <item quantity="other">เลื่อน %d ครั้ง</item>

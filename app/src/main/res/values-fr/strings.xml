@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwipeSkipr</string>
+    <string name="app_name">SwipeSkip</string>
     <string name="service_description">Fait défiler les YouTube Shorts à votre place pendant une session que vous lancez. Ne fonctionne que lorsqu\'une session est active, uniquement dans l\'application YouTube, et ne lit ni ne stocke jamais le texte de l\'écran.</string>
     <string name="home_start">Démarrer</string>
     <string name="home_stop">Arrêter</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Un bouton Ignorer est probablement disponible</string>
     <string name="notif_channel_session">Session active</string>
     <string name="notif_channel_ads">Indices publicitaires</string>
-    <string name="notif_title_session">Session SwipeSkipr</string>
+    <string name="notif_title_session">Session SwipeSkip</string>
     <string name="notif_action_stop">Arrêter</string>
     <string name="notif_action_scroll">Suivant</string>
     <string name="notif_action_pause">Pause</string>
     <string name="notif_action_resume">Reprendre</string>
     <string name="notif_ad_skip_title">Ignorer est peut-être possible</string>
-    <string name="notif_ad_skip_text">Utilisez le bouton Ignorer de YouTube si vous le souhaitez. SwipeSkipr n\'appuie jamais dessus.</string>
+    <string name="notif_ad_skip_text">Utilisez le bouton Ignorer de YouTube si vous le souhaitez. SwipeSkip n\'appuie jamais dessus.</string>
     <string name="onb_title">Avant de commencer</string>
-    <string name="onb_intro">SwipeSkipr passe au Short YouTube suivant à votre place, selon un minuteur que vous choisissez. Pour cela, il a besoin du service d\'accessibilité d\'Android.</string>
+    <string name="onb_intro">SwipeSkip passe au Short YouTube suivant à votre place, selon un minuteur que vous choisissez. Pour cela, il a besoin du service d\'accessibilité d\'Android.</string>
     <string name="onb_does_title">Ce qu\'il fait</string>
     <string name="onb_does">Pendant une session que vous avez lancée, il balaie vers le haut dans l\'application YouTube à l\'intervalle choisi, et vérifie la structure de l\'écran (pas le texte) pour repérer les publicités, les commentaires et les autres écrans.</string>
     <string name="onb_sees_title">Ce qu\'il peut voir</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Les sessions ont une limite de durée. Une notification avec un bouton Arrêter reste toujours visible pendant l\'exécution. Vous pouvez désactiver le service à tout moment dans les réglages d\'Android.</string>
     <string name="onb_consent">J\'ai compris et j\'accepte</string>
     <string name="onb_step_enable">Activer le service</string>
-    <string name="onb_step_enable_body">Ouvrez les réglages d\'accessibilité d\'Android, trouvez SwipeSkipr et activez-le.</string>
+    <string name="onb_step_enable_body">Ouvrez les réglages d\'accessibilité d\'Android, trouvez SwipeSkip et activez-le.</string>
     <string name="onb_open_accessibility">Ouvrir les réglages d\'accessibilité</string>
     <string name="onb_service_on">Le service est activé.</string>
     <string name="onb_service_off">Le service n\'est pas encore activé.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">À propos</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_license">Open source, licence Apache 2.0</string>
-    <string name="about_not_affiliated">SwipeSkipr n\'est ni affilié à YouTube ou Google, ni approuvé par eux. « YouTube » est une marque de Google LLC, utilisée ici uniquement pour décrire ce avec quoi l\'application fonctionne.</string>
+    <string name="about_not_affiliated">SwipeSkip n\'est ni affilié à YouTube ou Google, ni approuvé par eux. « YouTube » est une marque de Google LLC, utilisée ici uniquement pour décrire ce avec quoi l\'application fonctionne.</string>
     <string name="about_ai">Ce projet a été développé avec l\'aide de l\'IA et une relecture humaine.</string>
     <string name="about_source">Code source et tickets</string>
     <string name="premium_title">Premium</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">Appuyer sur Ignorer automatiquement</string>
     <string name="settings_auto_skip_desc">Quand le bouton Ignorer de YouTube est probablement visible, appuie dessus à ma place. Désactivé par défaut. N\'appuie jamais sur la publicité elle-même.</string>
     <string name="home_mode_watch">Regarder : passer les pubs</string>
-    <string name="settings_mode_watch_desc">Rien ne défile. Pendant une vidéo normale, SwipeSkipr appuie sur le bouton Ignorer de YouTube quand il apparaît. Il n\'appuie jamais sur l\'annonce elle-même. S\'arrête à la limite de la session, quand l\'écran s\'éteint ou après 60 s hors de YouTube.</string>
+    <string name="settings_mode_watch_desc">Rien ne défile. Pendant une vidéo normale, SwipeSkip appuie sur le bouton Ignorer de YouTube quand il apparaît. Il n\'appuie jamais sur l\'annonce elle-même. S\'arrête à la limite de la session, quand l\'écran s\'éteint ou après 60 s hors de YouTube.</string>
     <string name="settings_applies_next_session">Une session est en cours. Les changements d\'intervalle, de durée, de sens et de mode s\'appliquent à partir de la prochaine session.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d défilement</item>

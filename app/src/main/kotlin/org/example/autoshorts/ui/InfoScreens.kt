@@ -49,7 +49,7 @@ fun DiagnosticsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit) {
         Button(
             onClick = {
                 (context.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
-                    .setPrimaryClip(ClipData.newPlainText("SwipeSkipr diagnostics", report))
+                    .setPrimaryClip(ClipData.newPlainText("SwipeSkip diagnostics", report))
                 copied = true
             },
             Modifier.fillMaxWidth(),
