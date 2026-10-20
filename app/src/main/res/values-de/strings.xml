@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">Scrollt YouTube Shorts für Sie während einer von Ihnen gestarteten Sitzung. Läuft nur bei aktiver Sitzung, arbeitet nur in der YouTube-App und liest oder speichert nie Bildschirmtext.</string>
     <string name="home_start">Start</string>
     <string name="home_stop">Stopp</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Wahrscheinlich ist eine Überspringen-Taste verfügbar</string>
     <string name="notif_channel_session">Aktive Sitzung</string>
     <string name="notif_channel_ads">Werbehinweise</string>
-    <string name="notif_title_session">Autoshorts-Sitzung</string>
+    <string name="notif_title_session">Tempo-Sitzung</string>
     <string name="notif_action_stop">Stopp</string>
     <string name="notif_action_scroll">Weiter</string>
     <string name="notif_action_pause">Pause</string>
     <string name="notif_action_resume">Weiter</string>
     <string name="notif_ad_skip_title">Überspringen eventuell möglich</string>
-    <string name="notif_ad_skip_text">Nutzen Sie die eigene Überspringen-Taste von YouTube, wenn Sie möchten. Autoshorts tippt sie nie an.</string>
+    <string name="notif_ad_skip_text">Nutzen Sie die eigene Überspringen-Taste von YouTube, wenn Sie möchten. Tempo tippt sie nie an.</string>
     <string name="onb_title">Bevor Sie starten</string>
-    <string name="onb_intro">Autoshorts wischt für Sie in einem von Ihnen gewählten Takt zum nächsten YouTube Short. Dafür braucht die App den Bedienungshilfen-Dienst von Android.</string>
+    <string name="onb_intro">Tempo wischt für Sie in einem von Ihnen gewählten Takt zum nächsten YouTube Short. Dafür braucht die App den Bedienungshilfen-Dienst von Android.</string>
     <string name="onb_does_title">Was die App tut</string>
     <string name="onb_does">Während einer von Ihnen gestarteten Sitzung wischt sie in der YouTube-App im gewählten Intervall nach oben und prüft die Struktur des Bildschirms (nicht den Text), um Werbung, Kommentare und andere Bildschirme zu erkennen.</string>
     <string name="onb_sees_title">Was die App sehen kann</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Sitzungen haben ein Zeitlimit. Eine Benachrichtigung mit Stopp-Taste ist während der Sitzung immer sichtbar. Den Dienst können Sie jederzeit in den Android-Einstellungen ausschalten.</string>
     <string name="onb_consent">Verstanden und einverstanden</string>
     <string name="onb_step_enable">Dienst einschalten</string>
-    <string name="onb_step_enable_body">Öffnen Sie die Bedienungshilfen-Einstellungen von Android, suchen Sie Autoshorts und schalten Sie es ein.</string>
+    <string name="onb_step_enable_body">Öffnen Sie die Bedienungshilfen-Einstellungen von Android, suchen Sie Tempo und schalten Sie es ein.</string>
     <string name="onb_open_accessibility">Bedienungshilfen öffnen</string>
     <string name="onb_service_on">Der Dienst ist an.</string>
     <string name="onb_service_off">Der Dienst ist noch nicht an.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Über</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_license">Open Source, Apache License 2.0</string>
-    <string name="about_not_affiliated">Autoshorts steht in keiner Verbindung zu YouTube oder Google und wird nicht von ihnen unterstützt. „YouTube“ ist eine Marke von Google LLC und wird hier nur zur Beschreibung verwendet, womit die App arbeitet.</string>
+    <string name="about_not_affiliated">Tempo steht in keiner Verbindung zu YouTube oder Google und wird nicht von ihnen unterstützt. „YouTube“ ist eine Marke von Google LLC und wird hier nur zur Beschreibung verwendet, womit die App arbeitet.</string>
     <string name="about_ai">Dieses Projekt wurde mit KI-Unterstützung und menschlicher Prüfung entwickelt.</string>
     <string name="about_source">Quellcode und Issues</string>
     <string name="premium_title">Premium</string>

@@ -28,7 +28,7 @@ data class DiagnosticsInfo(
 
 object DiagnosticsReport {
     fun build(i: DiagnosticsInfo): String = buildString {
-        appendLine("Autoshorts diagnostics (no screen content)")
+        appendLine("Tempo diagnostics (no screen content)")
         appendLine("App: ${i.appVersion} (${i.flavor})")
         appendLine("Android: ${i.androidVersion}")
         appendLine("Device: ${i.device}")

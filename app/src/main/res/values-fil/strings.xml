@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">Ini-scroll para sa iyo ang YouTube Shorts habang may sesyon na sinimulan mo. Tumatakbo lang ito kapag may aktibong sesyon, gumagana lang sa loob ng YouTube app, at hindi kailanman nagbabasa o nag-iimbak ng text sa screen.</string>
     <string name="home_start">Simulan</string>
     <string name="home_stop">Itigil</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Posibleng may Skip button</string>
     <string name="notif_channel_session">Aktibong sesyon</string>
     <string name="notif_channel_ads">Mga pahiwatig sa ad</string>
-    <string name="notif_title_session">Sesyon ng Autoshorts</string>
+    <string name="notif_title_session">Sesyon ng Tempo</string>
     <string name="notif_action_stop">Itigil</string>
     <string name="notif_action_scroll">Susunod</string>
     <string name="notif_action_pause">I-pause</string>
     <string name="notif_action_resume">Ituloy</string>
     <string name="notif_ad_skip_title">Maaaring puwedeng i-skip</string>
-    <string name="notif_ad_skip_text">Gamitin ang sariling Skip button ng YouTube kung gusto mong mag-skip. Hindi kailanman ito tina-tap ng Autoshorts.</string>
+    <string name="notif_ad_skip_text">Gamitin ang sariling Skip button ng YouTube kung gusto mong mag-skip. Hindi kailanman ito tina-tap ng Tempo.</string>
     <string name="onb_title">Bago ka magsimula</string>
-    <string name="onb_intro">Nag-i-swipe ang Autoshorts papunta sa susunod na YouTube Short para sa iyo, ayon sa timer na pinili mo. Para magawa iyon, kailangan nito ang accessibility service ng Android.</string>
+    <string name="onb_intro">Nag-i-swipe ang Tempo papunta sa susunod na YouTube Short para sa iyo, ayon sa timer na pinili mo. Para magawa iyon, kailangan nito ang accessibility service ng Android.</string>
     <string name="onb_does_title">Ano ang ginagawa nito</string>
     <string name="onb_does">Habang tumatakbo ang sesyong sinimulan mo, nag-i-swipe ito pataas sa YouTube app ayon sa interval mo, at sinusuri nito ang istruktura ng screen (hindi ang text) para mapansin ang mga ad, komento, at iba pang screen.</string>
     <string name="onb_sees_title">Ano ang nakikita nito</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">May limitasyon sa oras ang mga sesyon. Laging nakikita ang notification na may Stop button habang tumatakbo ito. Puwede mong patayin ang service anumang oras sa mga setting ng Android.</string>
     <string name="onb_consent">Naiintindihan ko at sumasang-ayon ako</string>
     <string name="onb_step_enable">I-on ang service</string>
-    <string name="onb_step_enable_body">Buksan ang mga setting ng accessibility ng Android, hanapin ang Autoshorts, at i-on ito.</string>
+    <string name="onb_step_enable_body">Buksan ang mga setting ng accessibility ng Android, hanapin ang Tempo, at i-on ito.</string>
     <string name="onb_open_accessibility">Buksan ang mga setting ng accessibility</string>
     <string name="onb_service_on">Naka-on ang service.</string>
     <string name="onb_service_off">Hindi pa naka-on ang service.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Tungkol</string>
     <string name="about_version">Bersyon %1$s</string>
     <string name="about_license">Open source, may lisensyang Apache License 2.0</string>
-    <string name="about_not_affiliated">Walang kaugnayan ang Autoshorts sa YouTube o Google at hindi ito inendorso ng mga ito. Ang “YouTube” ay trademark ng Google LLC at ginagamit dito para lang ilarawan kung anong serbisyo ang pinagtatrabahuhan ng app.</string>
+    <string name="about_not_affiliated">Walang kaugnayan ang Tempo sa YouTube o Google at hindi ito inendorso ng mga ito. Ang “YouTube” ay trademark ng Google LLC at ginagamit dito para lang ilarawan kung anong serbisyo ang pinagtatrabahuhan ng app.</string>
     <string name="about_ai">Binuo ang proyektong ito sa tulong ng AI at pagsusuri ng tao.</string>
     <string name="about_source">Source code at mga issue</string>
     <string name="premium_title">Premium</string>

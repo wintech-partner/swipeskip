@@ -1,8 +1,8 @@
-# Autoshorts
+# Tempo
 
 Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, on a timer you choose, with a Start/Stop control that always works. Turkish: [README.tr.md](README.tr.md).
 
-> Autoshorts is not affiliated with or endorsed by YouTube or Google. "YouTube" is a trademark of Google LLC, used here only to describe what the app works with.
+> Tempo is not affiliated with or endorsed by YouTube or Google. "YouTube" is a trademark of Google LLC, used here only to describe what the app works with.
 >
 > This project was developed with AI assistance and human review.
 

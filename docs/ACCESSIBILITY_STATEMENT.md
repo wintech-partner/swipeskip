@@ -1,7 +1,7 @@
 # Accessibility statement (honest version)
 
 ## Who this is for
-**Primary goal:** convenience. Autoshorts scrolls YouTube Shorts hands-free for anyone who wants to watch without swiping.
+**Primary goal:** convenience. Tempo scrolls YouTube Shorts hands-free for anyone who wants to watch without swiping.
 
 **Secondary goal, stated plainly:** it may also help people with visual, motor or other physical disabilities. For example, someone with a tremor, limited hand mobility or a dexterity condition may find repeated swiping hard or tiring, and automatic advance or a flick of the phone can replace it. We want those users to be welcome and we will take their feedback seriously. They are not the first target audience and we do not market the app as a disability tool.
 

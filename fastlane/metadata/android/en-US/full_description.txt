@@ -1,4 +1,4 @@
-Autoshorts scrolls YouTube Shorts for you, on a timer you choose, during a session you start.
+Tempo scrolls YouTube Shorts for you, on a timer you choose, during a session you start.
 
 • Intervals from 3 to 120 seconds, session limits, optional scroll cap
 • Always-visible Stop button in a notification

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">Desplaza YouTube Shorts por ti durante una sesión que tú inicias. Solo funciona mientras hay una sesión activa, solo actúa dentro de la app de YouTube y nunca lee ni guarda texto de la pantalla.</string>
     <string name="home_start">Iniciar</string>
     <string name="home_stop">Detener</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Probablemente hay un botón Omitir disponible</string>
     <string name="notif_channel_session">Sesión activa</string>
     <string name="notif_channel_ads">Avisos de anuncios</string>
-    <string name="notif_title_session">Sesión de Autoshorts</string>
+    <string name="notif_title_session">Sesión de Tempo</string>
     <string name="notif_action_stop">Detener</string>
     <string name="notif_action_scroll">Siguiente</string>
     <string name="notif_action_pause">Pausar</string>
     <string name="notif_action_resume">Reanudar</string>
     <string name="notif_ad_skip_title">Puede que se pueda omitir</string>
-    <string name="notif_ad_skip_text">Usa el botón Omitir de YouTube si quieres omitir. Autoshorts nunca lo toca.</string>
+    <string name="notif_ad_skip_text">Usa el botón Omitir de YouTube si quieres omitir. Tempo nunca lo toca.</string>
     <string name="onb_title">Antes de empezar</string>
-    <string name="onb_intro">Autoshorts pasa al siguiente Short de YouTube por ti, con un temporizador que eliges. Para eso necesita el servicio de accesibilidad de Android.</string>
+    <string name="onb_intro">Tempo pasa al siguiente Short de YouTube por ti, con un temporizador que eliges. Para eso necesita el servicio de accesibilidad de Android.</string>
     <string name="onb_does_title">Qué hace</string>
     <string name="onb_does">Mientras corre una sesión que tú iniciaste, desliza hacia arriba en la app de YouTube según tu intervalo y comprueba la estructura de la pantalla (no el texto) para notar anuncios, comentarios y otras pantallas.</string>
     <string name="onb_sees_title">Qué puede ver</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Las sesiones tienen un límite de tiempo. Una notificación con un botón Detener siempre está visible mientras funciona. Puedes apagar el servicio cuando quieras en los ajustes de Android.</string>
     <string name="onb_consent">Entiendo y acepto</string>
     <string name="onb_step_enable">Activa el servicio</string>
-    <string name="onb_step_enable_body">Abre los ajustes de accesibilidad de Android, busca Autoshorts y actívalo.</string>
+    <string name="onb_step_enable_body">Abre los ajustes de accesibilidad de Android, busca Tempo y actívalo.</string>
     <string name="onb_open_accessibility">Abrir ajustes de accesibilidad</string>
     <string name="onb_service_on">El servicio está activado.</string>
     <string name="onb_service_off">El servicio aún no está activado.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Acerca de</string>
     <string name="about_version">Versión %1$s</string>
     <string name="about_license">Código abierto, licencia Apache 2.0</string>
-    <string name="about_not_affiliated">Autoshorts no está afiliado ni respaldado por YouTube ni Google. «YouTube» es una marca de Google LLC y se usa aquí solo para describir con qué funciona la app.</string>
+    <string name="about_not_affiliated">Tempo no está afiliado ni respaldado por YouTube ni Google. «YouTube» es una marca de Google LLC y se usa aquí solo para describir con qué funciona la app.</string>
     <string name="about_ai">Este proyecto se desarrolló con ayuda de IA y revisión humana.</string>
     <string name="about_source">Código fuente e incidencias</string>
     <string name="premium_title">Premium</string>

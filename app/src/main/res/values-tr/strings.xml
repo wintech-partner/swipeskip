@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">Başlattığınız bir oturum boyunca YouTube Shorts videolarını sizin yerinize kaydırır. Yalnızca oturum etkinken çalışır, sadece YouTube uygulamasında işlem yapar ve ekrandaki metni asla okumaz veya saklamaz.</string>
     <string name="home_start">Başlat</string>
     <string name="home_stop">Durdur</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Büyük olasılıkla bir Atla düğmesi var</string>
     <string name="notif_channel_session">Etkin oturum</string>
     <string name="notif_channel_ads">Reklam ipuçları</string>
-    <string name="notif_title_session">Autoshorts oturumu</string>
+    <string name="notif_title_session">Tempo oturumu</string>
     <string name="notif_action_stop">Durdur</string>
     <string name="notif_action_scroll">Sonraki</string>
     <string name="notif_action_pause">Duraklat</string>
     <string name="notif_action_resume">Devam</string>
     <string name="notif_ad_skip_title">Atla düğmesi olabilir</string>
-    <string name="notif_ad_skip_text">Atlamak isterseniz YouTube\'un kendi Atla düğmesini kullanın. Autoshorts ona asla dokunmaz.</string>
+    <string name="notif_ad_skip_text">Atlamak isterseniz YouTube\'un kendi Atla düğmesini kullanın. Tempo ona asla dokunmaz.</string>
     <string name="onb_title">Başlamadan önce</string>
-    <string name="onb_intro">Autoshorts, seçtiğiniz bir zamanlayıcıyla sizin yerinize bir sonraki YouTube Short\'a kaydırır. Bunun için Android\'in erişilebilirlik hizmetine ihtiyaç duyar.</string>
+    <string name="onb_intro">Tempo, seçtiğiniz bir zamanlayıcıyla sizin yerinize bir sonraki YouTube Short\'a kaydırır. Bunun için Android\'in erişilebilirlik hizmetine ihtiyaç duyar.</string>
     <string name="onb_does_title">Ne yapar</string>
     <string name="onb_does">Başlattığınız bir oturum sürerken, YouTube uygulamasında belirlediğiniz aralıkla yukarı kaydırır; reklam, yorum ve diğer ekranları fark etmek için ekranın yapısına (metnine değil) bakar.</string>
     <string name="onb_sees_title">Neleri görebilir</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Oturumların bir süre sınırı vardır. Çalışırken Durdur düğmeli bir bildirim her zaman görünür. Hizmeti istediğiniz an Android ayarlarından kapatabilirsiniz.</string>
     <string name="onb_consent">Anladım ve kabul ediyorum</string>
     <string name="onb_step_enable">Hizmeti açın</string>
-    <string name="onb_step_enable_body">Android erişilebilirlik ayarlarını açın, Autoshorts\'u bulun ve açın.</string>
+    <string name="onb_step_enable_body">Android erişilebilirlik ayarlarını açın, Tempo\'u bulun ve açın.</string>
     <string name="onb_open_accessibility">Erişilebilirlik ayarlarını aç</string>
     <string name="onb_service_on">Hizmet açık.</string>
     <string name="onb_service_off">Hizmet henüz açık değil.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Hakkında</string>
     <string name="about_version">Sürüm %1$s</string>
     <string name="about_license">Açık kaynak, Apache Lisansı 2.0</string>
-    <string name="about_not_affiliated">Autoshorts, YouTube veya Google ile bağlantılı değildir ve onlar tarafından onaylanmamıştır. “YouTube”, Google LLC\'nin ticari markasıdır ve burada yalnızca uygulamanın birlikte çalıştığı şeyi anlatmak için kullanılır.</string>
+    <string name="about_not_affiliated">Tempo, YouTube veya Google ile bağlantılı değildir ve onlar tarafından onaylanmamıştır. “YouTube”, Google LLC\'nin ticari markasıdır ve burada yalnızca uygulamanın birlikte çalıştığı şeyi anlatmak için kullanılır.</string>
     <string name="about_ai">Bu proje yapay zekâ desteğiyle geliştirildi ve insan tarafından gözden geçirildi.</string>
     <string name="about_source">Kaynak kod ve sorunlar</string>
     <string name="premium_title">Premium</string>

@@ -2,7 +2,7 @@
 
 Host this text where the store listing can link to it. Replace the contact placeholder.
 
-**Autoshorts does not collect, store or transmit personal data.**
+**Tempo does not collect, store or transmit personal data.**
 
 - No account, login, analytics, crash reporting or advertising.
 - Settings (interval, limits, theme, language, consent flag) are stored only in the app's local storage on your device.

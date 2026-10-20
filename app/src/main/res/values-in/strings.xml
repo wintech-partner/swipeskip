@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">Menggulir YouTube Shorts untuk Anda selama sesi yang Anda mulai. Hanya berjalan saat sesi aktif, hanya bekerja di dalam aplikasi YouTube, dan tidak pernah membaca atau menyimpan teks layar.</string>
     <string name="home_start">Mulai</string>
     <string name="home_stop">Berhenti</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Kemungkinan tombol Lewati tersedia</string>
     <string name="notif_channel_session">Sesi aktif</string>
     <string name="notif_channel_ads">Petunjuk iklan</string>
-    <string name="notif_title_session">Sesi Autoshorts</string>
+    <string name="notif_title_session">Sesi Tempo</string>
     <string name="notif_action_stop">Berhenti</string>
     <string name="notif_action_scroll">Lanjut</string>
     <string name="notif_action_pause">Jeda</string>
     <string name="notif_action_resume">Lanjutkan</string>
     <string name="notif_ad_skip_title">Mungkin bisa dilewati</string>
-    <string name="notif_ad_skip_text">Gunakan tombol Lewati milik YouTube jika ingin melewati. Autoshorts tidak pernah mengetuknya.</string>
+    <string name="notif_ad_skip_text">Gunakan tombol Lewati milik YouTube jika ingin melewati. Tempo tidak pernah mengetuknya.</string>
     <string name="onb_title">Sebelum memulai</string>
-    <string name="onb_intro">Autoshorts berpindah ke YouTube Short berikutnya untuk Anda, dengan timer pilihan Anda. Untuk itu aplikasi ini memerlukan layanan aksesibilitas Android.</string>
+    <string name="onb_intro">Tempo berpindah ke YouTube Short berikutnya untuk Anda, dengan timer pilihan Anda. Untuk itu aplikasi ini memerlukan layanan aksesibilitas Android.</string>
     <string name="onb_does_title">Apa yang dilakukan</string>
     <string name="onb_does">Selama sesi yang Anda mulai berjalan, aplikasi menggeser ke atas di aplikasi YouTube sesuai interval Anda, dan memeriksa struktur layar (bukan teksnya) untuk mengenali iklan, komentar, dan layar lain.</string>
     <string name="onb_sees_title">Apa yang bisa dilihat</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">Sesi punya batas waktu. Notifikasi dengan tombol Berhenti selalu terlihat selama berjalan. Anda dapat mematikan layanan kapan saja di pengaturan Android.</string>
     <string name="onb_consent">Saya mengerti dan setuju</string>
     <string name="onb_step_enable">Aktifkan layanan</string>
-    <string name="onb_step_enable_body">Buka pengaturan aksesibilitas Android, temukan Autoshorts, lalu aktifkan.</string>
+    <string name="onb_step_enable_body">Buka pengaturan aksesibilitas Android, temukan Tempo, lalu aktifkan.</string>
     <string name="onb_open_accessibility">Buka pengaturan aksesibilitas</string>
     <string name="onb_service_on">Layanan aktif.</string>
     <string name="onb_service_off">Layanan belum aktif.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Tentang</string>
     <string name="about_version">Versi %1$s</string>
     <string name="about_license">Sumber terbuka, Lisensi Apache 2.0</string>
-    <string name="about_not_affiliated">Autoshorts tidak berafiliasi dengan atau didukung oleh YouTube maupun Google. “YouTube” adalah merek dagang Google LLC dan di sini hanya dipakai untuk menjelaskan apa yang dikerjakan aplikasi.</string>
+    <string name="about_not_affiliated">Tempo tidak berafiliasi dengan atau didukung oleh YouTube maupun Google. “YouTube” adalah merek dagang Google LLC dan di sini hanya dipakai untuk menjelaskan apa yang dikerjakan aplikasi.</string>
     <string name="about_ai">Proyek ini dikembangkan dengan bantuan AI dan ditinjau oleh manusia.</string>
     <string name="about_source">Kode sumber dan issue</string>
     <string name="premium_title">Premium</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Autoshorts</string>
+    <string name="app_name">Tempo</string>
     <string name="service_description">あなたが開始したセッション中に YouTube ショートを自動でスクロールします。セッションが有効なときだけ動作し、YouTube アプリの中でのみ動作し、画面のテキストを読み取ったり保存したりすることはありません。</string>
     <string name="home_start">開始</string>
     <string name="home_stop">停止</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">スキップボタンが使える可能性があります</string>
     <string name="notif_channel_session">実行中のセッション</string>
     <string name="notif_channel_ads">広告のヒント</string>
-    <string name="notif_title_session">Autoshorts セッション</string>
+    <string name="notif_title_session">Tempo セッション</string>
     <string name="notif_action_stop">停止</string>
     <string name="notif_action_scroll">次へ</string>
     <string name="notif_action_pause">一時停止</string>
     <string name="notif_action_resume">再開</string>
     <string name="notif_ad_skip_title">スキップできる可能性があります</string>
-    <string name="notif_ad_skip_text">スキップしたい場合は YouTube 自身のスキップボタンを使ってください。Autoshorts がそれをタップすることはありません。</string>
+    <string name="notif_ad_skip_text">スキップしたい場合は YouTube 自身のスキップボタンを使ってください。Tempo がそれをタップすることはありません。</string>
     <string name="onb_title">開始する前に</string>
-    <string name="onb_intro">Autoshorts は、あなたが選んだタイマーに合わせて次の YouTube ショートへスワイプします。そのために Android のユーザー補助サービスが必要です。</string>
+    <string name="onb_intro">Tempo は、あなたが選んだタイマーに合わせて次の YouTube ショートへスワイプします。そのために Android のユーザー補助サービスが必要です。</string>
     <string name="onb_does_title">できること</string>
     <string name="onb_does">あなたが開始したセッションの実行中、設定した間隔で YouTube アプリ内を上にスワイプし、広告・コメント・その他の画面を見分けるために画面の構造（テキストではありません）を確認します。</string>
     <string name="onb_sees_title">見えるもの</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">セッションには時間制限があります。実行中は停止ボタン付きの通知が常に表示されます。Android の設定でいつでもサービスをオフにできます。</string>
     <string name="onb_consent">理解して同意します</string>
     <string name="onb_step_enable">サービスをオンにする</string>
-    <string name="onb_step_enable_body">Android のユーザー補助設定を開き、Autoshorts を見つけてオンにしてください。</string>
+    <string name="onb_step_enable_body">Android のユーザー補助設定を開き、Tempo を見つけてオンにしてください。</string>
     <string name="onb_open_accessibility">ユーザー補助設定を開く</string>
     <string name="onb_service_on">サービスはオンです。</string>
     <string name="onb_service_off">サービスはまだオンになっていません。</string>
@@ -124,7 +124,7 @@
     <string name="about_title">このアプリについて</string>
     <string name="about_version">バージョン %1$s</string>
     <string name="about_license">オープンソース、Apache License 2.0</string>
-    <string name="about_not_affiliated">Autoshorts は YouTube や Google とは提携しておらず、承認も受けていません。「YouTube」は Google LLC の商標であり、このアプリが対象とするサービスを説明する目的でのみ使用しています。</string>
+    <string name="about_not_affiliated">Tempo は YouTube や Google とは提携しておらず、承認も受けていません。「YouTube」は Google LLC の商標であり、このアプリが対象とするサービスを説明する目的でのみ使用しています。</string>
     <string name="about_ai">このプロジェクトは AI の支援と人によるレビューのもとで開発されました。</string>
     <string name="about_source">ソースコードと issue</string>
     <string name="premium_title">プレミアム</string>
