@@ -7,7 +7,7 @@
 
 ## Needs a physical device with real YouTube
 - [~] Matchers verified from real dumps on YouTube 21.41.525 (German, 2026-10-19): feed, comments, Home, Shorts ad. Still open: other versions/languages, regular watch page, skippable ads, and running the app itself on a phone. Original item: every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
-- [~] Real phone (Galaxy A04s, Android 14, YouTube 21.41.525), 2026-10-20, human-observed: swipe advances a Short at 5 s, a touch pauses the session. Also observed: pauses on an ad, pauses while comments are open (same Short keeps looping), pauses on Home and resumes when back in Shorts. Notification Stop works (needs notification permission; Home now warns when it is off). Still open: screen-off end, 60 s away end, restricted-settings flow, skippable-ad tap.
+- [~] Real phone (Galaxy A04s, Android 14, YouTube 21.41.525), 2026-10-20, human-observed: swipe advances a Short at 5 s, a touch pauses the session. Also observed: pauses on an ad, pauses while comments are open (same Short keeps looping), pauses on Home and resumes when back in Shorts. Notification Stop works (needs notification permission; Home now warns when it is off). 60 s away ends the session (after closing the PiP window). Still open: screen-off end, restricted-settings flow, skippable-ad tap.
 - [ ] Does `TYPE_TOUCH_INTERACTION_START` arrive? Is the 1 s own-gesture grace right? Does the swipe geometry (75%→25% height, 250 ms) reliably advance a Short?
 - [ ] Notification behavior on OEMs; restricted-settings flow on a real sideloaded install.
 - [ ] Battery numbers (method in COMPETITOR_RESEARCH checklist). None published.
