@@ -10,7 +10,7 @@
     <string name="home_interval_summary">A cada %1$d s</string>
     <string name="home_limit_summary">Até %1$d min</string>
     <string name="home_limit_scrolls_summary">· máx. %1$d rolagens</string>
-    <string name="home_mode_auto">SwipeSkiprrizador automático</string>
+    <string name="home_mode_auto">Temporizador automático</string>
     <string name="home_mode_manual">Toque manual</string>
     <string name="home_open_settings">Configurações</string>
     <string name="home_open_help">Ajuda</string>
