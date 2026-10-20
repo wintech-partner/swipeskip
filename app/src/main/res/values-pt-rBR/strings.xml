@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tempo</string>
+    <string name="app_name">SwipeSkipr</string>
     <string name="service_description">Rola os YouTube Shorts por você durante uma sessão que você inicia. Só funciona enquanto há uma sessão ativa, só atua dentro do app do YouTube e nunca lê nem guarda texto da tela.</string>
     <string name="home_start">Iniciar</string>
     <string name="home_stop">Parar</string>
@@ -10,7 +10,7 @@
     <string name="home_interval_summary">A cada %1$d s</string>
     <string name="home_limit_summary">Até %1$d min</string>
     <string name="home_limit_scrolls_summary">· máx. %1$d rolagens</string>
-    <string name="home_mode_auto">Temporizador automático</string>
+    <string name="home_mode_auto">SwipeSkiprrizador automático</string>
     <string name="home_mode_manual">Toque manual</string>
     <string name="home_open_settings">Configurações</string>
     <string name="home_open_help">Ajuda</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">Provavelmente há um botão Pular disponível</string>
     <string name="notif_channel_session">Sessão ativa</string>
     <string name="notif_channel_ads">Dicas de anúncios</string>
-    <string name="notif_title_session">Sessão do Tempo</string>
+    <string name="notif_title_session">Sessão do SwipeSkipr</string>
     <string name="notif_action_stop">Parar</string>
     <string name="notif_action_scroll">Próximo</string>
     <string name="notif_action_pause">Pausar</string>
     <string name="notif_action_resume">Retomar</string>
     <string name="notif_ad_skip_title">Pode ser possível pular</string>
-    <string name="notif_ad_skip_text">Use o botão Pular do próprio YouTube se quiser pular. O Tempo nunca toca nele.</string>
+    <string name="notif_ad_skip_text">Use o botão Pular do próprio YouTube se quiser pular. O SwipeSkipr nunca toca nele.</string>
     <string name="onb_title">Antes de começar</string>
-    <string name="onb_intro">O Tempo passa para o próximo YouTube Short por você, em um intervalo que você escolhe. Para isso ele precisa do serviço de acessibilidade do Android.</string>
+    <string name="onb_intro">O SwipeSkipr passa para o próximo YouTube Short por você, em um intervalo que você escolhe. Para isso ele precisa do serviço de acessibilidade do Android.</string>
     <string name="onb_does_title">O que ele faz</string>
     <string name="onb_does">Enquanto uma sessão iniciada por você está ativa, ele desliza para cima no app do YouTube no intervalo escolhido e verifica a estrutura da tela (não o texto) para notar anúncios, comentários e outras telas.</string>
     <string name="onb_sees_title">O que ele pode ver</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">As sessões têm limite de tempo. Uma notificação com botão Parar fica sempre visível enquanto ele funciona. Você pode desligar o serviço a qualquer momento nas configurações do Android.</string>
     <string name="onb_consent">Entendi e concordo</string>
     <string name="onb_step_enable">Ative o serviço</string>
-    <string name="onb_step_enable_body">Abra as configurações de acessibilidade do Android, encontre o Tempo e ative.</string>
+    <string name="onb_step_enable_body">Abra as configurações de acessibilidade do Android, encontre o SwipeSkipr e ative.</string>
     <string name="onb_open_accessibility">Abrir configurações de acessibilidade</string>
     <string name="onb_service_on">O serviço está ativado.</string>
     <string name="onb_service_off">O serviço ainda não está ativado.</string>
@@ -124,7 +124,7 @@
     <string name="about_title">Sobre</string>
     <string name="about_version">Versão %1$s</string>
     <string name="about_license">Código aberto, licença Apache 2.0</string>
-    <string name="about_not_affiliated">O Tempo não é afiliado nem endossado pelo YouTube ou pelo Google. “YouTube” é marca da Google LLC e é usada aqui apenas para descrever com o que o app funciona.</string>
+    <string name="about_not_affiliated">O SwipeSkipr não é afiliado nem endossado pelo YouTube ou pelo Google. “YouTube” é marca da Google LLC e é usada aqui apenas para descrever com o que o app funciona.</string>
     <string name="about_ai">Este projeto foi desenvolvido com auxílio de IA e revisão humana.</string>
     <string name="about_source">Código-fonte e issues</string>
     <string name="premium_title">Premium</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">Tocar em Pular automaticamente</string>
     <string name="settings_auto_skip_desc">Quando o botão Pular do YouTube provavelmente estiver visível, toca nele por mim. Desativado por padrão. Nunca toca no anúncio em si.</string>
     <string name="home_mode_watch">Assistir: pular anúncios</string>
-    <string name="settings_mode_watch_desc">Nada rola sozinho. Em um vídeo normal, o Tempo toca no botão Pular do próprio YouTube quando ele aparece. Nunca toca no anúncio em si. Termina no limite da sessão, quando a tela apaga ou após 60 s fora do YouTube.</string>
+    <string name="settings_mode_watch_desc">Nada rola sozinho. Em um vídeo normal, o SwipeSkipr toca no botão Pular do próprio YouTube quando ele aparece. Nunca toca no anúncio em si. Termina no limite da sessão, quando a tela apaga ou após 60 s fora do YouTube.</string>
     <string name="settings_applies_next_session">Há uma sessão em andamento. Mudanças de intervalo, duração, direção e modo valem a partir da próxima sessão.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d rolagem</item>

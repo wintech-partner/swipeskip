@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Tempo</string>
+    <string name="app_name">SwipeSkipr</string>
     <string name="service_description">आपके शुरू किए सत्र के दौरान आपके लिए YouTube Shorts स्क्रॉल करता है। यह केवल सत्र चलने पर ही काम करता है, केवल YouTube ऐप के अंदर काम करता है और स्क्रीन का टेक्स्ट कभी नहीं पढ़ता या सहेजता।</string>
     <string name="home_start">शुरू करें</string>
     <string name="home_stop">रोकें</string>
@@ -45,15 +45,15 @@
     <string name="ad_skip_likely">संभवतः Skip बटन उपलब्ध है</string>
     <string name="notif_channel_session">सक्रिय सत्र</string>
     <string name="notif_channel_ads">विज्ञापन संकेत</string>
-    <string name="notif_title_session">Tempo सत्र</string>
+    <string name="notif_title_session">SwipeSkipr सत्र</string>
     <string name="notif_action_stop">रोकें</string>
     <string name="notif_action_scroll">अगला</string>
     <string name="notif_action_pause">विराम</string>
     <string name="notif_action_resume">जारी रखें</string>
     <string name="notif_ad_skip_title">Skip उपलब्ध हो सकता है</string>
-    <string name="notif_ad_skip_text">छोड़ना चाहें तो YouTube का अपना Skip बटन इस्तेमाल करें। Tempo उसे कभी नहीं दबाता।</string>
+    <string name="notif_ad_skip_text">छोड़ना चाहें तो YouTube का अपना Skip बटन इस्तेमाल करें। SwipeSkipr उसे कभी नहीं दबाता।</string>
     <string name="onb_title">शुरू करने से पहले</string>
-    <string name="onb_intro">Tempo आपके चुने हुए टाइमर पर आपके लिए अगले YouTube Short पर स्वाइप करता है। इसके लिए उसे Android की एक्सेसिबिलिटी सेवा चाहिए।</string>
+    <string name="onb_intro">SwipeSkipr आपके चुने हुए टाइमर पर आपके लिए अगले YouTube Short पर स्वाइप करता है। इसके लिए उसे Android की एक्सेसिबिलिटी सेवा चाहिए।</string>
     <string name="onb_does_title">यह क्या करता है</string>
     <string name="onb_does">आपके शुरू किए सत्र के दौरान यह आपके अंतराल पर YouTube ऐप में ऊपर स्वाइप करता है, और विज्ञापन, टिप्पणियाँ तथा अन्य स्क्रीन पहचानने के लिए स्क्रीन की संरचना (टेक्स्ट नहीं) जाँचता है।</string>
     <string name="onb_sees_title">यह क्या देख सकता है</string>
@@ -64,7 +64,7 @@
     <string name="onb_control">सत्रों की समय सीमा होती है। चलते समय रोकें बटन वाली सूचना हमेशा दिखती है। आप Android सेटिंग्स में कभी भी सेवा बंद कर सकते हैं।</string>
     <string name="onb_consent">मैं समझता/समझती हूँ और सहमत हूँ</string>
     <string name="onb_step_enable">सेवा चालू करें</string>
-    <string name="onb_step_enable_body">Android की एक्सेसिबिलिटी सेटिंग्स खोलें, Tempo ढूँढें और उसे चालू करें।</string>
+    <string name="onb_step_enable_body">Android की एक्सेसिबिलिटी सेटिंग्स खोलें, SwipeSkipr ढूँढें और उसे चालू करें।</string>
     <string name="onb_open_accessibility">एक्सेसिबिलिटी सेटिंग्स खोलें</string>
     <string name="onb_service_on">सेवा चालू है।</string>
     <string name="onb_service_off">सेवा अभी चालू नहीं है।</string>
@@ -124,7 +124,7 @@
     <string name="about_title">परिचय</string>
     <string name="about_version">संस्करण %1$s</string>
     <string name="about_license">ओपन सोर्स, Apache License 2.0</string>
-    <string name="about_not_affiliated">Tempo का YouTube या Google से कोई संबंध नहीं है और न ही उनका समर्थन प्राप्त है। “YouTube” Google LLC का ट्रेडमार्क है और यहाँ केवल यह बताने के लिए इस्तेमाल किया गया है कि ऐप किसके साथ काम करता है।</string>
+    <string name="about_not_affiliated">SwipeSkipr का YouTube या Google से कोई संबंध नहीं है और न ही उनका समर्थन प्राप्त है। “YouTube” Google LLC का ट्रेडमार्क है और यहाँ केवल यह बताने के लिए इस्तेमाल किया गया है कि ऐप किसके साथ काम करता है।</string>
     <string name="about_ai">यह प्रोजेक्ट AI की सहायता और मानवीय समीक्षा से विकसित किया गया है।</string>
     <string name="about_source">सोर्स कोड और issues</string>
     <string name="premium_title">प्रीमियम</string>
@@ -145,7 +145,7 @@
     <string name="settings_auto_skip">Skip अपने आप दबाएँ</string>
     <string name="settings_auto_skip_desc">जब YouTube का अपना Skip बटन संभवतः दिख रहा हो, तो मेरे लिए उसे दबाए। डिफ़ॉल्ट रूप से बंद। विज्ञापन को कभी नहीं दबाता।</string>
     <string name="home_mode_watch">देखें: विज्ञापन छोड़ें</string>
-    <string name="settings_mode_watch_desc">कुछ भी स्क्रॉल नहीं होता। सामान्य वीडियो में, YouTube का अपना Skip बटन दिखते ही Tempo उसे दबाता है। विज्ञापन को खुद कभी नहीं दबाता। सत्र की सीमा पर, स्क्रीन बंद होने पर या YouTube से 60 सेकंड दूर रहने पर समाप्त होता है।</string>
+    <string name="settings_mode_watch_desc">कुछ भी स्क्रॉल नहीं होता। सामान्य वीडियो में, YouTube का अपना Skip बटन दिखते ही SwipeSkipr उसे दबाता है। विज्ञापन को खुद कभी नहीं दबाता। सत्र की सीमा पर, स्क्रीन बंद होने पर या YouTube से 60 सेकंड दूर रहने पर समाप्त होता है।</string>
     <string name="settings_applies_next_session">एक सत्र चल रहा है। अंतराल, अवधि, दिशा और मोड के बदलाव अगले सत्र से लागू होंगे।</string>
     <plurals name="scroll_count">
         <item quantity="one">%d स्क्रॉल</item>

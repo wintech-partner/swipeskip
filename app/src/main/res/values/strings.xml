@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Source of truth for English. Other locales are machine-drafted; see docs/OPEN_ITEMS.md. -->
 <resources>
-    <string name="app_name">Tempo</string>
+    <string name="app_name">SwipeSkipr</string>
     <string name="service_description">Scrolls YouTube Shorts for you during a session you start. It only runs while a session is active, only works inside the YouTube app and never reads or stores screen text.</string>
     <string name="home_start">Start</string>
     <string name="home_stop">Stop</string>
@@ -46,15 +46,15 @@
     <string name="ad_skip_likely">A Skip button is likely available</string>
     <string name="notif_channel_session">Active session</string>
     <string name="notif_channel_ads">Ad hints</string>
-    <string name="notif_title_session">Tempo session</string>
+    <string name="notif_title_session">SwipeSkipr session</string>
     <string name="notif_action_stop">Stop</string>
     <string name="notif_action_scroll">Next</string>
     <string name="notif_action_pause">Pause</string>
     <string name="notif_action_resume">Resume</string>
     <string name="notif_ad_skip_title">Skip may be available</string>
-    <string name="notif_ad_skip_text">Use YouTube\'s own Skip button if you want to skip. Tempo never taps it.</string>
+    <string name="notif_ad_skip_text">Use YouTube\'s own Skip button if you want to skip. SwipeSkipr never taps it.</string>
     <string name="onb_title">Before you start</string>
-    <string name="onb_intro">Tempo swipes to the next YouTube Short for you, on a timer you choose. To do that it needs Android\'s accessibility service.</string>
+    <string name="onb_intro">SwipeSkipr swipes to the next YouTube Short for you, on a timer you choose. To do that it needs Android\'s accessibility service.</string>
     <string name="onb_does_title">What it does</string>
     <string name="onb_does">While a session you started is running, it swipes up in the YouTube app at your interval, and it checks the structure of the screen (not the text) to notice ads, comments and other screens.</string>
     <string name="onb_sees_title">What it can see</string>
@@ -65,7 +65,7 @@
     <string name="onb_control">Sessions have a time limit. A notification with a Stop button is always visible while it runs. You can turn the service off any time in Android settings.</string>
     <string name="onb_consent">I understand and agree</string>
     <string name="onb_step_enable">Turn on the service</string>
-    <string name="onb_step_enable_body">Open Android accessibility settings, find Tempo and switch it on.</string>
+    <string name="onb_step_enable_body">Open Android accessibility settings, find SwipeSkipr and switch it on.</string>
     <string name="onb_open_accessibility">Open accessibility settings</string>
     <string name="onb_service_on">The service is on.</string>
     <string name="onb_service_off">The service is not on yet.</string>
@@ -125,7 +125,7 @@
     <string name="about_title">About</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_license">Open source, Apache License 2.0</string>
-    <string name="about_not_affiliated">Tempo is not affiliated with or endorsed by YouTube or Google. “YouTube” is a trademark of Google LLC and is used here only to describe what the app works with.</string>
+    <string name="about_not_affiliated">SwipeSkipr is not affiliated with or endorsed by YouTube or Google. “YouTube” is a trademark of Google LLC and is used here only to describe what the app works with.</string>
     <string name="about_ai">This project was developed with AI assistance and human review.</string>
     <string name="about_source">Source code and issues</string>
     <string name="premium_title">Premium</string>
@@ -146,7 +146,7 @@
     <string name="settings_auto_skip">Tap Skip automatically</string>
     <string name="settings_auto_skip_desc">When YouTube\'s own Skip button is likely visible, tap it for me. Off by default. Never taps the ad itself.</string>
     <string name="home_mode_watch">Watch: skip ads</string>
-    <string name="settings_mode_watch_desc">Nothing scrolls. During a regular video, Tempo taps YouTube\'s own Skip button when it appears. It never taps the ad itself. Ends at the session limit, when the screen turns off or after 60 s away from YouTube.</string>
+    <string name="settings_mode_watch_desc">Nothing scrolls. During a regular video, SwipeSkipr taps YouTube\'s own Skip button when it appears. It never taps the ad itself. Ends at the session limit, when the screen turns off or after 60 s away from YouTube.</string>
     <string name="settings_applies_next_session">A session is running. Changes to interval, length, direction and mode apply from the next session.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d scroll</item>
