@@ -1,0 +1,1 @@
+Tested on one real phone (Android 14). Watch mode skips ads on regular videos, 16 languages, new icon and name.
