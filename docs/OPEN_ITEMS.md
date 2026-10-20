@@ -1,7 +1,7 @@
 # Open items (need a human, a device or a store account)
 
 ## Release blockers
-- [x] App name SwipeSkip and `applicationId` io.github.kutlu24.swipeskip chosen by the human 2026-10-20. Still open: create the GitHub repo Kutlu24/swipeskip (the `url_issues`/`url_source` links point there), fill the SECURITY/PRIVACY contacts. Check the name on Play, F-Droid and GitHub.
+- [x] App name SwipeSkip and `applicationId` io.github.kutlu24.swipeskip chosen by the human 2026-10-20. The private GitHub repo Kutlu24/swipeskip exists (make it public before any release; SECURITY/PRIVACY point at its issues and security advisories). Still open: check the name on Play, F-Droid and GitHub.
 - [x] License: Apache-2.0, confirmed by the human 2026-10-20.
 - [~] Launcher icon: blue rounded square with a white double chevron (>>), chosen by the human 2026-10-20; it is still a simple vector, a designer's logo may replace it.
 
@@ -19,7 +19,7 @@
 - [ ] Skip control: verify the real Skip button label/ids and that `ACTION_CLICK` works on it. `tapsSkipOnlyWhenTheUserOptedIn` passes against the fake app only.
 
 ## Decisions
-- [ ] Confirm you accept the ADR 9 risk (automatic Skip tapping may conflict with YouTube's terms; Play will likely reject it, so it exists in `foss` only).
+- [x] The human accepted the ADR 9 and ADR 10 risk on 2026-10-20 (automatic Skip tapping may conflict with YouTube's terms; Play will likely reject it, so it exists in `foss` only).
 - [ ] Play submission; whether `AUTO_TIMER` may ship there (`AUTO_TIMER_ENABLED` flag in `app/build.gradle.kts`); accessibility-tool declaration (default: no).
 - [ ] Release signing keys, repo creation/push, F-Droid/IzzyOnDroid submissions, pricing, Play product id (`-PpremiumProductId`). The purchase flow UI is not implemented, only restore.
 - [ ] Optional floating on-screen indicator/control is not implemented (the notification is the control).

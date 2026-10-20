@@ -40,4 +40,5 @@ The human asked for the Skip-ad tap to also work on regular (non-Shorts) videos.
 - It never scrolls. Touches, comments and "not on the Shorts feed" are ignored in this mode (a touch on a regular video must not pause the skipper).
 - Same tap safety as ADR 9: whole-string label, click only inside an ad container, at most 3 taps per ad, 2 s apart. On a regular video the container is `skip_ad_button` itself (the clickable FrameLayout), so a look-alike label elsewhere can never be clicked.
 - Evidence: two regular-video ads on a real phone (YouTube 21.41.525, German). Ad-only ids: `skip_ad_button`, `ad_progress_text`, `ad_details_container_layout`. Verified on the phone by the human: the tap skips a regular-video ad. Not verified: other languages and versions, any ad type other than these.
+- Risk accepted by the human on 2026-10-20 for both ADR 9 and ADR 10.
 - Same risk as ADR 9 and larger in practice (skippable ads are common in regular videos): automating YouTube's UI may conflict with its terms.

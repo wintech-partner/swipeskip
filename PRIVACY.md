@@ -1,6 +1,6 @@
 # Privacy policy (template)
 
-Host this text where the store listing can link to it. Replace the contact placeholder.
+Host this text where the store listing can link to it.
 
 **SwipeSkip does not collect, store or transmit personal data.**
 
@@ -12,4 +12,4 @@ Host this text where the store listing can link to it. Replace the contact place
 - Diagnostics reports are created only when you tap "Copy report" and contain no screen content. Nothing is uploaded by the app.
 - The open-source (`foss`) build has no internet permission. The Play build adds the permissions required by Google Play Billing, used only for the optional premium purchase.
 
-Contact: (placeholder)
+Contact: open an issue at https://github.com/Kutlu24/swipeskip/issues, or, for anything sensitive, use a private [security advisory](https://github.com/Kutlu24/swipeskip/security/advisories/new).
