@@ -19,6 +19,7 @@ Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, 
 ## Extras
 
 - **Motion:** flick the phone sideways or back and forth to go to the next Short (off by default).
+- **Watch mode:** a session that never scrolls and only taps YouTube's own Skip button on regular videos (`foss` build, see ADR 10; the tap itself is unverified on a device).
 - **Skip ad:** an opt-in "Tap Skip automatically" setting taps YouTube's own Skip control when it is likely visible. `foss` build only, off by default. See ADR 9; unverified on a real device.
 
 ## Who it is for

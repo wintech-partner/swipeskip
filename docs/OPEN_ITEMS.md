@@ -15,6 +15,7 @@
 - [ ] RTL and long-string visual check on a device (only automated checks exist).
 
 - [ ] Motion thresholds (8/11/14 m/s^2, 1.2 s cooldown) and whether walking causes false triggers.
+- [~] Watch mode (ADR 10): the real regular-video Skip button was dumped (`skip_ad_button`, 2026-10-20); the tap itself has not been tried on the phone yet. Open: `ACTION_CLICK` on it, other languages/versions, other ad types.
 - [ ] Skip control: verify the real Skip button label/ids and that `ACTION_CLICK` works on it. `tapsSkipOnlyWhenTheUserOptedIn` passes against the fake app only.
 
 ## Decisions

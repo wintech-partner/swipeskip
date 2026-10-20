@@ -32,3 +32,12 @@ The original brief prohibited any Skip tapping. The human then asked for a "skip
 - Risk, stated plainly: this reverses a prohibition written for Play-policy and platform-terms reasons. Automating YouTube's own UI may conflict with YouTube's terms, and Play will likely reject it, hence `foss` only. The tap is on YouTube's own control, never on the ad, and does not fake engagement, but a human should still confirm they accept this.
 - Real-device finding (2026-10-19): neither of two observed Shorts ads had a Skip button, so in Shorts this opt-in probably never triggers. The skip labels remain unverified.
 - **Motion-to-next:** `MotionDetector` (pure) over `TYPE_ACCELEROMETER` (no permission). The sensor is registered only while a session is live and the setting is on, unregistered otherwise. A flick performs one user-initiated scroll in either mode (also while an ad pause holds) and restarts the interval. Thresholds (8/11/14 m/s^2 after gravity filtering, 1.2 s cooldown) are first guesses.
+
+## ADR 10 - Watch mode: skip ads on regular videos (2026-10-20)
+The human asked for the Skip-ad tap to also work on regular (non-Shorts) videos. Scope was v1 = Shorts only, so this widens it, at their explicit request.
+- It is a third `AutomationMode`, `WATCH_ADS`, offered only where `adSkipAllowed` is true (`foss`; never `play`). Choosing it is the opt-in: the setting text says it taps YouTube's Skip button.
+- It is still a bounded session: the user starts it, it has a time limit, a Stop notification, and it ends on screen off or 60 s away from YouTube. Nothing runs when idle, so the passive-when-idle rule stands.
+- It never scrolls. Touches, comments and "not on the Shorts feed" are ignored in this mode (a touch on a regular video must not pause the skipper).
+- Same tap safety as ADR 9: whole-string label, click only inside an ad container, at most 3 taps per ad, 2 s apart. On a regular video the container is `skip_ad_button` itself (the clickable FrameLayout), so a look-alike label elsewhere can never be clicked.
+- Evidence: two regular-video ads on a real phone (YouTube 21.41.525, German). Ad-only ids: `skip_ad_button`, `ad_progress_text`, `ad_details_container_layout`. Not verified: other languages and versions, any ad type other than these, and that `ACTION_CLICK` on the real button works (see OPEN_ITEMS).
+- Same risk as ADR 9 and larger in practice (skippable ads are common in regular videos): automating YouTube's UI may conflict with its terms.

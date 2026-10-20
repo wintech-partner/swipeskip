@@ -26,7 +26,7 @@ class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAd
     override val packageNames = setOf(YouTubeMatchers.PACKAGE) + extraPackages
     override val adMonitor: AdvertisementMonitor = YouTubeAdMonitor(packageNames)
     override val skipControlCategory: String = YouTubeMatchers.Categories.SKIP_AD
-    override val adContainerIds: Set<String> = YouTubeMatchers.Ids.adMarkers
+    override val adContainerIds: Set<String> = YouTubeMatchers.Ids.skipContainers
 
     override fun classify(snapshot: NodeSnapshot): ScreenState {
         if (snapshot.packageName !in packageNames) return ScreenState.Unknown

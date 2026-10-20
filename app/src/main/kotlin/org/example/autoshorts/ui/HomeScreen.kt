@@ -68,12 +68,15 @@ fun HomeScreen(
         val s = settings.session
         Text(
             buildString {
-                append(stringResource(R.string.home_interval_summary, s.intervalSeconds))
-                append(" · ")
+                // Watch mode never scrolls, so an interval and a scroll cap would only mislead.
+                if (s.mode != AutomationMode.WATCH_ADS) {
+                    append(stringResource(R.string.home_interval_summary, s.intervalSeconds))
+                    append(" · ")
+                }
                 append(stringResource(R.string.home_limit_summary, s.maxDurationMinutes))
-                s.maxScrolls?.let { append(" "); append(stringResource(R.string.home_limit_scrolls_summary, it)) }
+                if (s.mode != AutomationMode.WATCH_ADS) s.maxScrolls?.let { append(" "); append(stringResource(R.string.home_limit_scrolls_summary, it)) }
                 append(" · ")
-                append(stringResource(if (s.mode == AutomationMode.AUTO_TIMER) R.string.home_mode_auto else R.string.home_mode_manual))
+                append(stringResource(s.mode.labelRes()))
             },
             style = MaterialTheme.typography.bodyMedium,
         )

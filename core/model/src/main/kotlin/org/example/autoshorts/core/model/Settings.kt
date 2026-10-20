@@ -75,6 +75,7 @@ data class AutomationPolicy(
 ) {
     init {
         require(defaultMode in allowedModes) { "default mode must be allowed" }
+        require(AutomationMode.WATCH_ADS !in allowedModes || adSkipAllowed) { "WATCH_ADS needs ad skipping" }
     }
 
     fun apply(settings: SessionSettings): SessionSettings =

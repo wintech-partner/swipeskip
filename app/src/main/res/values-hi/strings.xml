@@ -144,6 +144,8 @@
     <string name="settings_level_high">अधिक</string>
     <string name="settings_auto_skip">Skip अपने आप दबाएँ</string>
     <string name="settings_auto_skip_desc">जब YouTube का अपना Skip बटन संभवतः दिख रहा हो, तो मेरे लिए उसे दबाए। डिफ़ॉल्ट रूप से बंद। विज्ञापन को कभी नहीं दबाता।</string>
+    <string name="home_mode_watch">देखें: विज्ञापन छोड़ें</string>
+    <string name="settings_mode_watch_desc">कुछ भी स्क्रॉल नहीं होता। सामान्य वीडियो में, YouTube का अपना Skip बटन दिखते ही Tempo उसे दबाता है। विज्ञापन को खुद कभी नहीं दबाता। सत्र की सीमा पर, स्क्रीन बंद होने पर या YouTube से 60 सेकंड दूर रहने पर समाप्त होता है।</string>
     <plurals name="scroll_count">
         <item quantity="one">%d स्क्रॉल</item>
         <item quantity="other">%d स्क्रॉल</item>

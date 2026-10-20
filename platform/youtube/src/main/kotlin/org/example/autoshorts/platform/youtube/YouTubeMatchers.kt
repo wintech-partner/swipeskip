@@ -27,8 +27,21 @@ object YouTubeMatchers {
          */
         val otherScreenMarkers = setOf("watch_player", "results", "filter_bar")
 
-        /** Overlay that appeared on both observed Shorts ads and on none of ~28 normal Shorts pages. */
-        val adMarkers = setOf("reel_player_delegated_overlay", "reel_progress_bar")
+        /**
+         * Evidence of an advertisement. The first two appeared on both observed Shorts ads and on none of ~28 normal
+         * Shorts pages. The last three are ad-specific names observed on two regular-video ads (2026-10-20) and absent
+         * from a regular video without an ad.
+         */
+        val adMarkers = setOf(
+            "reel_player_delegated_overlay", "reel_progress_bar",
+            "skip_ad_button", "ad_progress_text", "ad_details_container_layout",
+        )
+
+        /**
+         * Subtrees inside which a Skip control may be clicked. On a regular video this is the Skip button itself
+         * (`skip_ad_button` is the clickable FrameLayout; its child carries the "Werbung überspringen" description).
+         */
+        val skipContainers = setOf("reel_player_delegated_overlay", "skip_ad_button")
     }
 
     object Categories {

@@ -46,6 +46,9 @@ class SessionEngine(
 
     private var settings: SessionSettings = SessionSettings()
 
+    /** Mode of the session that was last started (or the default before any start). */
+    val activeMode: AutomationMode get() = settings.mode
+
     // Inputs reported by the service.
     private var permissionGranted = false
     private var targetInForeground = false
@@ -251,7 +254,7 @@ class SessionEngine(
 
         if (state is SessionState.Running) {
             if (loopJob == null) {
-                loopJob = scope.launch { if (settings.mode == AutomationMode.AUTO_TIMER) autoLoop() else reminderLoop() }
+                loopJob = launchLoop()
             }
             // The watchdog only judges a session that is really working in the target app.
             if (targetInForeground && watchdogJob == null && settings.mode == AutomationMode.AUTO_TIMER) {
@@ -281,6 +284,13 @@ class SessionEngine(
         adPresent = false
     }
 
+    /** WATCH_ADS has no timer at all: the session only holds its limits while the host taps Skip. */
+    private fun launchLoop(): Job? = when (settings.mode) {
+        AutomationMode.AUTO_TIMER -> scope.launch { autoLoop() }
+        AutomationMode.MANUAL_TAP -> scope.launch { reminderLoop() }
+        AutomationMode.WATCH_ADS -> null
+    }
+
     private suspend fun autoLoop() {
         while (true) {
             delay(settings.intervalMillis)
@@ -298,7 +308,7 @@ class SessionEngine(
     private fun restartLoop() {
         if (_model.value.state != SessionState.Running) return
         loopJob?.cancel()
-        loopJob = scope.launch { if (settings.mode == AutomationMode.AUTO_TIMER) autoLoop() else reminderLoop() }
+        loopJob = launchLoop()
     }
 
     private fun startWatchdog() {

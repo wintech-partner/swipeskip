@@ -93,6 +93,6 @@ class SettingsRepository(
     companion object {
         val MANUAL_ONLY = AutomationPolicy(setOf(AutomationMode.MANUAL_TAP), AutomationMode.MANUAL_TAP)
         val BOTH_AUTO_DEFAULT = AutomationPolicy(AutomationMode.entries.toSet(), AutomationMode.AUTO_TIMER, adSkipAllowed = true)
-        val BOTH_MANUAL_DEFAULT = AutomationPolicy(AutomationMode.entries.toSet(), AutomationMode.MANUAL_TAP)
+        val BOTH_MANUAL_DEFAULT = AutomationPolicy(setOf(AutomationMode.AUTO_TIMER, AutomationMode.MANUAL_TAP), AutomationMode.MANUAL_TAP)
     }
 }

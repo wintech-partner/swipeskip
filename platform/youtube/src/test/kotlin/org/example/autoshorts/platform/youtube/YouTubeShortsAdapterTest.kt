@@ -155,7 +155,7 @@ class YouTubeShortsAdapterTest {
     }
 
     @Test fun `ad containers are the ad marker ids`() =
-        assertEquals(YouTubeMatchers.Ids.adMarkers, adapter.adContainerIds)
+        assertEquals(YouTubeMatchers.Ids.skipContainers, adapter.adContainerIds)
 
     @Test fun `ad label is found on the last line of a multi line description`() {
         assertEquals(YouTubeMatchers.Categories.AD_BADGE, adapter.categorizeDescription("Some Brand - great game\nAnzeige"))

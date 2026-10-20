@@ -144,6 +144,8 @@
     <string name="settings_level_high">Cao</string>
     <string name="settings_auto_skip">Tự động chạm Bỏ qua</string>
     <string name="settings_auto_skip_desc">Khi nút Bỏ qua của chính YouTube có thể đang hiển thị, chạm giúp tôi. Mặc định tắt. Không bao giờ chạm vào chính quảng cáo.</string>
+    <string name="home_mode_watch">Xem: bỏ qua quảng cáo</string>
+    <string name="settings_mode_watch_desc">Không có gì được cuộn. Khi xem video thường, Tempo chạm vào nút Bỏ qua của chính YouTube khi nó xuất hiện. Không bao giờ chạm vào chính quảng cáo. Kết thúc khi hết giới hạn phiên, tắt màn hình hoặc rời YouTube 60 giây.</string>
     <plurals name="scroll_count">
         <item quantity="other">%d lần cuộn</item>
     </plurals>

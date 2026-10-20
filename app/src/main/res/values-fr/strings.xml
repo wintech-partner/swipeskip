@@ -144,6 +144,8 @@
     <string name="settings_level_high">Élevée</string>
     <string name="settings_auto_skip">Appuyer sur Ignorer automatiquement</string>
     <string name="settings_auto_skip_desc">Quand le bouton Ignorer de YouTube est probablement visible, appuie dessus à ma place. Désactivé par défaut. N\'appuie jamais sur la publicité elle-même.</string>
+    <string name="home_mode_watch">Regarder : passer les pubs</string>
+    <string name="settings_mode_watch_desc">Rien ne défile. Pendant une vidéo normale, Tempo appuie sur le bouton Ignorer de YouTube quand il apparaît. Il n\'appuie jamais sur l\'annonce elle-même. S\'arrête à la limite de la session, quand l\'écran s\'éteint ou après 60 s hors de YouTube.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d défilement</item>
         <item quantity="many">%d de défilements</item>

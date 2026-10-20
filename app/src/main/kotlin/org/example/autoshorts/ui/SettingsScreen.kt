@@ -119,12 +119,13 @@ fun SettingsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit, onPriv
                         onClick = { vm.update { it.copy(session = it.session.copy(mode = m)) } },
                         shape = SegmentedButtonDefaults.itemShape(i, modes.size),
                     ) {
-                        Text(stringResource(if (m == AutomationMode.AUTO_TIMER) R.string.home_mode_auto else R.string.home_mode_manual))
+                        Text(stringResource(m.labelRes()))
                     }
                 }
             }
         }
         if (s.mode == AutomationMode.MANUAL_TAP) Text(stringResource(R.string.settings_mode_manual_desc), style = MaterialTheme.typography.bodySmall)
+        if (s.mode == AutomationMode.WATCH_ADS) Text(stringResource(R.string.settings_mode_watch_desc), style = MaterialTheme.typography.bodySmall)
         HorizontalDivider()
 
         // Interaction

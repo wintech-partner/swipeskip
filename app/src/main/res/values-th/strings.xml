@@ -144,6 +144,8 @@
     <string name="settings_level_high">สูง</string>
     <string name="settings_auto_skip">แตะข้ามอัตโนมัติ</string>
     <string name="settings_auto_skip_desc">เมื่อปุ่มข้ามของ YouTube น่าจะมองเห็นอยู่ ให้แตะแทนฉัน ปิดไว้เป็นค่าเริ่มต้น ไม่เคยแตะตัวโฆษณา</string>
+    <string name="home_mode_watch">ดู: ข้ามโฆษณา</string>
+    <string name="settings_mode_watch_desc">ไม่มีการเลื่อน ระหว่างวิดีโอปกติ Tempo จะแตะปุ่มข้ามของ YouTube เองเมื่อปรากฏ ไม่แตะตัวโฆษณา สิ้นสุดเมื่อถึงขีดจำกัดเซสชัน หน้าจอดับ หรืออยู่นอก YouTube นาน 60 วินาที</string>
     <plurals name="scroll_count">
         <item quantity="other">เลื่อน %d ครั้ง</item>
     </plurals>

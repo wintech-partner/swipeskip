@@ -29,6 +29,7 @@ import org.example.autoshorts.core.automation.MotionDetector
 import org.example.autoshorts.core.automation.Scroller
 import org.example.autoshorts.core.automation.SessionEngine
 import org.example.autoshorts.core.model.AdState
+import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.ScreenState
 import org.example.autoshorts.core.model.SessionState
 import org.example.autoshorts.core.platformapi.GestureResult
@@ -109,9 +110,11 @@ class SessionHost(
         _observation.onEach { obs ->
             val s = settings.settings.first()
             // With automatic skipping on, the app handles the Skip control itself and a hint would be noise.
-            if (s.adNotifications && !s.autoSkipAds) notifier.updateAd(engine.model.value.state, obs.adState)
+            val watching = watchMode()
+            val skipping = s.autoSkipAds || watching
+            if (s.adNotifications && !skipping) notifier.updateAd(engine.model.value.state, obs.adState)
             if (!obs.adState.isAdPresent) skipGate.onAdCleared()
-            if (obs.adState is AdState.SkipLikelyAvailable && s.autoSkipAds && adSkipAllowed &&
+            if (obs.adState is AdState.SkipLikelyAvailable && skipping && adSkipAllowed &&
                 engine.model.value.state.isActive && skipGate.tryAcquire(System.currentTimeMillis())
             ) {
                 service?.clickSkipControl()
@@ -188,12 +191,15 @@ class SessionHost(
         when (eventType) {
             AccessibilityEvent.TYPE_VIEW_SCROLLED,
             AccessibilityEvent.TYPE_VIEW_CLICKED,
-            AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> engine.onUserInteraction()
+            AccessibilityEvent.TYPE_TOUCH_INTERACTION_START -> if (!watchMode()) engine.onUserInteraction()
 
             AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED,
             AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED -> scheduleSnapshot()
         }
     }
+
+    /** Whether the live session is a WATCH_ADS one. Read from the last settings the engine was started with. */
+    private fun watchMode(): Boolean = engine.activeMode == AutomationMode.WATCH_ADS
 
     /** Trailing-edge throttle: at most one tree walk per [SNAPSHOT_THROTTLE_MILLIS]. */
     private fun scheduleSnapshot() {
@@ -207,7 +213,8 @@ class SessionHost(
             val screen = adapter.classify(snapshot)
             val ad = adapter.adMonitor.evaluate(snapshot)
             _observation.value = _observation.value.copy(screenState = screen, adState = ad)
-            engine.onScreenState(screen)
+            // Watch mode lives on regular videos, so "not on the Shorts feed" and "comments open" mean nothing there.
+            engine.onScreenState(if (watchMode()) ScreenState.Unknown else screen)
             engine.onAdState(ad)
         }
     }

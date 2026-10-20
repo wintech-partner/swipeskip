@@ -1,5 +1,7 @@
 # Guardrails for AI sessions on this repo
 
+Update 2026-10-20 (ADR 10): at the human's explicit request the opt-in Skip tap also works on regular YouTube videos through a bounded `WATCH_ADS` session (`foss` only). Scrolling Shorts is still the main feature. Reels/TikTok are still out of scope.
+
 Open-source Android app (Kotlin, Compose, Material 3, Gradle KTS) that scrolls YouTube Shorts on a user-chosen timer. v1 = YouTube Shorts only. Reels/TikTok are NOT to be implemented yet.
 
 ## Operating rules

@@ -144,6 +144,8 @@
     <string name="settings_level_high">Mataas</string>
     <string name="settings_auto_skip">Awtomatikong i-tap ang Skip</string>
     <string name="settings_auto_skip_desc">Kapag posibleng nakikita ang sariling Skip button ng YouTube, i-tap ito para sa akin. Naka-off bilang default. Hindi kailanman tina-tap ang mismong ad.</string>
+    <string name="home_mode_watch">Manood: i-skip ang ad</string>
+    <string name="settings_mode_watch_desc">Walang nag-i-scroll. Sa karaniwang video, ita-tap ng Tempo ang sariling Skip button ng YouTube kapag lumabas ito. Hindi kailanman tina-tap ang mismong ad. Natatapos sa limitasyon ng sesyon, kapag namatay ang screen, o pagkatapos ng 60 s na wala sa YouTube.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d scroll</item>
         <item quantity="other">%d na scroll</item>

@@ -60,6 +60,18 @@ class SessionEngineTest {
         assertEquals(2, e.stats.value.scrollCount)
     }
 
+    @Test fun `watch mode never scrolls but still enforces the duration limit`() = runTest {
+        val s = FakeScroller()
+        val e = engine(s)
+        e.start(settings.copy(mode = AutomationMode.WATCH_ADS))
+        assertEquals(AutomationMode.WATCH_ADS, e.activeMode)
+        advance(5 * 60_000L)
+        assertTrue(s.directions.isEmpty())
+        assertTrue(e.model.value.state.isActive)
+        advance(11 * 60_000L)
+        assertEquals(StopReason.DURATION_REACHED, e.stats.value.lastStopReason)
+    }
+
     @Test fun `uses the configured direction`() = runTest {
         val s = FakeScroller()
         val e = engine(s)

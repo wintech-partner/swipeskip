@@ -17,6 +17,14 @@ Two sources, both `adb shell uiautomator dump`:
 
 Navigation labels seen (German): Startseite, Shorts, Erstellen, Abos, Mein YouTube, Suchen, Mehr Aktionen, Speichern, Dieses Video teilen, Remixen, "N Kommentare anzeigen".
 
+## Regular video (full screen), real phone 2026-10-20
+| Situation | Evidence |
+|---|---|
+| Regular watch page | `watch_player`, `player_overlays`, `player_view`; no `reel_*`. |
+| Ad (skippable, with the Skip button shown) | `ad_progress_text` ("Gesponsert Mein Anzeigen-Center"), `ad_details_container_layout`, `skip_ad_button` (clickable FrameLayout) with a child `skip_ad_button_container` whose content-description is "Werbung überspringen" and `skip_ad_button_text` ("Überspringen"). |
+| Ad before the Skip button appears | `ad_progress_text` ("Gesponsert · 1 von 2 ..."), `ad_details_container_layout`; no `skip_ad_button`. |
+Fixtures: `youtube_21.41.525_de_watch_{no_ad,ad_before_skip,skippable_ad}.xml`. Only 2 ads sampled.
+
 ## Important findings
 - **Neither of the two Shorts ads had a Skip button.** The Skip control in `SKIP_AD` was never observed. Shorts ads seem not to be skippable by a button, so the opt-in "Tap Skip automatically" setting probably does nothing in Shorts (it may matter for skippable ads in regular videos, which this app does not target). The `SKIP_AD` labels remain unverified.
 - The ad label is a last line of a longer description. `categorizeDescription` now compares the whole text or only the last line; nothing else of the description is kept.

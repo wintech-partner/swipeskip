@@ -3,6 +3,7 @@ package org.example.autoshorts.ui
 import androidx.annotation.StringRes
 import org.example.autoshorts.R
 import org.example.autoshorts.core.model.AdState
+import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.ErrorReason
 import org.example.autoshorts.core.model.PauseCause
 import org.example.autoshorts.core.model.SessionState
@@ -49,4 +50,11 @@ fun AdState.labelRes(): Int = when (this) {
     AdState.NoAdEvidence -> R.string.ad_none
     is AdState.AdLikely -> R.string.ad_likely
     is AdState.SkipLikelyAvailable -> R.string.ad_skip_likely
+}
+
+@StringRes
+fun AutomationMode.labelRes(): Int = when (this) {
+    AutomationMode.AUTO_TIMER -> R.string.home_mode_auto
+    AutomationMode.MANUAL_TAP -> R.string.home_mode_manual
+    AutomationMode.WATCH_ADS -> R.string.home_mode_watch
 }

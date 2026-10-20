@@ -144,6 +144,8 @@
     <string name="settings_level_high">বেশি</string>
     <string name="settings_auto_skip">স্বয়ংক্রিয়ভাবে Skip ট্যাপ করুন</string>
     <string name="settings_auto_skip_desc">YouTube-এর নিজের Skip বোতাম দেখা যাওয়ার সম্ভাবনা থাকলে আমার হয়ে ট্যাপ করুন। ডিফল্টভাবে বন্ধ। বিজ্ঞাপনে কখনও ট্যাপ করে না।</string>
+    <string name="home_mode_watch">দেখা: বিজ্ঞাপন Skip</string>
+    <string name="settings_mode_watch_desc">কিছু স্ক্রল হয় না। সাধারণ ভিডিওতে YouTube-এর নিজের Skip বোতাম দেখা দিলে Tempo সেটি ট্যাপ করে। বিজ্ঞাপনে নিজে কখনও ট্যাপ করে না। সেশনের সীমায়, স্ক্রিন বন্ধ হলে বা YouTube থেকে ৬০ সেকেন্ড দূরে থাকলে শেষ হয়।</string>
     <plurals name="scroll_count">
         <item quantity="one">%d বার স্ক্রল</item>
         <item quantity="other">%d বার স্ক্রল</item>

@@ -96,4 +96,32 @@ class RealDumpFixtureTest {
         assertEquals(AdState.Unknown, adapter.adMonitor.evaluate(home))
         assertTrue(!adapter.adMonitor.evaluate(comments).isAdPresent)
     }
+
+    // ---- real phone dumps of a REGULAR video (full screen), 2026-10-20 ----
+
+    private val watchNoAd get() = load("youtube_21.41.525_de_watch_no_ad.xml")
+    private val watchAd get() = load("youtube_21.41.525_de_watch_ad_before_skip.xml")
+    private val watchSkippable get() = load("youtube_21.41.525_de_watch_skippable_ad.xml")
+
+    @Test fun `a regular video without an ad shows no ad evidence`() =
+        assertTrue(!adapter.adMonitor.evaluate(watchNoAd).isAdPresent)
+
+    @Test fun `a regular video ad before its Skip button appears is AdLikely and not skippable`() =
+        assertTrue(adapter.adMonitor.evaluate(watchAd) is AdState.AdLikely)
+
+    @Test fun `a regular video ad with a Skip button is SkipLikelyAvailable`() =
+        assertTrue(adapter.adMonitor.evaluate(watchSkippable) is AdState.SkipLikelyAvailable)
+
+    @Test fun `the real Skip control sits inside a skip container and is the only skip-category node`() {
+        val skipNodes = watchSkippable.walk().filter { it.descriptionCategory == adapter.skipControlCategory }.toList()
+        assertEquals(1, skipNodes.size)
+        val container = watchSkippable.walk().first { it.viewId?.substringAfter(":id/") in adapter.adContainerIds }
+        assertTrue(container.walk().any { it.descriptionCategory == adapter.skipControlCategory })
+    }
+
+    @Test fun `no regular video fixture without an ad contains a skip container`() {
+        listOf(watchNoAd, watchAd).forEach { tree ->
+            assertTrue(tree.walk().none { it.viewId?.substringAfter(":id/") == "skip_ad_button" })
+        }
+    }
 }

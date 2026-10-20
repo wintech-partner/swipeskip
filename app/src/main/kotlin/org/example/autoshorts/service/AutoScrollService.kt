@@ -61,22 +61,23 @@ class AutoScrollService : AccessibilityService() {
         val category = host.adapter.skipControlCategory ?: return false
         val root = rootInActiveWindow ?: return false
         if (root.packageName?.toString() !in host.adapter.packageNames) return false
-        val budget = intArrayOf(600)
-        return findAdContainer(root, budget)?.let { container ->
-            val target = findSkip(container, category, IntArray(1) { 300 }) ?: return@let false
+        val containers = mutableListOf<AccessibilityNodeInfo>()
+        collectAdContainers(root, containers, intArrayOf(600))
+        // Try every container: the page can hold more than one ad-related subtree and only one has the Skip control.
+        return containers.any { container ->
+            val target = findSkip(container, category, IntArray(1) { 300 }) ?: return@any false
             clickWithin(target, container)
-        } ?: false
+        }
     }
 
-    private fun findAdContainer(node: AccessibilityNodeInfo, budget: IntArray): AccessibilityNodeInfo? {
-        if (budget[0]-- <= 0) return null
+    private fun collectAdContainers(node: AccessibilityNodeInfo, out: MutableList<AccessibilityNodeInfo>, budget: IntArray) {
+        if (budget[0]-- <= 0) return
         val shortId = node.viewIdResourceName?.substringAfter(":id/")
-        if (node.isVisibleToUser && shortId in host.adapter.adContainerIds) return node
+        if (node.isVisibleToUser && shortId in host.adapter.adContainerIds) out += node
         for (i in 0 until node.childCount) {
             val child = node.getChild(i) ?: continue
-            findAdContainer(child, budget)?.let { return it }
+            collectAdContainers(child, out, budget)
         }
-        return null
     }
 
     private fun findSkip(node: AccessibilityNodeInfo, category: String, budget: IntArray): AccessibilityNodeInfo? {
