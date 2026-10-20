@@ -5,6 +5,9 @@
 - [x] License: Apache-2.0, confirmed by the human 2026-10-20.
 - [~] Launcher icon: blue rounded square with a white double chevron (>>), chosen by the human 2026-10-20; it is still a simple vector, a designer's logo may replace it.
 
+## Distribution
+- [~] F-Droid: merge request https://gitlab.com/fdroid/fdroiddata/-/merge_requests/53461 (opened 2026-10-20, tag v0.1.1, recipe in docs/fdroid/). CI pipeline green after two fixes (trailing newline, `scanignore: billing/play`). Waiting for human review; the reviewers may ask to delete `billing/play` or question the Skip tap (ADR 9/10). Next release: tag v0.1.x, F-Droid auto-updates from tags.
+
 ## Needs a physical device with real YouTube
 - [~] Matchers verified from real dumps on YouTube 21.41.525 (German, 2026-10-19): feed, comments, Home, Shorts ad. Still open: other versions/languages, regular watch page, skippable ads, and running the app itself on a phone. Original item: every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
 - [~] Real phone (Galaxy A04s, Android 14, YouTube 21.41.525), 2026-10-20, human-observed: swipe advances a Short at 5 s, a touch pauses the session. Also observed: pauses on an ad, pauses while comments are open (same Short keeps looping), pauses on Home and resumes when back in Shorts. Notification Stop works (needs notification permission; Home now warns when it is off). 60 s away ends the session (after closing the PiP window). Screen-off ends the session. Still open: restricted-settings flow, skippable-ad tap.
