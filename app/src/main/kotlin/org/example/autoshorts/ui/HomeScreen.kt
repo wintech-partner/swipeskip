@@ -13,10 +13,16 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LifecycleEventEffect
 import org.example.autoshorts.R
 import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.SessionState
@@ -34,6 +40,9 @@ fun HomeScreen(
     val session = state.session
     val ready = state.serviceConnected && settings.consentGiven
     val live = session.isActive || session is SessionState.Starting
+    var notificationsAllowed by remember { mutableStateOf(vm.notificationsAllowed()) }
+    // The permission is changed in system settings, so look again whenever we come back.
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { notificationsAllowed = vm.notificationsAllowed() }
 
     ScreenScaffold(stringResource(R.string.app_name), onBack = null) {
         Card(Modifier.fillMaxWidth()) {
@@ -50,6 +59,10 @@ fun HomeScreen(
                     Text(stringResource(state.observation.adState.labelRes()), style = MaterialTheme.typography.bodyMedium)
                 }
             }
+        }
+
+        if (!notificationsAllowed) {
+            Text(stringResource(R.string.diag_fix_notifications), color = MaterialTheme.colorScheme.error)
         }
 
         val s = settings.session
