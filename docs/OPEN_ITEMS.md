@@ -29,4 +29,4 @@
 - [ ] Human decision: keep `isAccessibilityTool` unset (default) unless the audience truly changes.
 
 ## Translations
-All non-English strings (tr, de, es, fr, pt-BR, ru, ar, id) are **machine-drafted** and need native review. The Turkish text was written to read naturally but is unreviewed. YouTube's own localized labels in the matchers are also from general knowledge, unverified.
+All non-English strings (tr, de, es, fr, pt-BR, ru, ar, id, hi, ja, vi, ko, th, fil, bn, ur; the last eight were added 2026-10-20, Urdu is a second right-to-left language with no RTL check yet) are **machine-drafted** and need native review. The Turkish text was written to read naturally but is unreviewed. YouTube's own localized labels in the matchers are also from general knowledge, unverified.

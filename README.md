@@ -14,7 +14,7 @@ Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, 
 - Pauses when you touch the screen, when comments are open, when you leave the Shorts feed, and when an ad is *likely* showing.
 - Ongoing notification with a Stop button. Screen off, 60 s away from YouTube, or any limit ends the session.
 - Diagnostics screen and a copyable report with no screen content.
-- Languages: English, Turkish, German, Spanish, French, Brazilian Portuguese, Russian, Arabic, Indonesian (non-English texts are machine-drafted, see open items).
+- Languages: English, Turkish, German, Spanish, French, Brazilian Portuguese, Russian, Arabic, Indonesian, Hindi, Japanese, Vietnamese, Korean, Thai, Filipino, Bengali, Urdu (non-English texts are machine-drafted, see open items).
 
 ## Extras
 

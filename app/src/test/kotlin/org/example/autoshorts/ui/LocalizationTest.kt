@@ -30,7 +30,7 @@ class StringResourcesTest {
     private val locales = res.listFiles()!!.map { it.name }.filter { it.startsWith("values-") && File(it.let { n -> File(res, n) }, "strings.xml").exists() }
     private val placeholder = Regex("%(\\d\\$)?[sd]")
 
-    @Test fun `nine languages are present`() = assertEquals(8, locales.size)
+    @Test fun `sixteen languages are present`() = assertEquals(16, locales.size)
 
     @Test fun `every locale has every key`() {
         val en = load("values").keys

@@ -38,6 +38,8 @@ import org.example.autoshorts.core.model.ThemeMode
 private val LANGUAGES = listOf(
     "" to null, "en" to "English", "tr" to "Türkçe", "de" to "Deutsch", "es" to "Español",
     "fr" to "Français", "pt-BR" to "Português (Brasil)", "ru" to "Русский", "ar" to "العربية", "in" to "Indonesia",
+    "hi" to "हिन्दी", "ja" to "日本語", "vi" to "Tiếng Việt", "ko" to "한국어", "th" to "ไทย",
+    "fil" to "Filipino", "bn" to "বাংলা", "ur" to "اردو",
 )
 
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
