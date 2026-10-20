@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">YouTube 自身のスキップボタンが表示されていそうなときに、代わりにタップします。既定ではオフです。広告そのものをタップすることはありません。</string>
     <string name="home_mode_watch">視聴: 広告をスキップ</string>
     <string name="settings_mode_watch_desc">スクロールはしません。通常の動画で YouTube 自身のスキップボタンが表示されたときに Tempo がタップします。広告そのものはタップしません。セッションの上限、画面オフ、または YouTube から60秒離れると終了します。</string>
+    <string name="settings_applies_next_session">セッション実行中です。間隔・長さ・方向・モードの変更は次のセッションから反映されます。</string>
     <plurals name="scroll_count">
         <item quantity="other">%d 回スクロール</item>
     </plurals>

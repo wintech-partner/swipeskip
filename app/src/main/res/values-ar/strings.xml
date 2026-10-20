@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">عندما يُحتمل أن زر التخطي الخاص بـ YouTube ظاهر، ينقر عليه نيابةً عني. متوقف افتراضيًا. لا ينقر على الإعلان نفسه أبدًا.</string>
     <string name="home_mode_watch">المشاهدة: تخطي الإعلانات</string>
     <string name="settings_mode_watch_desc">لا يتم تمرير أي شيء. أثناء فيديو عادي، يضغط Tempo على زر التخطي الخاص بـ YouTube عند ظهوره. ولا يضغط على الإعلان نفسه أبدًا. تنتهي الجلسة عند حدّها أو عند إطفاء الشاشة أو بعد 60 ثانية خارج YouTube.</string>
+    <string name="settings_applies_next_session">هناك جلسة قيد التشغيل. تسري تغييرات الفاصل والمدة والاتجاه والوضع اعتبارًا من الجلسة التالية.</string>
     <plurals name="scroll_count">
         <item quantity="zero">%d تمريرة</item>
         <item quantity="one">تمريرة واحدة</item>

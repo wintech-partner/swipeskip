@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">Когда собственная кнопка «Пропустить» YouTube, вероятно, видна, нажимает её за меня. По умолчанию выключено. Саму рекламу никогда не нажимает.</string>
     <string name="home_mode_watch">Просмотр: пропуск рекламы</string>
     <string name="settings_mode_watch_desc">Ничего не прокручивается. Во время обычного видео Tempo нажимает собственную кнопку «Пропустить» YouTube, когда она появляется. Саму рекламу никогда не нажимает. Заканчивается по лимиту сеанса, при выключении экрана или через 60 с вне YouTube.</string>
+    <string name="settings_applies_next_session">Сеанс запущен. Изменения интервала, длительности, направления и режима вступят в силу со следующего сеанса.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d прокрутка</item>
         <item quantity="few">%d прокрутки</item>

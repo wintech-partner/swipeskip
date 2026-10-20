@@ -147,6 +147,7 @@
     <string name="settings_auto_skip_desc">When YouTube\'s own Skip button is likely visible, tap it for me. Off by default. Never taps the ad itself.</string>
     <string name="home_mode_watch">Watch: skip ads</string>
     <string name="settings_mode_watch_desc">Nothing scrolls. During a regular video, Tempo taps YouTube\'s own Skip button when it appears. It never taps the ad itself. Ends at the session limit, when the screen turns off or after 60 s away from YouTube.</string>
+    <string name="settings_applies_next_session">A session is running. Changes to interval, length, direction and mode apply from the next session.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d scroll</item>
         <item quantity="other">%d scrolls</item>

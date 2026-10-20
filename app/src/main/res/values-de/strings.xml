@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">Tippt die eigene Überspringen-Taste von YouTube für mich an, wenn sie wahrscheinlich sichtbar ist. Standardmäßig aus. Tippt nie auf die Werbung selbst.</string>
     <string name="home_mode_watch">Ansehen: Werbung überspringen</string>
     <string name="settings_mode_watch_desc">Nichts wird gescrollt. Bei einem normalen Video tippt Tempo auf YouTubes eigene Überspringen-Taste, sobald sie erscheint. Die Werbung selbst wird nie angetippt. Endet am Sitzungslimit, bei ausgeschaltetem Bildschirm oder nach 60 s außerhalb von YouTube.</string>
+    <string name="settings_applies_next_session">Eine Sitzung läuft. Änderungen an Intervall, Dauer, Richtung und Modus gelten ab der nächsten Sitzung.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d Scroll</item>
         <item quantity="other">%d Scrolls</item>

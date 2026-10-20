@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">جب YouTube کا اپنا Skip بٹن غالباً نظر آ رہا ہو تو میری جگہ ٹیپ کر دے۔ ڈیفالٹ میں بند۔ اشتہار کو خود کبھی ٹیپ نہیں کرتا۔</string>
     <string name="home_mode_watch">دیکھیں: اشتہار Skip</string>
     <string name="settings_mode_watch_desc">کچھ اسکرول نہیں ہوتا۔ عام ویڈیو میں YouTube کا اپنا Skip بٹن ظاہر ہوتے ہی Tempo اسے دباتا ہے۔ اشتہار کو خود کبھی نہیں دباتا۔ سیشن کی حد پر، اسکرین بند ہونے پر یا YouTube سے 60 سیکنڈ دور رہنے پر ختم ہو جاتا ہے۔</string>
+    <string name="settings_applies_next_session">ایک سیشن چل رہا ہے۔ وقفے، دورانیے، سمت اور موڈ کی تبدیلیاں اگلے سیشن سے لاگو ہوں گی۔</string>
     <plurals name="scroll_count">
         <item quantity="one">%d اسکرول</item>
         <item quantity="other">%d اسکرول</item>

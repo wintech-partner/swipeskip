@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">YouTube의 건너뛰기 버튼이 보일 가능성이 높을 때 대신 탭합니다. 기본값은 꺼짐입니다. 광고 자체는 절대 탭하지 않습니다.</string>
     <string name="home_mode_watch">시청: 광고 건너뛰기</string>
     <string name="settings_mode_watch_desc">스크롤하지 않습니다. 일반 동영상에서 YouTube의 건너뛰기 버튼이 나타나면 Tempo가 탭합니다. 광고 자체는 절대 탭하지 않습니다. 세션 제한에 도달하거나, 화면이 꺼지거나, YouTube를 60초 벗어나면 종료됩니다.</string>
+    <string name="settings_applies_next_session">세션이 실행 중입니다. 간격, 길이, 방향, 모드 변경은 다음 세션부터 적용됩니다.</string>
     <plurals name="scroll_count">
         <item quantity="other">%d회 스크롤</item>
     </plurals>

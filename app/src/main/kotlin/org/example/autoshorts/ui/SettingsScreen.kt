@@ -31,6 +31,7 @@ import org.example.autoshorts.R
 import org.example.autoshorts.core.model.AutomationMode
 import org.example.autoshorts.core.model.MotionSensitivity
 import org.example.autoshorts.core.model.ScrollDirection
+import org.example.autoshorts.core.model.SessionState
 import org.example.autoshorts.core.model.SettingsLimits
 import org.example.autoshorts.core.model.ThemeMode
 
@@ -49,6 +50,10 @@ fun SettingsScreen(vm: MainViewModel, state: UiState, onBack: () -> Unit, onPriv
     val s = settings.session
 
     ScreenScaffold(stringResource(R.string.settings_title), onBack) {
+        // The engine reads session settings once, at Start, so changes made mid-session only count next time.
+        if (state.session.isActive || state.session is SessionState.Starting) {
+            Text(stringResource(R.string.settings_applies_next_session), color = MaterialTheme.colorScheme.error)
+        }
         // Interval
         Text(stringResource(R.string.settings_interval), style = MaterialTheme.typography.titleMedium)
         FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {

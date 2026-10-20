@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">Quando o botão Pular do YouTube provavelmente estiver visível, toca nele por mim. Desativado por padrão. Nunca toca no anúncio em si.</string>
     <string name="home_mode_watch">Assistir: pular anúncios</string>
     <string name="settings_mode_watch_desc">Nada rola sozinho. Em um vídeo normal, o Tempo toca no botão Pular do próprio YouTube quando ele aparece. Nunca toca no anúncio em si. Termina no limite da sessão, quando a tela apaga ou após 60 s fora do YouTube.</string>
+    <string name="settings_applies_next_session">Há uma sessão em andamento. Mudanças de intervalo, duração, direção e modo valem a partir da próxima sessão.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d rolagem</item>
         <item quantity="many">%d de rolagens</item>

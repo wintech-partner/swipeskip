@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">Cuando el botón Omitir de YouTube probablemente esté visible, lo toca por mí. Desactivado por defecto. Nunca toca el anuncio en sí.</string>
     <string name="home_mode_watch">Ver: omitir anuncios</string>
     <string name="settings_mode_watch_desc">No se desplaza nada. En un vídeo normal, Tempo pulsa el botón Omitir de YouTube cuando aparece. Nunca pulsa el anuncio. Termina al llegar al límite de la sesión, al apagarse la pantalla o tras 60 s fuera de YouTube.</string>
+    <string name="settings_applies_next_session">Hay una sesión en curso. Los cambios de intervalo, duración, dirección y modo se aplican desde la próxima sesión.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d desplazamiento</item>
         <item quantity="many">%d de desplazamientos</item>

@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">YouTube\'un kendi Atla düğmesi büyük olasılıkla görünürken benim yerime dokunur. Varsayılan olarak kapalı. Reklamın kendisine asla dokunmaz.</string>
     <string name="home_mode_watch">İzle: reklamı atla</string>
     <string name="settings_mode_watch_desc">Hiçbir şey kaydırılmaz. Normal bir videoda YouTube\'un kendi Atla düğmesi göründüğünde Tempo ona dokunur. Reklamın kendisine asla dokunmaz. Oturum süresi dolunca, ekran kapanınca veya YouTube\'dan 60 sn uzak kalınca biter.</string>
+    <string name="settings_applies_next_session">Bir oturum çalışıyor. Aralık, süre, yön ve mod değişiklikleri bir sonraki oturumdan itibaren geçerli olur.</string>
     <plurals name="scroll_count">
         <item quantity="one">%d kaydırma</item>
         <item quantity="other">%d kaydırma</item>

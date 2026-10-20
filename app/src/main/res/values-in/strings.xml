@@ -146,6 +146,7 @@
     <string name="settings_auto_skip_desc">Saat tombol Lewati milik YouTube kemungkinan terlihat, ketuk untuk saya. Mati secara default. Tidak pernah mengetuk iklan itu sendiri.</string>
     <string name="home_mode_watch">Tonton: lewati iklan</string>
     <string name="settings_mode_watch_desc">Tidak ada yang digulir. Saat video biasa, Tempo mengetuk tombol Lewati milik YouTube ketika muncul. Tidak pernah mengetuk iklannya. Berakhir saat batas sesi tercapai, layar mati, atau 60 dtk di luar YouTube.</string>
+    <string name="settings_applies_next_session">Sesi sedang berjalan. Perubahan interval, durasi, arah, dan mode berlaku mulai sesi berikutnya.</string>
     <plurals name="scroll_count">
         <item quantity="other">%d gulir</item>
     </plurals>
