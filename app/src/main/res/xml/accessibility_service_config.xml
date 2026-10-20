@@ -14,4 +14,4 @@
     android:description="@string/service_description"
     android:notificationTimeout="100"
     android:packageNames="com.google.android.youtube"
-    android:settingsActivity="io.github.kutlu24.swipeskip.ui.MainActivity" />
+    android:settingsActivity="io.github.wintech_partner.swipeskip.ui.MainActivity" />

@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "io.github.kutlu24.swipeskip"
+    namespace = "io.github.wintech_partner.swipeskip"
     compileSdk = 37
 
     defaultConfig {
         // Placeholder id: a release blocker, see docs/OPEN_ITEMS.md.
-        applicationId = "io.github.kutlu24.swipeskip"
+        applicationId = "io.github.wintech_partner.swipeskip"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

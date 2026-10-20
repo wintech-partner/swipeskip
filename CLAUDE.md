@@ -37,7 +37,7 @@ MVVM, coroutines/StateFlow, DataStore. Modules: `app`, `core/model`, `core/autom
 No analytics, crash SDKs or ads. No INTERNET permission in `foss`. Settings only in local DataStore. Logs contain no screen text.
 
 ## Human-only decisions
-Final name and applicationId (placeholder `io.github.kutlu24.swipeskip` is a release blocker), license, Play submission and whether AUTO_TIMER is acceptable there, accessibility-tool declaration, signing keys, repo creation/push, F-Droid/IzzyOnDroid submission, pricing, native translation review, real-device tests.
+Final name and applicationId (placeholder `io.github.wintech_partner.swipeskip` is a release blocker), license, Play submission and whether AUTO_TIMER is acceptable there, accessibility-tool declaration, signing keys, repo creation/push, F-Droid/IzzyOnDroid submission, pricing, native translation review, real-device tests.
 
 ## Build
 `export JAVA_HOME=<jdk17> ANDROID_HOME=<sdk>` then `./gradlew test lint assembleFossDebug`.

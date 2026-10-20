@@ -1,7 +1,7 @@
 plugins { alias(libs.plugins.android.library) }
 
 android {
-    namespace = "io.github.kutlu24.swipeskip.billing.play"
+    namespace = "io.github.wintech_partner.swipeskip.billing.play"
     compileSdk = 37
     defaultConfig { minSdk = 26 }
     compileOptions {

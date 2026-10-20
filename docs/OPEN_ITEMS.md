@@ -1,7 +1,7 @@
 # Open items (need a human, a device or a store account)
 
 ## Release blockers
-- [x] App name SwipeSkip and `applicationId` io.github.kutlu24.swipeskip chosen by the human 2026-10-20. The private GitHub repo Kutlu24/swipeskip exists (make it public before any release; SECURITY/PRIVACY point at its issues and security advisories). Still open: check the name on Play, F-Droid and GitHub.
+- [x] App name SwipeSkip and `applicationId` io.github.wintech_partner.swipeskip chosen by the human 2026-10-20. The private GitHub repo wintech-partner/swipeskip exists (make it public before any release; SECURITY/PRIVACY point at its issues and security advisories). Still open: check the name on Play, F-Droid and GitHub.
 - [x] License: Apache-2.0, confirmed by the human 2026-10-20.
 - [~] Launcher icon: blue rounded square with a white double chevron (>>), chosen by the human 2026-10-20; it is still a simple vector, a designer's logo may replace it.
 

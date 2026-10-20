@@ -2,6 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Debug only: lets the instrumented test find the fake Shorts app (package visibility). -->
     <queries>
-        <package android:name="io.github.kutlu24.swipeskip.fakeshorts" />
+        <package android:name="io.github.wintech_partner.swipeskip.fakeshorts" />
     </queries>
 </manifest>

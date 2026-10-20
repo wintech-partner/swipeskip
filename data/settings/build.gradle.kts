@@ -1,7 +1,7 @@
 plugins { alias(libs.plugins.android.library) }
 
 android {
-    namespace = "io.github.kutlu24.swipeskip.data.settings"
+    namespace = "io.github.wintech_partner.swipeskip.data.settings"
     compileSdk = 37
     defaultConfig { minSdk = 26 }
     compileOptions {
