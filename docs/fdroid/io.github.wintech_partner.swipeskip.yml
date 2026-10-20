@@ -1,5 +1,3 @@
-# DRAFT of the F-Droid build recipe (fdroiddata/metadata/io.github.wintech_partner.swipeskip.yml).
-# Not submitted. Field names follow F-Droid's metadata reference as I know it; the reviewers will correct details.
 Categories:
   - System
 License: Apache-2.0
@@ -20,6 +18,8 @@ Builds:
     subdir: app
     gradle:
       - foss
+    scanignore:
+      - billing/play
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
