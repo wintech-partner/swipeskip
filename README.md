@@ -53,7 +53,7 @@ Open the folder in Android Studio to work on it. Instrumented end-to-end test (n
 
 [PLAN](docs/PLAN.md) · [DECISIONS](docs/DECISIONS.md) · [POLICY_NOTES](docs/POLICY_NOTES.md) · [PERMISSIONS](docs/PERMISSIONS.md) · [COMPETITOR_RESEARCH](docs/COMPETITOR_RESEARCH.md) · [SPIKE_END_OF_VIDEO](docs/SPIKE_END_OF_VIDEO.md) · [DISTRIBUTION](docs/DISTRIBUTION.md) · [ADDING_A_PLATFORM](docs/ADDING_A_PLATFORM.md) · [TESTED_VERSIONS](docs/TESTED_VERSIONS.md) · [OPEN_ITEMS](docs/OPEN_ITEMS.md)
 
-License: Apache-2.0 (choice flagged in open items).
+License: Apache-2.0.
 
 ## Emulator end-to-end test
 

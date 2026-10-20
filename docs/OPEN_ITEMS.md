@@ -2,8 +2,8 @@
 
 ## Release blockers
 - [ ] Final app name and `applicationId` (placeholder `org.example.autoshorts`; avoid "YouTube" and "Clicker"). Also update `url_issues`/`url_source` placeholders in `res/values/config.xml`, SECURITY/PRIVACY contacts.
-- [ ] License: Apache-2.0 chosen as default; maybe GPL-3.0 is preferred.
-- [ ] Launcher icon/logo is a placeholder vector.
+- [x] License: Apache-2.0, confirmed by the human 2026-10-20.
+- [~] Launcher icon: blue rounded square with a white double chevron (>>), chosen by the human 2026-10-20; it is still a simple vector, a designer's logo may replace it.
 
 ## Needs a physical device with real YouTube
 - [~] Matchers verified from real dumps on YouTube 21.41.525 (German, 2026-10-19): feed, comments, Home, Shorts ad. Still open: other versions/languages, regular watch page, skippable ads, and running the app itself on a phone. Original item: every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
