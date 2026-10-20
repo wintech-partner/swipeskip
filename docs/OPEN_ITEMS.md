@@ -1,7 +1,7 @@
 # Open items (need a human, a device or a store account)
 
 ## Release blockers
-- [ ] Final app name and `applicationId` (placeholder `org.example.autoshorts`; avoid "YouTube" and "Clicker"). Also update `url_issues`/`url_source` placeholders in `res/values/config.xml`, SECURITY/PRIVACY contacts.
+- [x] App name SwipeSkip and `applicationId` io.github.kutlu24.swipeskip chosen by the human 2026-10-20. Still open: create the GitHub repo Kutlu24/swipeskip (the `url_issues`/`url_source` links point there), fill the SECURITY/PRIVACY contacts. Check the name on Play, F-Droid and GitHub.
 - [x] License: Apache-2.0, confirmed by the human 2026-10-20.
 - [~] Launcher icon: blue rounded square with a white double chevron (>>), chosen by the human 2026-10-20; it is still a simple vector, a designer's logo may replace it.
 

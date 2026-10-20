@@ -14,5 +14,5 @@
     android:canRetrieveWindowContent="true"
     android:description="@string/service_description"
     android:notificationTimeout="100"
-    android:packageNames="com.google.android.youtube,org.example.autoshorts.fakeshorts"
-    android:settingsActivity="org.example.autoshorts.ui.MainActivity" />
+    android:packageNames="com.google.android.youtube,io.github.kutlu24.swipeskip.fakeshorts"
+    android:settingsActivity="io.github.kutlu24.swipeskip.ui.MainActivity" />

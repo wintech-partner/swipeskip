@@ -3,10 +3,10 @@
 plugins { alias(libs.plugins.android.application) }
 
 android {
-    namespace = "org.example.autoshorts.fakeshorts"
+    namespace = "io.github.kutlu24.swipeskip.fakeshorts"
     compileSdk = 37
     defaultConfig {
-        applicationId = "org.example.autoshorts.fakeshorts"
+        applicationId = "io.github.kutlu24.swipeskip.fakeshorts"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

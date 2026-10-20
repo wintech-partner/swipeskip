@@ -1,7 +1,7 @@
 plugins { alias(libs.plugins.android.library) }
 
 android {
-    namespace = "org.example.autoshorts.data.settings"
+    namespace = "io.github.kutlu24.swipeskip.data.settings"
     compileSdk = 37
     defaultConfig { minSdk = 26 }
     compileOptions {

@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "org.example.autoshorts"
+    namespace = "io.github.kutlu24.swipeskip"
     compileSdk = 37
 
     defaultConfig {
         // Placeholder id: a release blocker, see docs/OPEN_ITEMS.md.
-        applicationId = "org.example.autoshorts"
+        applicationId = "io.github.kutlu24.swipeskip"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

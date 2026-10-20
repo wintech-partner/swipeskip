@@ -1,7 +1,7 @@
 plugins { alias(libs.plugins.android.library) }
 
 android {
-    namespace = "org.example.autoshorts.billing.play"
+    namespace = "io.github.kutlu24.swipeskip.billing.play"
     compileSdk = 37
     defaultConfig { minSdk = 26 }
     compileOptions {
