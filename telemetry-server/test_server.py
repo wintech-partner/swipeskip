@@ -62,6 +62,18 @@ class T(unittest.TestCase):
         self.assertIn(b" 408 ", c.recv(200))
         self.assertLess(time.time() - t0, server.SOCKET_TIMEOUT + 2)
         c.close()
+        # trickle client: one byte every second never trips the per-read timeout, but must hit the absolute deadline
+        server.DEADLINE = 3
+        c = so.create_connection(("127.0.0.1", srv.server_port))
+        c.sendall(b"POST /v1/event HTTP/1.1\r\nHost: x\r\nContent-Length: 100\r\n\r\n")
+        t0 = time.time(); closed = False
+        while time.time() - t0 < 8:
+            try:
+                c.sendall(b"x"); time.sleep(1)
+            except OSError:
+                closed = True; break
+        self.assertTrue(closed and time.time() - t0 < 6)
+        c.close()
         srv.shutdown()
 
 

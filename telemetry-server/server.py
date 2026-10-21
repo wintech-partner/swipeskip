@@ -18,6 +18,7 @@ ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 MAX_BODY = 512
 RATE_PER_SEC = 20  # global, all senders together
 SOCKET_TIMEOUT = 5  # seconds; a slow-read client is dropped instead of holding a thread
+DEADLINE = 8  # seconds, absolute per connection: defeats trickle-feeding that resets the per-read timeout
 MAX_CONCURRENT = 32
 slots = threading.BoundedSemaphore(MAX_CONCURRENT)
 
@@ -115,10 +116,21 @@ def make_handler(store, limiter):
         def handle(self):
             if not slots.acquire(blocking=False):  # too many open connections: drop
                 return
+            watchdog = threading.Timer(DEADLINE, self._abort)
+            watchdog.start()
             try:
                 super().handle()
+            except OSError:  # socket closed by the watchdog or the peer
+                pass
             finally:
+                watchdog.cancel()
                 slots.release()
+
+        def _abort(self):
+            try:
+                self.connection.shutdown(socket.SHUT_RDWR)
+            except OSError:
+                pass
 
         def log_message(self, *_):  # no access log: it would contain client addresses
             pass
