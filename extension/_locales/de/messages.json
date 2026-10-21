@@ -98,6 +98,9 @@
     "message": "Standardmäßig aus. Wischt bei einem Werbe-Short zum nächsten; klickt nie auf die Werbung. Kann gegen die YouTube-Bedingungen verstoßen."
   },
   "donate": {
-    "message": "Kostenlos und Open Source. Unterstütze uns auf Liberapay"
+    "message": "Kostenlos und Open Source. Spenden sind freiwillig."
+  },
+  "donateButton": {
+    "message": "Spenden"
   }
 }

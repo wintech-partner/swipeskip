@@ -8,3 +8,5 @@ select, input[type=number] { width: 120px; padding: 3px; }
 button { width: 100%; margin-top: 8px; padding: 8px; border: 0; border-radius: 8px; background: #1a56db; color: #fff; font-weight: 600; cursor: pointer; }
 button.stop { background: #b42318; }
 #state { min-height: 1.2em; margin: 8px 0 0; }
+.donate { display: block; margin-top: 10px; padding: 7px; text-align: center; text-decoration: none; border-radius: 8px; font-weight: 600; background: #f6c915; color: #1a1a1a; }
+.donate:hover { filter: brightness(.95); }

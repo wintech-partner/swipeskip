@@ -98,6 +98,9 @@
     "message": "Off by default. Swipes to the next Short when an ad Short shows; never clicks the ad. May conflict with YouTube's terms."
   },
   "donate": {
-    "message": "Free and open source. Support us on Liberapay"
+    "message": "Free and open source. Donations are optional."
+  },
+  "donateButton": {
+    "message": "Donate"
   }
 }
