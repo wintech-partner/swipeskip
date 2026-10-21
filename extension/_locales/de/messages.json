@@ -90,5 +90,11 @@
   },
   "privacy": {
     "message": "Datenschutz"
+  },
+  "skipAdShorts": {
+    "message": "Werbe-Shorts überspringen"
+  },
+  "skipAdShortsHint": {
+    "message": "Standardmäßig aus. Wischt bei einem Werbe-Short zum nächsten; klickt nie auf die Werbung. Kann gegen die YouTube-Bedingungen verstoßen."
   }
 }

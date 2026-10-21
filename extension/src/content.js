@@ -6,6 +6,7 @@
   // Present only in the Chrome build (chrome-only/telemetry-content.js); a no-op elsewhere.
   const emit = (self.SwipeSkipTelemetry && self.SwipeSkipTelemetry.emit) || function () {};
   const TICK_MS = 250;
+  const AD_SWIPE_DELAY_MS = 1500;
   const FALLBACK_MS = 5000;
   const PENDING_MAX_MS = 9000;
   const USER_GRACE_MS = 8000;
@@ -110,6 +111,11 @@
     }
     const reason = pauseReason(now);
     session.pause = reason;
+    // Opt-in: on an ad Short, move on to the next Short (a swipe, never a click on the ad).
+    if (reason === "ad" && session.settings.skipAdShorts && now - session.lastAdvanceAt >= AD_SWIPE_DELAY_MS) {
+      goNext();
+      return renderBadge();
+    }
     const v = activeVideo();
     const verdict = E.decide({
       now, startedAt: session.startedAt, settings: session.settings, scrolls: session.scrolls,

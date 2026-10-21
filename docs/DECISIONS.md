@@ -42,3 +42,10 @@ The human asked for the Skip-ad tap to also work on regular (non-Shorts) videos.
 - Evidence: two regular-video ads on a real phone (YouTube 21.41.525, German). Ad-only ids: `skip_ad_button`, `ad_progress_text`, `ad_details_container_layout`. Verified on the phone by the human: the tap skips a regular-video ad. Not verified: other languages and versions, any ad type other than these.
 - Risk accepted by the human on 2026-10-20 for both ADR 9 and ADR 10.
 - Same risk as ADR 9 and larger in practice (skippable ads are common in regular videos): automating YouTube's UI may conflict with its terms.
+
+## ADR 11 - Browser extension: opt-in "Move past ad Shorts" (2026-10-21)
+At the human's explicit request the browser extension can swipe to the next Short when an ad Short is showing.
+- Opt-in checkbox, default off, shown with a terms-of-service warning. It only presses YouTube's own Next control (or scrolls the feed); it never clicks the ad, its link or any advertiser page, so the prohibition on tapping ads stands.
+- It does not play, mute or hide the ad differently from what a user swiping would do. It is the same class of risk as ADR 9/10: automating YouTube's UI may conflict with its terms; stores may reject it, in which case the checkbox is removed from the store build.
+- Detection is the unverified-in-general heuristic `ytd-in-feed-ad-layout-renderer` / `ytd-ad-slot-renderer` (seen on one real ad Short, desktop Chrome, 2026-10-21).
+- Not in the Android app. Not reported by telemetry.

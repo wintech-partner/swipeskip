@@ -6,7 +6,7 @@ const base = () => ({ now: 1000, startedAt: 0, settings: E.sanitize({}), scrolls
 
 test("sanitize clamps and defaults", () => {
   const s = E.sanitize({ intervalSec: 1, durationMin: 9999, maxScrolls: -5, mode: "x", tapSkip: "yes" });
-  assert.deepEqual(s, { mode: "videoEnd", intervalSec: 3, durationMin: 240, maxScrolls: 0, tapSkip: false });
+  assert.deepEqual(s, { mode: "videoEnd", intervalSec: 3, durationMin: 240, maxScrolls: 0, tapSkip: false, skipAdShorts: false });
 });
 test("tapSkip is off by default", () => assert.equal(E.sanitize().tapSkip, false));
 test("videoEnd advances only when the video ended", () => {
@@ -30,4 +30,9 @@ test("custom session length is kept inside 15..240", () => {
   assert.equal(E.sanitize({ durationMin: 45 }).durationMin, 45);
   assert.equal(E.sanitize({ durationMin: 5 }).durationMin, 15);
   assert.equal(E.sanitize({ durationMin: 999 }).durationMin, 240);
+});
+test("skipAdShorts is opt-in", () => {
+  assert.equal(E.sanitize().skipAdShorts, false);
+  assert.equal(E.sanitize({ skipAdShorts: true }).skipAdShorts, true);
+  assert.equal(E.sanitize({ skipAdShorts: "yes" }).skipAdShorts, false);
 });

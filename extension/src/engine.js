@@ -8,6 +8,7 @@
     durationMin: 30,
     maxScrolls: 0, // 0 = no cap
     tapSkip: false, // opt-in: click YouTube's own Skip button
+    skipAdShorts: false, // opt-in: swipe past an ad Short (never clicks the ad)
   };
 
   const clamp = (n, lo, hi) => Math.min(hi, Math.max(lo, n));
@@ -19,6 +20,7 @@
     s.durationMin = clamp(Math.round(Number(s.durationMin) || DEFAULTS.durationMin), LIMITS.durationMin, LIMITS.durationMax);
     s.maxScrolls = clamp(Math.round(Number(s.maxScrolls) || 0), 0, LIMITS.scrollsMax);
     s.tapSkip = s.tapSkip === true;
+    s.skipAdShorts = s.skipAdShorts === true;
     return s;
   }
 
