@@ -2,8 +2,8 @@
 
 Packages: `extension/build.sh` → `extension/dist/`. Each store needs the human's own developer account.
 
-## Chrome Web Store: not used
-Decided 2026-10-21: no Chrome Web Store listing (5 USD fee). Chrome users can load `dist/stage-chrome` unpacked; Chrome stays sideload-only. The `-chrome.zip` is the Chromium build and is the package for Edge.
+## Chrome: not a target
+Decided 2026-10-21: no Chrome Web Store listing and no Chrome support promise. Targets are Edge and Firefox. The Chromium build (`-chrome.zip`) exists only because Edge uses it.
 
 ## Edge Add-ons (Microsoft Partner Center)
 Free. Edge accepts the Chromium build, so upload `swipeskip-<v>-chrome.zip` (it has the opt-in telemetry setting).
