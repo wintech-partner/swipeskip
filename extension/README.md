@@ -12,3 +12,5 @@ Desktop sibling of the Android app. Hands-free YouTube Shorts: moves to the next
 Try it unpacked from `dist/stage-chrome` (Chrome: `chrome://extensions` → Developer mode → Load unpacked) or `dist/stage-firefox` (`about:debugging` → Load Temporary Add-on → `manifest.json`).
 
 Status: engine unit-tested, `web-ext lint` clean. The YouTube selectors (next button, ad and comment panel markers) are unverified on live YouTube; see `docs/STORE_SUBMISSION.md`.
+
+Live check (2026-10-21, Chrome, desktop YouTube, content script injected with a stubbed `chrome`): the Next button `#navigation-button-down button` and `#shorts-player video` exist; a click moves to the next Short but the address changes about 4 s later, so the script waits for the address change before advancing again (an earlier 1.2 s fallback skipped a Short). An in-feed ad Short was detected through `ytd-in-feed-ad-layout-renderer` and paused the session. Not yet checked live: end-of-video mode, comments panel, Skip button, the popup.

@@ -6,6 +6,8 @@
   // Present only in the Chrome build (chrome-only/telemetry-content.js); a no-op elsewhere.
   const emit = (self.SwipeSkipTelemetry && self.SwipeSkipTelemetry.emit) || function () {};
   const TICK_MS = 250;
+  const FALLBACK_MS = 5000;
+  const PENDING_MAX_MS = 9000;
   const USER_GRACE_MS = 8000;
   const AWAY_END_MS = 60000;
   const SKIP_MAX_TAPS = 3;
@@ -73,13 +75,14 @@
     session.scrolls += 1;
     session.lastAdvanceAt = Date.now();
     session.lastTime = 0;
+    session.pendingFrom = before; // YouTube changes the address ~4 s after the click: no new advance until it does
     setTimeout(() => {
-      if (session && location.href === before && onShorts()) {
+      if (session && session.pendingFrom === before && location.href === before && onShorts()) {
         const c = document.querySelector("#shorts-container");
         breakage("next_fallback_used");
         if (c && c.scrollBy) c.scrollBy({ top: c.clientHeight, behavior: "smooth" });
       }
-    }, 1200);
+    }, FALLBACK_MS);
   }
 
   function maybeTapSkip(now) {
@@ -100,6 +103,11 @@
     maybeTapSkip(now);
     if (onShorts()) session.lastOnShorts = now;
     else if (now - session.lastOnShorts >= AWAY_END_MS) return stop("away");
+    if (session.pendingFrom) {
+      if (location.href !== session.pendingFrom) { session.pendingFrom = null; session.lastAdvanceAt = now; session.lastTime = 0; }
+      else if (now - session.lastAdvanceAt < PENDING_MAX_MS) return renderBadge();
+      else session.pendingFrom = null;
+    }
     const reason = pauseReason(now);
     session.pause = reason;
     const v = activeVideo();
@@ -118,7 +126,7 @@
     const now = Date.now();
     session = {
       settings: E.sanitize(raw), startedAt: now, lastAdvanceAt: now, lastOnShorts: now,
-      scrolls: 0, reported: {}, lastTime: 0, userUntil: 0, pause: null, skipTaps: 0, lastSkipAt: 0, timer: null, endReason: null,
+      scrolls: 0, reported: {}, pendingFrom: null, lastTime: 0, userUntil: 0, pause: null, skipTaps: 0, lastSkipAt: 0, timer: null, endReason: null,
     };
     session.timer = setInterval(tick, TICK_MS);
     renderBadge();
