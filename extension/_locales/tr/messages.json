@@ -81,5 +81,14 @@
   },
   "end_away": {
     "message": "Oturum bitti: 60 sn Shorts dışındaydın."
+  },
+  "telemetry": {
+    "message": "Anonim kullanım istatistiği paylaş"
+  },
+  "telemetryHint": {
+    "message": "Varsayılan kapalı. Yalnızca sayaçlar: oturumların nasıl bittiği, ayarların ve YouTube sayfasının değişip değişmediği. Video, URL veya geçmiş asla."
+  },
+  "privacy": {
+    "message": "Gizlilik"
   }
 }

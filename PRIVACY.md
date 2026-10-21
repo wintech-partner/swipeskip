@@ -14,5 +14,7 @@ Host this text where the store listing can link to it.
 
 Contact: wintechpartners@gmail.com, or open an issue at https://github.com/wintech-partner/swipeskip/issues, or, for anything sensitive, use a private [security advisory](https://github.com/wintech-partner/swipeskip/security/advisories/new).
 
-## Browser extension
-The SwipeSkip browser extension runs only on www.youtube.com, stores its settings locally in the browser (`storage`), reads no page text, makes no network requests and collects no data.
+## Browser extensions
+**Firefox:** the extension runs only on www.youtube.com, stores its settings locally in the browser, reads no page text, makes no network requests and collects no data.
+
+**Chrome / Edge:** same, plus an optional usage-stats setting that is **off until you tick it** in the popup (untick it to stop at once). When on, the extension sends small anonymous events to our own server: how a session ended (stopped, time limit, Short limit, left Shorts), its length bucket and number of Shorts, your SwipeSkip settings (advance mode, "Skip" option), and breakage signals (for example "the Next button was not found", which tells us YouTube changed its page). Each event also carries the extension version, browser (Chrome/Edge/other) and interface language. We never receive or store video IDs, URLs, titles, channels, page text, watch history, account data, cookies or a user/device identifier. The server stores per-day counters for each field separately (no joint record), keeps no IP addresses and writes no access log. The data is used only to keep the extension working and to fix bugs. Source: `telemetry-server/`.

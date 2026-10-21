@@ -81,5 +81,14 @@
   },
   "end_away": {
     "message": "Sitzung beendet: 60 s nicht in Shorts."
+  },
+  "telemetry": {
+    "message": "Anonyme Nutzungsstatistik teilen"
+  },
+  "telemetryHint": {
+    "message": "Standardmäßig aus. Nur Zähler: wie Sitzungen enden, deine Einstellungen und ob sich die YouTube-Seite geändert hat. Nie Videos, URLs oder Verlauf."
+  },
+  "privacy": {
+    "message": "Datenschutz"
   }
 }

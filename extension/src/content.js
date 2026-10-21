@@ -3,6 +3,8 @@
 (function () {
   const ext = typeof browser !== "undefined" ? browser : chrome;
   const E = self.SwipeSkipEngine;
+  // Present only in the Chrome build (chrome-only/telemetry-content.js); a no-op elsewhere.
+  const emit = (self.SwipeSkipTelemetry && self.SwipeSkipTelemetry.emit) || function () {};
   const TICK_MS = 250;
   const USER_GRACE_MS = 8000;
   const AWAY_END_MS = 60000;
@@ -41,7 +43,8 @@
     if (commentsOpen()) return "comments";
     if (adLikely()) return "ad";
     const v = activeVideo();
-    if (!v || v.paused) return "videoPaused";
+    if (!v) { breakage("video_not_found"); return "videoPaused"; }
+    if (v.paused) return "videoPaused";
     return null;
   }
 
@@ -53,17 +56,27 @@
     return wrapped || t >= v.duration - 0.25 || v.ended;
   }
 
+  function breakage(kind) {
+    if (session.reported[kind]) return;
+    session.reported[kind] = true;
+    emit("breakage", { kind });
+  }
+
   function goNext() {
     const before = location.href;
     const btn = document.querySelector("#navigation-button-down button, #navigation-button-down ytd-button-renderer button");
     if (btn) btn.click();
-    else document.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", code: "ArrowDown", keyCode: 40, bubbles: true }));
+    else {
+      breakage("next_button_missing");
+      document.dispatchEvent(new KeyboardEvent("keydown", { key: "ArrowDown", code: "ArrowDown", keyCode: 40, bubbles: true }));
+    }
     session.scrolls += 1;
     session.lastAdvanceAt = Date.now();
     session.lastTime = 0;
     setTimeout(() => {
       if (session && location.href === before && onShorts()) {
         const c = document.querySelector("#shorts-container");
+        breakage("next_fallback_used");
         if (c && c.scrollBy) c.scrollBy({ top: c.clientHeight, behavior: "smooth" });
       }
     }, 1200);
@@ -75,7 +88,7 @@
     if (!btn) { session.skipTaps = 0; return; }
     if (session.skipTaps >= SKIP_MAX_TAPS || now - session.lastSkipAt < SKIP_GAP_MS) return;
     const target = btn.closest("button") || btn;
-    if (target.offsetParent === null) return;
+    if (target.offsetParent === null) { breakage("skip_not_clickable"); return; }
     target.click();
     session.skipTaps += 1;
     session.lastSkipAt = now;
@@ -105,7 +118,7 @@
     const now = Date.now();
     session = {
       settings: E.sanitize(raw), startedAt: now, lastAdvanceAt: now, lastOnShorts: now,
-      scrolls: 0, lastTime: 0, userUntil: 0, pause: null, skipTaps: 0, lastSkipAt: 0, timer: null, endReason: null,
+      scrolls: 0, reported: {}, lastTime: 0, userUntil: 0, pause: null, skipTaps: 0, lastSkipAt: 0, timer: null, endReason: null,
     };
     session.timer = setInterval(tick, TICK_MS);
     renderBadge();
@@ -114,6 +127,7 @@
   function stop(reason) {
     if (!session) return;
     clearInterval(session.timer);
+    if (reason) emit("session_end", { reason, mode: session.settings.mode, durationMin: session.settings.durationMin, scrolls: session.scrolls, tapSkip: session.settings.tapSkip });
     session = null;
     if (badge) { badge.remove(); badge = null; }
     try { ext.runtime.sendMessage({ type: "ended", reason }).catch(() => {}); } catch (_) { /* popup closed */ }

@@ -81,5 +81,14 @@
   },
   "end_away": {
     "message": "Session ended: you left Shorts for 60 s."
+  },
+  "telemetry": {
+    "message": "Share anonymous usage stats"
+  },
+  "telemetryHint": {
+    "message": "Off by default. Counts only: how sessions end, your settings, and whether YouTube's page changed. Never videos, URLs or history."
+  },
+  "privacy": {
+    "message": "Privacy"
   }
 }
