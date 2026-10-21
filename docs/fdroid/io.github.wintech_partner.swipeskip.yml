@@ -1,3 +1,6 @@
+AntiFeatures:
+  NonFreeDep:
+    en-US: Only useful with the proprietary YouTube app, which it controls through an accessibility service.
 Categories:
   - System
 License: Apache-2.0

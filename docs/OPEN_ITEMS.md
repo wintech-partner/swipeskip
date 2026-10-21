@@ -7,6 +7,7 @@
 
 ## Distribution
 - [~] F-Droid: merge request https://gitlab.com/fdroid/fdroiddata/-/merge_requests/53461 (opened 2026-10-20, tag v0.1.1, recipe in docs/fdroid/). CI pipeline green after two fixes (trailing newline, `scanignore: billing/play`). Waiting for human review; the reviewers may ask to delete `billing/play` or question the Skip tap (ADR 9/10). Next release: tag v0.1.x, F-Droid auto-updates from tags.
+  - 2026-10-21: reviewer Licaon_Kter asked why no NonFreeDep. Verified: the foss runtime classpath has no proprietary library (only billing:noop/api), but F-Droid counts a required proprietary app (YouTube) as NonFreeDep, so we added `AntiFeatures: NonFreeDep` (fork commit 5854e8336). Still open: post a reply on the MR (the token is write_repository only, no API).
 
 ## Needs a physical device with real YouTube
 - [~] Matchers verified from real dumps on YouTube 21.41.525 (German, 2026-10-19): feed, comments, Home, Shorts ad. Still open: other versions/languages, regular watch page, skippable ads, and running the app itself on a phone. Original item: every matcher in `platform/youtube/.../YouTubeMatchers.kt` is an unverified candidate (feed, comments, other-screen and ad ids; localized labels).
