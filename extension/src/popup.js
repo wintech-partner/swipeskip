@@ -22,13 +22,13 @@
   function readForm() {
     return E.sanitize({
       mode: $("mode").value, intervalSec: $("intervalSec").value, durationMin: $("durationMin").value,
-      maxScrolls: $("maxScrolls").value, tapSkip: $("tapSkip").checked, skipAdShorts: $("skipAdShorts").checked,
+      maxScrolls: $("maxScrolls").value, tapSkip: !!$("tapSkip") && $("tapSkip").checked, skipAdShorts: $("skipAdShorts").checked,
     });
   }
 
   function fillForm(s) {
     $("mode").value = s.mode; $("intervalSec").value = s.intervalSec; $("durationMin").value = s.durationMin;
-    $("maxScrolls").value = s.maxScrolls; $("tapSkip").checked = s.tapSkip; $("skipAdShorts").checked = s.skipAdShorts;
+    $("maxScrolls").value = s.maxScrolls; if ($("tapSkip")) $("tapSkip").checked = s.tapSkip; $("skipAdShorts").checked = s.skipAdShorts;
     $("intervalRow").hidden = s.mode !== "timer";
   }
 

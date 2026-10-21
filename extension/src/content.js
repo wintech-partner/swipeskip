@@ -111,6 +111,8 @@
     const target = btn.closest("button") || btn;
     if (target.offsetParent === null) { breakage("skip_not_clickable"); return; }
     target.click();
+    // YouTube ignores synthetic clicks on Skip; where the build has it (Firefox, ADR 12), a second try moves the ad to its end.
+    if (session.skipTaps >= 1 && self.SwipeSkipAdSeek) self.SwipeSkipAdSeek();
     session.skipTaps += 1;
     session.lastSkipAt = now;
   }

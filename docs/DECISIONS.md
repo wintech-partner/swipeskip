@@ -49,3 +49,10 @@ At the human's explicit request the browser extension can swipe to the next Shor
 - It does not play, mute or hide the ad differently from what a user swiping would do. It is the same class of risk as ADR 9/10: automating YouTube's UI may conflict with its terms; stores may reject it, in which case the checkbox is removed from the store build.
 - Detection is the unverified-in-general heuristic `ytd-in-feed-ad-layout-renderer` / `ytd-ad-slot-renderer` (seen on one real ad Short, desktop Chrome, 2026-10-21).
 - Not in the Android app. Not reported by telemetry.
+
+## ADR 12 - Firefox extension: skip skippable ads by moving the ad video to its end (2026-10-21)
+At the human's explicit request ("remove the no-bypass rule; add this feature to Firefox even if Edge doesn't have it").
+- Finding that forced it (live, desktop Chrome, regular-video ad, 2026-10-21): `button.ytp-skip-ad-button` matches and is visible, but `.click()` and a dispatched pointer/mouse sequence do not skip; a real mouse click does. A content script cannot make a trusted click, so the ADR 9/10 approach cannot work in a browser extension.
+- Behaviour: opt-in "Click YouTube's Skip button" (off by default, Firefox popup only). With the Skip button showing, the script clicks it; if that does not work, the next try (2 s later) sets the ad video's `currentTime` to its duration. At most 3 tries per ad. It only acts while the Skip button is visible, so unskippable ads are left alone; extending it to those is a separate decision.
+- Code: `extension/firefox-only/ad-seek.js`, added to the Firefox build only. The Edge build and popup have no such option (the checkbox is removed by `build.sh`). Not in the Android app (a real click works there, ADR 9/10).
+- Risk, stated plainly: this does bypass part of the ad (the viewer does not watch it), unlike a click on YouTube's own Skip control. It may conflict with YouTube's terms, and AMO reviewers may question it; if rejected, remove `firefox-only/` and the checkbox from the store build. Unverified live: the seek itself (the click failure was verified, the seek was not run end to end in Firefox).

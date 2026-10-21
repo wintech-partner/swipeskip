@@ -15,7 +15,7 @@ Open-source Android app (Kotlin, Compose, Material 3, Gradle KTS) that scrolls Y
 ## Product scope and hard prohibitions (every flavor, forever)
 - No automated tapping of ads, sponsored links or advertiser pages.
 - No artificial engagement: no automated likes, subscriptions, comments, views or watch-time inflation.
-- No bypassing ads or timers. **Amended 2026-10-19 at the human's explicit request (ADR 9):** the app may tap the platform's own Skip control only when the user switched on the opt-in "Tap Skip automatically" setting (off by default, `foss` only). There is no manual Skip button (removed 2026-10-19: it added nothing over YouTube's own button). It never taps the ad itself, a badge, a sponsored link or anything but a node categorised as the skip control, at most 3 taps per ad, 2 s apart.
+- No bypassing ads or timers. **Amended 2026-10-21 at the human's explicit request (ADR 12):** the Firefox extension may also move a skippable ad's video to its end when YouTube's Skip button is showing and a click on it did not skip. Edge and Android do not do this. **Amended 2026-10-19 at the human's explicit request (ADR 9):** the app may tap the platform's own Skip control only when the user switched on the opt-in "Tap Skip automatically" setting (off by default, `foss` only). There is no manual Skip button (removed 2026-10-19: it added nothing over YouTube's own button). It never taps the ad itself, a badge, a sponsored link or anything but a node categorised as the skip control, at most 3 taps per ad, 2 s apart.
 - No anti-detection or human-mimicking behavior (no evasion jitter, no hiding the service or notification).
 - No collection of credentials, tokens, watch history or on-screen content.
 

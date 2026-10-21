@@ -17,7 +17,7 @@ c=dist/stage-edge
 cp edge-only/telemetry-content.js edge-only/popup-telemetry.js "$c/src/"
 sed "s#__TELEMETRY_URL__#$TELEMETRY_URL#" edge-only/background.js > "$c/src/background.js"
 python3 - "$c" "$TELEMETRY_URL" <<'PY'
-import json, sys
+import json, re, sys
 d, url = sys.argv[1:]
 m = json.load(open(f"{d}/manifest.json"))
 m["content_scripts"][0]["js"] = ["src/engine.js", "src/telemetry-content.js", "src/content.js"]
@@ -26,12 +26,22 @@ m["background"] = {"service_worker": "src/background.js"}
 m.pop("browser_specific_settings", None)
 json.dump(m, open(f"{d}/manifest.json", "w"), indent=2)
 html = open(f"{d}/src/popup.html").read().replace("<!--TELEMETRY_UI-->", open("edge-only/popup-telemetry.html").read().rstrip())
+# The Skip-click option does not work in Chromium (YouTube ignores synthetic clicks), so the Edge popup omits it
+html = re.sub(r"<!--FF_ONLY-->.*?<!--/FF_ONLY-->\n?", "", html, flags=re.S)
 open(f"{d}/src/popup.html", "w").write(html)
 PY
 
-# Firefox build: strip the marker, assert it cannot send anything anywhere
+# Firefox build: skip-ad seek (ADR 12), strip the markers, assert it cannot send anything anywhere
 f=dist/stage-firefox
-sed -i '/<!--TELEMETRY_UI-->/d' "$f/src/popup.html"
+cp firefox-only/ad-seek.js "$f/src/"
+python3 - "$f" <<'PY'
+import json, sys
+d = sys.argv[1]
+m = json.load(open(f"{d}/manifest.json"))
+m["content_scripts"][0]["js"] = ["src/engine.js", "src/ad-seek.js", "src/content.js"]
+json.dump(m, open(f"{d}/manifest.json", "w"), indent=2)
+PY
+sed -i -e '/<!--TELEMETRY_UI-->/d' -e 's/<!--\/\?FF_ONLY-->//g' "$f/src/popup.html"
 if grep -rnE "fetch\(|XMLHttpRequest|sendBeacon|WebSocket|service_worker|https?://[^\"' ]*(onrender|workers)" "$f/src" "$f/manifest.json"; then
   echo "network code leaked into the Firefox build" >&2; exit 1
 fi
