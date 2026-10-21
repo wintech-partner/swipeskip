@@ -20,9 +20,23 @@
 
   const onShorts = () => location.pathname.startsWith("/shorts/");
 
+  // YouTube dropped `ytd-reel-video-renderer[is-active]` in some layouts (2026-10-21, desktop): the Shorts sit in
+  // `.reel-video-in-sequence-new` items and the active one is the item across the middle of the viewport.
+  function activeReel() {
+    const old = document.querySelector("ytd-reel-video-renderer[is-active]");
+    if (old) return old;
+    const mid = innerHeight / 2;
+    for (const el of document.querySelectorAll(".reel-video-in-sequence-new")) {
+      const r = el.getBoundingClientRect();
+      if (r.top <= mid && r.bottom >= mid) return el;
+    }
+    return null;
+  }
+
   function activeVideo() {
+    const reel = activeReel();
     return (
-      document.querySelector("ytd-reel-video-renderer[is-active] video") ||
+      (reel && reel.querySelector("video")) ||
       document.querySelector("#shorts-player video") ||
       document.querySelector("video.html5-main-video") ||
       document.querySelector("video")
@@ -30,8 +44,9 @@
   }
 
   function adLikely() {
-    const root = document.querySelector("ytd-reel-video-renderer[is-active]") || document;
-    return !!(root.querySelector("ytd-ad-slot-renderer, ytd-in-feed-ad-layout-renderer, .ytp-ad-player-overlay-layout") ||
+    // Only the active Short counts: neighbouring Shorts are preloaded and may be ads.
+    const reel = activeReel();
+    return !!((reel && reel.querySelector("ytd-ad-slot-renderer, ytd-in-feed-ad-layout-renderer, .ytp-ad-player-overlay-layout")) ||
       document.querySelector(".ad-showing"));
   }
 
