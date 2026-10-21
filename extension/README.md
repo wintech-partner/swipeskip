@@ -4,7 +4,7 @@ Desktop sibling of the Android app. Hands-free YouTube Shorts: moves to the next
 
 - Session length 15 to 240 min (no unlimited), optional Short cap, a visible badge with Stop on the page.
 - Pauses while you use the page (wheel, keys, mouse; 8 s), while comments are open, while an ad is likely showing, while the video is paused or the tab is hidden. Ends after 60 s away from Shorts.
-- Opt-in, off by default: click YouTube's own Skip button (max 3 clicks per ad). Same ADR 9/10 caveat as the app: this may conflict with YouTube's terms.
+- Opt-in, off by default: click YouTube's own Skip button (max 3 clicks per ad), on Shorts and on regular `/watch` videos (a running session stays alive on a watch page while this is on). Same ADR 9/10 caveat as the app: this may conflict with YouTube's terms.
 - Edge build only: an opt-in (off by default) anonymous usage-stats setting, see `PRIVACY.md`. The Firefox build contains no telemetry code and no network permission (`build.sh` fails if that changes).
 - Never clicks ads, never likes/subscribes/comments, reads no page text, no analytics unless the Edge user opts in. Permissions: `storage`, `www.youtube.com` (Edge adds the collector's address).
 

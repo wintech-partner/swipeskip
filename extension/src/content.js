@@ -19,6 +19,8 @@
   let badge = null;
 
   const onShorts = () => location.pathname.startsWith("/shorts/");
+  // With "click Skip" on, a regular video page also keeps the session alive so its skippable ads get the Skip click.
+  const inScope = () => onShorts() || (!!session && session.settings.tapSkip && location.pathname === "/watch");
 
   // YouTube dropped `ytd-reel-video-renderer[is-active]` in some layouts (2026-10-21, desktop): the Shorts sit in
   // `.reel-video-in-sequence-new` items and the active one is the item across the middle of the viewport.
@@ -117,7 +119,7 @@
     if (!session) return;
     const now = Date.now();
     maybeTapSkip(now);
-    if (onShorts()) session.lastOnShorts = now;
+    if (inScope()) session.lastOnShorts = now;
     else if (now - session.lastOnShorts >= AWAY_END_MS) return stop("away");
     if (session.pendingFrom) {
       if (location.href !== session.pendingFrom) { session.pendingFrom = null; session.lastAdvanceAt = now; session.lastTime = 0; }
