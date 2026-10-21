@@ -24,7 +24,7 @@
     "message": "Saniye"
   },
   "duration": {
-    "message": "Oturum (dk)"
+    "message": "Oturum (dk, 15–240)"
   },
   "maxScrolls": {
     "message": "En çok Short (0 = sınırsız)"

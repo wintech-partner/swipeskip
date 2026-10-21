@@ -28,7 +28,6 @@ KINDS = {"next_button_missing", "next_fallback_used", "video_not_found", "skip_n
 BROWSERS = {"chrome", "edge", "other"}
 VERSION_RE = re.compile(r"^\d{1,3}\.\d{1,3}\.\d{1,3}$")
 LOCALE_RE = re.compile(r"^[a-z]{2,3}(-[A-Za-z]{2,4})?$")
-DURATIONS = {15, 30, 60, 120, 240}
 
 
 def bucket_scrolls(n):
@@ -57,7 +56,7 @@ def validate(doc):
         if set(data) != {"reason", "mode", "durationMin", "scrolls", "tapSkip"}:
             return None
         scrolls = data["scrolls"]
-        if data["reason"] not in REASONS or data["mode"] not in MODES or data["durationMin"] not in DURATIONS:
+        if data["reason"] not in REASONS or data["mode"] not in MODES or not (isinstance(data["durationMin"], int) and not isinstance(data["durationMin"], bool) and 15 <= data["durationMin"] <= 240):
             return None
         if not (isinstance(scrolls, int) and not isinstance(scrolls, bool) and 0 <= scrolls <= 10000):
             return None

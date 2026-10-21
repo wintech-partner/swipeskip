@@ -24,7 +24,7 @@
     "message": "Seconds"
   },
   "duration": {
-    "message": "Session (min)"
+    "message": "Session (min, 15–240)"
   },
   "maxScrolls": {
     "message": "Max Shorts (0 = no cap)"

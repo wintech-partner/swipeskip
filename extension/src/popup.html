@@ -18,9 +18,8 @@
       <input id="intervalSec" type="number" min="3" max="120" step="1">
     </label>
     <label><span data-i18n="duration"></span>
-      <select id="durationMin">
-        <option>15</option><option>30</option><option>60</option><option>120</option><option>240</option>
-      </select>
+      <input id="durationMin" type="number" min="15" max="240" step="1" list="durPresets">
+      <datalist id="durPresets"><option value="15"><option value="30"><option value="60"><option value="120"><option value="240"></datalist>
     </label>
     <label><span data-i18n="maxScrolls"></span>
       <input id="maxScrolls" type="number" min="0" max="10000" step="1">

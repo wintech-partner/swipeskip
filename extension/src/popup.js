@@ -27,7 +27,7 @@
   }
 
   function fillForm(s) {
-    $("mode").value = s.mode; $("intervalSec").value = s.intervalSec; $("durationMin").value = String(s.durationMin);
+    $("mode").value = s.mode; $("intervalSec").value = s.intervalSec; $("durationMin").value = s.durationMin;
     $("maxScrolls").value = s.maxScrolls; $("tapSkip").checked = s.tapSkip;
     $("intervalRow").hidden = s.mode !== "timer";
   }

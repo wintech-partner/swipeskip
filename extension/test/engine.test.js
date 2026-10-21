@@ -26,3 +26,8 @@ test("limits stop the session even when paused", () => {
   const settings = E.sanitize({ maxScrolls: 3 });
   assert.equal(E.decide({ ...base(), settings, scrolls: 3, paused: true }), "stop-scrolls");
 });
+test("custom session length is kept inside 15..240", () => {
+  assert.equal(E.sanitize({ durationMin: 45 }).durationMin, 45);
+  assert.equal(E.sanitize({ durationMin: 5 }).durationMin, 15);
+  assert.equal(E.sanitize({ durationMin: 999 }).durationMin, 240);
+});

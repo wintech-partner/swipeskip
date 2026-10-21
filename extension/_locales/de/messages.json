@@ -24,7 +24,7 @@
     "message": "Sekunden"
   },
   "duration": {
-    "message": "Sitzung (Min.)"
+    "message": "Sitzung (Min., 15–240)"
   },
   "maxScrolls": {
     "message": "Max. Shorts (0 = unbegrenzt)"

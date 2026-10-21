@@ -23,6 +23,10 @@ class T(unittest.TestCase):
         bad = dict(OK_BREAK, locale="en; DROP TABLE")
         self.assertIsNone(server.validate(bad))
         self.assertIsNone(server.validate("x"))
+        custom = json.loads(json.dumps(OK_END)); custom["data"]["durationMin"] = 45
+        self.assertIsNotNone(server.validate(custom))
+        custom["data"]["durationMin"] = 500
+        self.assertIsNone(server.validate(custom))
 
     def test_http_roundtrip(self):
         server.ADMIN_TOKEN = "tok"
