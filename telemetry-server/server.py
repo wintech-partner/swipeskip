@@ -6,6 +6,7 @@ IP, never a user id). Anything outside the allowlists below is rejected.
 import json
 import os
 import re
+import socket
 import sqlite3
 import threading
 import time
@@ -16,6 +17,9 @@ DB_PATH = os.environ.get("DB_PATH", "/data/stats.db")
 ADMIN_TOKEN = os.environ.get("ADMIN_TOKEN", "")
 MAX_BODY = 512
 RATE_PER_SEC = 20  # global, all senders together
+SOCKET_TIMEOUT = 5  # seconds; a slow-read client is dropped instead of holding a thread
+MAX_CONCURRENT = 32
+slots = threading.BoundedSemaphore(MAX_CONCURRENT)
 
 REASONS = {"user", "stop-duration", "stop-scrolls", "away"}
 MODES = {"videoEnd", "timer"}
@@ -106,6 +110,16 @@ class Limiter:
 
 def make_handler(store, limiter):
     class H(BaseHTTPRequestHandler):
+        timeout = SOCKET_TIMEOUT  # applied to the socket by StreamRequestHandler
+
+        def handle(self):
+            if not slots.acquire(blocking=False):  # too many open connections: drop
+                return
+            try:
+                super().handle()
+            finally:
+                slots.release()
+
         def log_message(self, *_):  # no access log: it would contain client addresses
             pass
 
@@ -130,6 +144,8 @@ def make_handler(store, limiter):
                 return self._send(413 if length > MAX_BODY else 400)
             try:
                 pairs = validate(json.loads(self.rfile.read(length)))
+            except (socket.timeout, TimeoutError):
+                return self._send(408)
             except (ValueError, UnicodeDecodeError):
                 pairs = None
             if pairs is None:

@@ -52,6 +52,16 @@ class T(unittest.TestCase):
         stats = json.load(urllib.request.urlopen(req))
         self.assertEqual(stats["end_reason"], {"user": 2})
         self.assertEqual(stats["breakage"], {"next_button_missing": 1})
+        # slow-read client: promises a body, sends none; must be cut off with 408 within the timeout
+        import socket as so, time
+        server.SOCKET_TIMEOUT  # exists
+        c = so.create_connection(("127.0.0.1", srv.server_port))
+        c.sendall(b"POST /v1/event HTTP/1.1\r\nHost: x\r\nContent-Length: 100\r\n\r\n")
+        c.settimeout(server.SOCKET_TIMEOUT + 3)
+        t0 = time.time()
+        self.assertIn(b" 408 ", c.recv(200))
+        self.assertLess(time.time() - t0, server.SOCKET_TIMEOUT + 2)
+        c.close()
         srv.shutdown()
 
 
