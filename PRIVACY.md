@@ -13,3 +13,6 @@ Host this text where the store listing can link to it.
 - The open-source (`foss`) build has no internet permission. The Play build adds the permissions required by Google Play Billing, used only for the optional premium purchase.
 
 Contact: wintechpartners@gmail.com, or open an issue at https://github.com/wintech-partner/swipeskip/issues, or, for anything sensitive, use a private [security advisory](https://github.com/wintech-partner/swipeskip/security/advisories/new).
+
+## Browser extension
+The SwipeSkip browser extension runs only on www.youtube.com, stores its settings locally in the browser (`storage`), reads no page text, makes no network requests and collects no data.

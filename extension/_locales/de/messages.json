@@ -1,0 +1,85 @@
+{
+  "extName": {
+    "message": "SwipeSkip – Shorts automatisch weiter"
+  },
+  "extDescription": {
+    "message": "Freihändig YouTube Shorts: wechselt zum nächsten Short, wenn einer endet oder nach einem Timer. Begrenzte, sichtbare Sitzungen. Keine Datenerhebung."
+  },
+  "start": {
+    "message": "Starten"
+  },
+  "stop": {
+    "message": "Stopp"
+  },
+  "mode": {
+    "message": "Weiter"
+  },
+  "modeEnd": {
+    "message": "Wenn ein Short endet"
+  },
+  "modeTimer": {
+    "message": "Alle N Sekunden"
+  },
+  "interval": {
+    "message": "Sekunden"
+  },
+  "duration": {
+    "message": "Sitzung (Min.)"
+  },
+  "maxScrolls": {
+    "message": "Max. Shorts (0 = unbegrenzt)"
+  },
+  "tapSkip": {
+    "message": "YouTubes Überspringen-Button klicken"
+  },
+  "tapSkipHint": {
+    "message": "Standardmäßig aus. Es wird nur YouTubes eigener Überspringen-Button geklickt, nie die Anzeige selbst. Kann gegen die YouTube-Bedingungen verstoßen."
+  },
+  "notAffiliated": {
+    "message": "Nicht mit YouTube oder Google verbunden."
+  },
+  "openYoutube": {
+    "message": "Öffne zuerst youtube.com/shorts in diesem Tab."
+  },
+  "running": {
+    "message": "Läuft: noch $MIN$ Min., $N$ Shorts",
+    "placeholders": {
+      "min": {
+        "content": "$1"
+      },
+      "n": {
+        "content": "$2"
+      }
+    }
+  },
+  "pause_notShorts": {
+    "message": "pausiert: nicht in Shorts"
+  },
+  "pause_hidden": {
+    "message": "pausiert: Tab verborgen"
+  },
+  "pause_touched": {
+    "message": "pausiert: du nutzt die Seite"
+  },
+  "pause_comments": {
+    "message": "pausiert: Kommentare offen"
+  },
+  "pause_ad": {
+    "message": "pausiert: vermutlich Werbung"
+  },
+  "pause_videoPaused": {
+    "message": "pausiert: Video angehalten"
+  },
+  "end_user": {
+    "message": "Sitzung beendet."
+  },
+  "end_stop-duration": {
+    "message": "Sitzung beendet: Zeit abgelaufen."
+  },
+  "end_stop-scrolls": {
+    "message": "Sitzung beendet: Short-Limit erreicht."
+  },
+  "end_away": {
+    "message": "Sitzung beendet: 60 s nicht in Shorts."
+  }
+}

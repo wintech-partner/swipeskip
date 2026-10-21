@@ -1,0 +1,85 @@
+{
+  "extName": {
+    "message": "SwipeSkip – Shorts Auto Scroll"
+  },
+  "extDescription": {
+    "message": "Hands-free YouTube Shorts: moves to the next Short when one ends or on a timer you choose. Bounded, visible sessions. No data collected."
+  },
+  "start": {
+    "message": "Start"
+  },
+  "stop": {
+    "message": "Stop"
+  },
+  "mode": {
+    "message": "Advance"
+  },
+  "modeEnd": {
+    "message": "When a Short ends"
+  },
+  "modeTimer": {
+    "message": "Every N seconds"
+  },
+  "interval": {
+    "message": "Seconds"
+  },
+  "duration": {
+    "message": "Session (min)"
+  },
+  "maxScrolls": {
+    "message": "Max Shorts (0 = no cap)"
+  },
+  "tapSkip": {
+    "message": "Click YouTube's Skip button"
+  },
+  "tapSkipHint": {
+    "message": "Off by default. Only YouTube's own Skip button is clicked, never the ad itself. This may conflict with YouTube's terms."
+  },
+  "notAffiliated": {
+    "message": "Not affiliated with or endorsed by YouTube or Google."
+  },
+  "openYoutube": {
+    "message": "Open youtube.com/shorts in this tab first."
+  },
+  "running": {
+    "message": "Running: $MIN$ min left, $N$ Shorts",
+    "placeholders": {
+      "min": {
+        "content": "$1"
+      },
+      "n": {
+        "content": "$2"
+      }
+    }
+  },
+  "pause_notShorts": {
+    "message": "paused: not on Shorts"
+  },
+  "pause_hidden": {
+    "message": "paused: tab hidden"
+  },
+  "pause_touched": {
+    "message": "paused: you are using the page"
+  },
+  "pause_comments": {
+    "message": "paused: comments open"
+  },
+  "pause_ad": {
+    "message": "paused: ad likely showing"
+  },
+  "pause_videoPaused": {
+    "message": "paused: video paused"
+  },
+  "end_user": {
+    "message": "Session stopped."
+  },
+  "end_stop-duration": {
+    "message": "Session ended: time limit reached."
+  },
+  "end_stop-scrolls": {
+    "message": "Session ended: Short limit reached."
+  },
+  "end_away": {
+    "message": "Session ended: you left Shorts for 60 s."
+  }
+}

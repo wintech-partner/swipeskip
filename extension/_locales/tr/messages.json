@@ -1,0 +1,85 @@
+{
+  "extName": {
+    "message": "SwipeSkip – Shorts Otomatik Kaydırma"
+  },
+  "extDescription": {
+    "message": "Eller serbest YouTube Shorts: bir Short bitince veya seçtiğin zamanlayıcıyla sonrakine geçer. Süreli ve görünür oturumlar. Veri toplamaz."
+  },
+  "start": {
+    "message": "Başlat"
+  },
+  "stop": {
+    "message": "Durdur"
+  },
+  "mode": {
+    "message": "Geçiş"
+  },
+  "modeEnd": {
+    "message": "Short bitince"
+  },
+  "modeTimer": {
+    "message": "Her N saniyede"
+  },
+  "interval": {
+    "message": "Saniye"
+  },
+  "duration": {
+    "message": "Oturum (dk)"
+  },
+  "maxScrolls": {
+    "message": "En çok Short (0 = sınırsız)"
+  },
+  "tapSkip": {
+    "message": "YouTube'un Atla düğmesine tıkla"
+  },
+  "tapSkipHint": {
+    "message": "Varsayılan kapalı. Yalnızca YouTube'un kendi Atla düğmesine tıklanır, reklamın kendisine asla. YouTube şartlarıyla çelişebilir."
+  },
+  "notAffiliated": {
+    "message": "YouTube veya Google ile bağlantılı değildir."
+  },
+  "openYoutube": {
+    "message": "Önce bu sekmede youtube.com/shorts aç."
+  },
+  "running": {
+    "message": "Çalışıyor: $MIN$ dk kaldı, $N$ Short",
+    "placeholders": {
+      "min": {
+        "content": "$1"
+      },
+      "n": {
+        "content": "$2"
+      }
+    }
+  },
+  "pause_notShorts": {
+    "message": "duraklatıldı: Shorts'ta değil"
+  },
+  "pause_hidden": {
+    "message": "duraklatıldı: sekme gizli"
+  },
+  "pause_touched": {
+    "message": "duraklatıldı: sayfayı kullanıyorsun"
+  },
+  "pause_comments": {
+    "message": "duraklatıldı: yorumlar açık"
+  },
+  "pause_ad": {
+    "message": "duraklatıldı: reklam olabilir"
+  },
+  "pause_videoPaused": {
+    "message": "duraklatıldı: video durdu"
+  },
+  "end_user": {
+    "message": "Oturum durduruldu."
+  },
+  "end_stop-duration": {
+    "message": "Oturum bitti: süre doldu."
+  },
+  "end_stop-scrolls": {
+    "message": "Oturum bitti: Short sınırına ulaşıldı."
+  },
+  "end_away": {
+    "message": "Oturum bitti: 60 sn Shorts dışındaydın."
+  }
+}

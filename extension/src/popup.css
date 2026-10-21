@@ -1,0 +1,10 @@
+:root { color-scheme: light dark; font: 14px system-ui, sans-serif; }
+body { width: 280px; margin: 0; padding: 12px 14px 14px; }
+h1 { font-size: 16px; margin: 0 0 10px; color: #1a56db; }
+label { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 8px 0; }
+label.check { justify-content: flex-start; }
+select, input[type=number] { width: 120px; padding: 3px; }
+.hint { font-size: 11px; opacity: .75; margin: 4px 0; }
+button { width: 100%; margin-top: 8px; padding: 8px; border: 0; border-radius: 8px; background: #1a56db; color: #fff; font-weight: 600; cursor: pointer; }
+button.stop { background: #b42318; }
+#state { min-height: 1.2em; margin: 8px 0 0; }
