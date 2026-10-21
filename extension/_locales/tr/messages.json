@@ -96,5 +96,8 @@
   },
   "skipAdShortsHint": {
     "message": "Varsayılan kapalı. Reklam Short'u gelince sonrakine kaydırır; reklama asla tıklamaz. YouTube şartlarıyla çelişebilir."
+  },
+  "donate": {
+    "message": "Ücretsiz ve açık kaynak. Liberapay'de destek ol"
   }
 }

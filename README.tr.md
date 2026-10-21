@@ -42,3 +42,7 @@ export JAVA_HOME=/jdk17/yolu ANDROID_HOME=/Android/Sdk/yolu
 ```
 
 Lisans: Apache-2.0.
+
+## Destek
+
+SwipeSkip ücretsizdir ve ücretsiz kalacak. İşinize yaradıysa [Liberapay](https://liberapay.com/wintech-partners) üzerinden destek olabilirsiniz. Bağış isteğe bağlıdır ve hiçbir şeyin kilidini açmaz.

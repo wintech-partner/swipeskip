@@ -24,3 +24,6 @@ Packages: `extension/build.sh` → `extension/dist/`. Both stores need the human
 - Code `telemetry-server/` (stdlib Python + SQLite), compose service `swipeskip-telemetry` in home-server-infra, public only through a Render relay (see home-server-infra `docs/RENDER_PROXY.md`) pointed at Caddy `:8082` (POST `/v1/event` only).
 - Relay LIVE (2026-10-21) at https://swipeskip-telemetry.onrender.com (free plan: sleeps after 15 min idle, first event after a pause may be lost). Relay env: `TS_AUTHKEY`, `TS_HOSTNAME=swipeskip-telemetry-relay`, `TARGET_HOST=<home server Tailscale IP>`, `TARGET_PORT=8082`. The relay's public https URL must equal `TELEMETRY_URL` at build time (default `https://swipeskip-telemetry.onrender.com`).
 - Read stats on the tailnet: `curl -H "Authorization: Bearer $SWIPESKIP_TELEMETRY_ADMIN_TOKEN" http://<tailscale-ip>:7870/stats?days=7`.
+
+## Price and donations
+Free everywhere (decided 2026-10-21). Donations via https://liberapay.com/wintech-partners (F-Droid `Liberapay:` field, `.github/FUNDING.yml`, README, extension popup). Do not mention a paid version in the F-Droid build (it would add the NonFreeAdd anti-feature).
