@@ -3,7 +3,7 @@
 (function () {
   const ext = typeof browser !== "undefined" ? browser : chrome;
   const E = self.SwipeSkipEngine;
-  // Present only in the Chrome build (chrome-only/telemetry-content.js); a no-op elsewhere.
+  // Present only in the Edge build (edge-only/telemetry-content.js); a no-op elsewhere.
   const emit = (self.SwipeSkipTelemetry && self.SwipeSkipTelemetry.emit) || function () {};
   const TICK_MS = 250;
   const AD_SWIPE_DELAY_MS = 1500;

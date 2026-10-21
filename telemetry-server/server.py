@@ -1,4 +1,4 @@
-"""SwipeSkip usage-stats collector (Chrome build, opt-in).
+"""SwipeSkip usage-stats collector (Edge build, opt-in).
 
 Stores only per-day counters for each field separately (never a joint record, never an
 IP, never a user id). Anything outside the allowlists below is rejected.

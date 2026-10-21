@@ -1,4 +1,4 @@
-// Chrome build only. Hands anonymous events to the background worker, which checks consent.
+// Edge build only. Hands anonymous events to the background worker, which checks consent.
 (function () {
   const ext = chrome;
   self.SwipeSkipTelemetry = {

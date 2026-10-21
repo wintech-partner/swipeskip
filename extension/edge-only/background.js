@@ -1,4 +1,4 @@
-// Chrome build only. Sends one small anonymous event per message, and only after the user opted in.
+// Edge build only. Sends one small anonymous event per message, and only after the user opted in.
 // No retry queue, no stored events, no identifier, cookies omitted.
 const TELEMETRY_URL = "__TELEMETRY_URL__";
 const VERSION = chrome.runtime.getManifest().version;
