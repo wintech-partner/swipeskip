@@ -1,13 +1,19 @@
 # Browser extension store submission
 
-Packages: `extension/build.sh` → `extension/dist/`. Both stores need the human's own developer account.
+Packages: `extension/build.sh` → `extension/dist/`. Each store needs the human's own developer account.
 
-## Chrome Web Store
-1. Developer account at https://chrome.google.com/webstore/devconsole (one-time 5 USD fee).
-2. New item → upload `swipeskip-<v>-chrome.zip`.
-3. Listing: use the description in `extension/_locales/en/messages.json`; category Productivity; screenshots 1280x800 (to be taken).
-4. Privacy tab: single purpose = "Automatically advance to the next YouTube Short in a user-started session." Permission justifications: `storage` = saves the user's settings locally; host `www.youtube.com` = the content script that advances Shorts. Data usage (Chrome build, opt-in): tick "Website content"? NO. Tick only what applies: none of the listed personal data categories is collected; the anonymous counters are usage statistics sent with the user's consent. Certify: not sold, not used for unrelated purposes, not used for creditworthiness. Single purpose of the data: keep the extension working and fix bugs. Privacy policy URL: https://github.com/wintech-partner/swipeskip/blob/main/PRIVACY.md
-5. Submit for review.
+## Chrome Web Store: not used
+Decided 2026-10-21: no Chrome Web Store listing (5 USD fee). Chrome users can load `dist/stage-chrome` unpacked; Chrome stays sideload-only. The `-chrome.zip` is the Chromium build and is the package for Edge.
+
+## Edge Add-ons (Microsoft Partner Center)
+Free. Edge accepts the Chromium build, so upload `swipeskip-<v>-chrome.zip` (it has the opt-in telemetry setting).
+1. Sign in at https://partner.microsoft.com/dashboard/microsoftedge/ with a Microsoft account and register as an Edge extensions developer (individual, no fee).
+2. Microsoft Edge → Overview → "Create new extension" → upload `swipeskip-<v>-chrome.zip`.
+3. Availability: public, all markets, no hide-from-store.
+4. Properties: category Productivity; privacy policy URL https://github.com/wintech-partner/swipeskip/blob/main/PRIVACY.md. No login is needed to use the extension.
+5. Store listings (add English first, then tr, de): description from `extension/_locales/en/messages.json`, logo 300x300 (`icons/icon-128.png` scaled up or a new one), at least one screenshot 1280x800 or 640x480, optional search terms. Do not use the word "YouTube" as a brand; "YouTube Shorts" only to describe compatibility, keep the not-affiliated notice.
+6. Notes for certification (visible to testers only): "Open https://www.youtube.com/shorts, click the toolbar icon, Start. The extension swipes to the next Short. Only opt-in setting that touches ads: 'Move past ad Shorts' swipes on, never clicks. Usage stats are off by default."
+7. Publish. Review usually takes up to 7 business days.
 
 ## Firefox (addons.mozilla.org)
 1. Free account at https://addons.mozilla.org/developers/.
