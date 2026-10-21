@@ -73,10 +73,10 @@
   "end_user": {
     "message": "Session stopped."
   },
-  "end_stop-duration": {
+  "end_stop_duration": {
     "message": "Session ended: time limit reached."
   },
-  "end_stop-scrolls": {
+  "end_stop_scrolls": {
     "message": "Session ended: Short limit reached."
   },
   "end_away": {

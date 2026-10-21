@@ -73,10 +73,10 @@
   "end_user": {
     "message": "Oturum durduruldu."
   },
-  "end_stop-duration": {
+  "end_stop_duration": {
     "message": "Oturum bitti: süre doldu."
   },
-  "end_stop-scrolls": {
+  "end_stop_scrolls": {
     "message": "Oturum bitti: Short sınırına ulaşıldı."
   },
   "end_away": {

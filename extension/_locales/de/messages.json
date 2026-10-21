@@ -73,10 +73,10 @@
   "end_user": {
     "message": "Sitzung beendet."
   },
-  "end_stop-duration": {
+  "end_stop_duration": {
     "message": "Sitzung beendet: Zeit abgelaufen."
   },
-  "end_stop-scrolls": {
+  "end_stop_scrolls": {
     "message": "Sitzung beendet: Short-Limit erreicht."
   },
   "end_away": {

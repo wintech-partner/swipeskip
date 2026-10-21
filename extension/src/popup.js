@@ -40,7 +40,7 @@
     document.querySelectorAll("#f select, #f input").forEach((el) => { el.disabled = running; });
     let msg = "";
     if (running) msg = t("running", [String(Math.ceil(st.remainingSec / 60)), String(st.scrolls)]) + (st.pause ? " · " + t("pause_" + st.pause) : "");
-    else if (st && st.endReason) msg = t("end_" + st.endReason);
+    else if (st && st.endReason) msg = t("end_" + String(st.endReason).replace(/-/g, "_"));
     $("state").textContent = msg;
   }
 
