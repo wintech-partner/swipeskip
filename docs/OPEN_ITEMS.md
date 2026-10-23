@@ -26,7 +26,8 @@
 ## Decisions
 - [x] The human accepted the ADR 9 and ADR 10 risk on 2026-10-20 (automatic Skip tapping may conflict with YouTube's terms; Play will likely reject it, so it exists in `foss` only).
 - [ ] Play submission; whether `AUTO_TIMER` may ship there (`AUTO_TIMER_ENABLED` flag in `app/build.gradle.kts`); accessibility-tool declaration (default: no).
-- [ ] Release signing keys, repo creation/push, F-Droid/IzzyOnDroid submissions, pricing, Play product id (`-PpremiumProductId`). The purchase flow UI is not implemented, only restore.
+- [~] Release signing key created 2026-10-23 (keystore + password in `~/.config/swipeskip-release/`, back them up; cert SHA-256 `c5d9c032e8e97d32d0eeb2747f0e80ef77dde72d4d30b501250e29a755d0656f`). v0.1.1 GitHub release published, signed by hand from the tag. Still open: add repo secrets `RELEASE_KEYSTORE_B64`, `RELEASE_KEYSTORE_PASSWORD`, `RELEASE_KEY_ALIAS` (=`swipeskip`) so the release workflow signs future tags (needs admin on wintech-partner/swipeskip; our account has push only).
+- [ ] IzzyOnDroid submission, pricing, Play product id (`-PpremiumProductId`). The purchase flow UI is not implemented, only restore.
 - [ ] Optional floating on-screen indicator/control is not implemented (the notification is the control).
 
 ## Accessibility (see ACCESSIBILITY_STATEMENT.md)
