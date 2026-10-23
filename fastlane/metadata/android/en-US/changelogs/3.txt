@@ -1,0 +1,1 @@
+Reproducible build: the APK no longer embeds git revision info, so it matches F-Droid's build bit for bit.

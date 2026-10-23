@@ -1,0 +1,1 @@
+Tekrarlanabilir derleme: APK artık git bilgisi içermiyor, F-Droid derlemesiyle birebir aynı.

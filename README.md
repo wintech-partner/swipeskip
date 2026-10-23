@@ -6,7 +6,7 @@ Free, open-source Android companion that scrolls **YouTube Shorts** hands-free, 
 >
 > This project was developed with AI assistance and human review.
 
-**Status: pre-release (0.1.1).** It builds, the pure logic and UI are unit-tested, and it has been run on one real phone (Android 14, YouTube 21.41.525, German UI): scrolling, pausing, Stop, screen-off and the Skip tap on a regular video work there. Other devices, YouTube versions and languages are untested; see [docs/OPEN_ITEMS.md](docs/OPEN_ITEMS.md).
+**Status: pre-release (0.1.2).** It builds, the pure logic and UI are unit-tested, and it has been run on one real phone (Android 14, YouTube 21.41.525, German UI): scrolling, pausing, Stop, screen-off and the Skip tap on a regular video work there. Other devices, YouTube versions and languages are untested; see [docs/OPEN_ITEMS.md](docs/OPEN_ITEMS.md).
 
 ## What it does
 

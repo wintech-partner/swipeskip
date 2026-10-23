@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.2
+- Reproducible build: AGP no longer embeds git revision info (`vcsInfo.include = false`), so the APK is identical across checkouts.
+
 ## 0.1.1
 - First run on a real phone (Android 14, YouTube 21.41.525, German): scrolling, pauses, notification Stop, screen-off and 60 s-away end work.
 - Watch mode: a bounded session that only taps YouTube's own Skip button during regular videos (`foss` only, ADR 10).

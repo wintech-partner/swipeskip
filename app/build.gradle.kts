@@ -12,8 +12,8 @@ android {
         applicationId = "io.github.wintech_partner.swipeskip"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.1.1"
+        versionCode = 3
+        versionName = "0.1.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,6 +49,9 @@ android {
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             // Signing config is injected by CI from secrets; nothing is stored in the repository.
+            // AGP otherwise embeds the git revision (or NO_VALID_GIT_FOUND) in META-INF, so the
+            // APK differs between checkouts and F-Droid's reproducible-build check fails.
+            vcsInfo.include = false
         }
     }
 
