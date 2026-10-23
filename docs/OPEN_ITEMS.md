@@ -35,3 +35,6 @@
 
 ## Translations
 All non-English strings (tr, de, es, fr, pt-BR, ru, ar, id, hi, ja, vi, ko, th, fil, bn, ur; the last eight were added 2026-10-20, Urdu is a second right-to-left language with no RTL check yet) are **machine-drafted** and need native review. The Turkish text was written to read naturally but is unreviewed. YouTube's own localized labels in the matchers are also from general knowledge, unverified.
+
+## Firefox load check (2026-10-23)
+- [x] Firefox 157.0.1 (snap): `dist/stage-firefox` (copied to `~/snap/firefox/common/swipeskip-firefox/`) installs as a temporary add-on via geckodriver (`extension/test/firefox-load-check.py`), id swipeskip@wintech-partner.github.io. Cause of the earlier failure was snap confinement: pick folders under `~/snap/firefox/common/`, not hidden or `/tmp` paths. Engine unit tests 8/8 pass. Still untested: the ad fast-forward on a real YouTube ad.
