@@ -14,12 +14,13 @@ AutoName: SwipeSkip
 
 RepoType: git
 Repo: https://github.com/wintech-partner/swipeskip.git
-Binaries: https://github.com/wintech-partner/swipeskip/releases/download/v%v/swipeskip-%v-foss-release.apk
+Binaries: 
+  https://github.com/wintech-partner/swipeskip/releases/download/v%v/swipeskip-%v-foss-release.apk
 
 Builds:
-  - versionName: 0.1.1
-    versionCode: 2
-    commit: v0.1.1
+  - versionName: 0.1.2
+    versionCode: 3
+    commit: v0.1.2
     subdir: app
     gradle:
       - foss
@@ -30,5 +31,5 @@ AllowedAPKSigningKeys: c5d9c032e8e97d32d0eeb2747f0e80ef77dde72d4d30b501250e29a75
 
 AutoUpdateMode: Version
 UpdateCheckMode: Tags
-CurrentVersion: 0.1.1
-CurrentVersionCode: 2
+CurrentVersion: 0.1.2
+CurrentVersionCode: 3
