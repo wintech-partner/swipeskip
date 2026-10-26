@@ -40,3 +40,6 @@ All non-English strings (tr, de, es, fr, pt-BR, ru, ar, id, hi, ja, vi, ko, th, 
 
 ## Firefox load check (2026-10-23)
 - [x] Firefox 157.0.1 (snap): `dist/stage-firefox` (copied to `~/snap/firefox/common/swipeskip-firefox/`) installs as a temporary add-on via geckodriver (`extension/test/firefox-load-check.py`), id swipeskip@wintech-partner.github.io. Cause of the earlier failure was snap confinement: pick folders under `~/snap/firefox/common/`, not hidden or `/tmp` paths. Engine unit tests 8/8 pass. Still untested: the ad fast-forward on a real YouTube ad.
+
+## Firefox add-on published (2026-10-26)
+- [x] addons.mozilla.org: version 0.1.0 passed automated screening and is tentatively approved, live at https://addons.mozilla.org/addon/swipeskip-shorts-auto-scroll/ (ref Addon#3103855). A human reviewer may still ask for changes or take it down later; watch the developer mailbox. Next releases: upload a new `swipeskip-<v>-firefox.zip` as a new version.
