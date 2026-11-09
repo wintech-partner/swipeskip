@@ -1,5 +1,6 @@
 // SwipeSkip content script: runs a bounded, visible, user-started session on youtube.com.
-// It reads no page text, stores no history and makes no network requests.
+// It reads no page text beyond comparing an ad player button's label to a fixed Skip word list (nothing is kept),
+// stores no history and makes no network requests.
 (function () {
   const ext = typeof browser !== "undefined" ? browser : chrome;
   const E = self.SwipeSkipEngine;
@@ -103,9 +104,21 @@
     }, FALLBACK_MS);
   }
 
+  // Fallback when YouTube renames the Skip classes: a button inside the ad player whose own label is exactly a known
+  // Skip word in any supported language. Only runs while an ad is showing; the label is compared and dropped.
+  function findSkipByLabel() {
+    const player = document.querySelector("#movie_player.ad-showing, .html5-video-player.ad-showing");
+    if (!player) return null;
+    for (const el of player.querySelectorAll("button, [role=button]")) {
+      if (el.offsetParent === null) continue;
+      if (E.isSkipLabel(el.getAttribute("aria-label")) || E.isSkipLabel(el.textContent) || E.isSkipLabel(el.getAttribute("title"))) return el;
+    }
+    return null;
+  }
+
   function maybeTapSkip(now) {
     if (!session.settings.tapSkip) return;
-    const btn = document.querySelector(SKIP_SELECTOR);
+    const btn = document.querySelector(SKIP_SELECTOR) || findSkipByLabel();
     if (!btn) { session.skipTaps = 0; return; }
     if (session.skipTaps >= SKIP_MAX_TAPS || now - session.lastSkipAt < SKIP_GAP_MS) return;
     const target = btn.closest("button") || btn;

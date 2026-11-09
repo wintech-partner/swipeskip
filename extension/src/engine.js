@@ -36,7 +36,35 @@
     return ctx.ended ? "advance" : "wait";
   }
 
-  const api = { LIMITS, DEFAULTS, sanitize, decide };
+  // Skip-button labels in the 16 UI languages of the Android app (same list as YouTubeMatchers.kt). Fallback only: the
+  // CSS classes are tried first. Whole-string match after trimming, so a creator's text containing "skip ad" never counts.
+  // Only German was ever seen on a device; the rest are unverified.
+  const SKIP_LABELS = new Set([
+    "skip ad", "skip ads", "skip", // en
+    "reklamı atla", "atla", // tr
+    "anzeige überspringen", "werbung überspringen", "überspringen", // de
+    "omitir anuncio", "omitir", // es
+    "passer l'annonce", "ignorer l'annonce", "passer", // fr
+    "pular anúncio", "pular", // pt-BR
+    "пропустить рекламу", "пропустить", // ru
+    "تخطي الإعلان", "تخطي", // ar
+    "lewati iklan", "lewati", // id
+    "विज्ञापन छोड़ें", "छोड़ें", // hi
+    "広告をスキップ", "スキップ", // ja
+    "광고 건너뛰기", "건너뛰기", // ko
+    "bỏ qua quảng cáo", "bỏ qua", // vi
+    "ข้ามโฆษณา", "ข้าม", // th
+    "i-skip ang ad", "i-skip", // fil
+    "বিজ্ঞাপন এড়িয়ে যান", "এড়িয়ে যান", // bn
+    "اشتہار چھوڑیں", "چھوڑیں", // ur
+  ]);
+
+  function isSkipLabel(text) {
+    if (typeof text !== "string") return false;
+    return SKIP_LABELS.has(text.replace(/\s+/g, " ").trim().toLowerCase());
+  }
+
+  const api = { LIMITS, DEFAULTS, sanitize, decide, SKIP_LABELS, isSkipLabel };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.SwipeSkipEngine = api;
 })(typeof self !== "undefined" ? self : this);
