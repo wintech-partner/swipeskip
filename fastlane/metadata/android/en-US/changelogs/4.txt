@@ -1,0 +1,3 @@
+- Home now warns when Android switched the accessibility service off while the app was closed, with shortcuts to the accessibility and battery settings.
+- The Skip button is found by its language-independent id, so Watch mode no longer depends on the UI language (only German was verified on a device).
+- Skip labels for all 16 languages added as fallback.

@@ -1,0 +1,3 @@
+- Android uygulama kapalıyken erişilebilirlik hizmetini kapatırsa ana ekran artık uyarıyor; erişilebilirlik ve pil ayarlarına kısayol sunuyor.
+- Atla düğmesi dilden bağımsız kimliğiyle bulunuyor, böylece İzleme modu arayüz diline bağlı kalmıyor (cihazda yalnızca Almanca doğrulandı).
+- 16 dilin tamamı için Atla etiketleri yedek olarak eklendi.

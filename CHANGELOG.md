@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+- Home warns when Android switched the accessibility service off while the app was closed (card with shortcuts to accessibility settings and app info / Battery).
+- The Skip button is found by its language-independent id `skip_ad_button` inside the ad container; labels for all 16 languages are only a fallback. Verified on a device in German only.
+
 ## 0.1.2
 - Reproducible build: AGP no longer embeds git revision info (`vcsInfo.include = false`), so the APK is identical across checkouts.
 
