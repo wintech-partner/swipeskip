@@ -126,6 +126,21 @@ class YouTubeShortsAdapterTest {
         assertTrue(adapter.skipControlCategory != adapter.categorizeDescription("Ad"))
     }
 
+    @Test fun `skip label is recognised in all sixteen languages`() {
+        listOf(
+            "Skip ad", "Reklamı atla", "Werbung überspringen", "Omitir anuncio", "Passer l'annonce", "Pular anúncio",
+            "Пропустить рекламу", "تخطي الإعلان", "Lewati iklan", "विज्ञापन छोड़ें", "広告をスキップ", "광고 건너뛰기",
+            "Bỏ qua quảng cáo", "ข้ามโฆษณา", "I-skip ang ad", "বিজ্ঞাপন এড়িয়ে যান", "اشتہار چھوڑیں",
+        ).forEach { assertEquals(it, YouTubeMatchers.Categories.SKIP_AD, adapter.categorizeDescription(it)) }
+    }
+
+    @Test fun `skip button id marks SkipLikelyAvailable without any label`() {
+        val state = adapter.adMonitor.evaluate(root(node("reel_recycler"), node("skip_ad_button")))
+        assertTrue(state is AdState.SkipLikelyAvailable)
+        assertEquals(setOf("skip_ad_button"), adapter.skipControlIds)
+        assertTrue(adapter.skipControlIds.all { it in adapter.adContainerIds })
+    }
+
     // ---- ad monitor ----
 
     @Test fun `feed without ad signals is NoAdEvidence`() =

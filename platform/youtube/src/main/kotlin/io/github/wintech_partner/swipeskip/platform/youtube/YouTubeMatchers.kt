@@ -42,6 +42,12 @@ object YouTubeMatchers {
          * (`skip_ad_button` is the clickable FrameLayout; its child carries the "Werbung überspringen" description).
          */
         val skipContainers = setOf("reel_player_delegated_overlay", "skip_ad_button")
+
+        /**
+         * The Skip button itself, independent of the UI language. It appeared only once the ad was skippable (absent
+         * from the real "ad before skip" and "no ad" dumps, present in the skippable one, 2026-10-20).
+         */
+        val skipButtons = setOf("skip_ad_button")
     }
 
     object Categories {
@@ -64,6 +70,15 @@ object YouTubeMatchers {
             "пропустить рекламу", // ru
             "تخطي الإعلان", // ar
             "lewati iklan", // id
+            // Fallback only: the language-independent id above is what normally finds the button. Unverified on a device.
+            "विज्ञापन छोड़ें", // hi
+            "広告をスキップ", // ja
+            "광고 건너뛰기", // ko
+            "bỏ qua quảng cáo", // vi
+            "ข้ามโฆษณา", // th
+            "i-skip ang ad", // fil
+            "বিজ্ঞাপন এড়িয়ে যান", // bn
+            "اشتہار چھوڑیں", // ur
         ),
         Categories.AD_BADGE to setOf(
             "ad", "sponsored", // en
@@ -75,6 +90,14 @@ object YouTubeMatchers {
             "реклама", // ru
             "إعلان", // ar
             "iklan", // id
+            "विज्ञापन", // hi
+            "広告", // ja
+            "광고", // ko
+            "quảng cáo", // vi
+            "โฆษณา", // th
+            "ad", // fil (same word as en)
+            "বিজ্ঞাপন", // bn
+            "اشتہار", // ur
         ),
     )
 

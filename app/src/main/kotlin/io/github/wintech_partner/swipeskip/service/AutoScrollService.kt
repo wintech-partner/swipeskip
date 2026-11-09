@@ -82,7 +82,10 @@ class AutoScrollService : AccessibilityService() {
 
     private fun findSkip(node: AccessibilityNodeInfo, category: String, budget: IntArray): AccessibilityNodeInfo? {
         if (budget[0]-- <= 0) return null
-        if (node.isVisibleToUser && node.contentDescription?.toString()?.let(host.adapter::categorizeDescription) == category) return node
+        if (node.isVisibleToUser) {
+            val byId = node.viewIdResourceName?.substringAfter(":id/") in host.adapter.skipControlIds
+            if (byId || node.contentDescription?.toString()?.let(host.adapter::categorizeDescription) == category) return node
+        }
         for (i in 0 until node.childCount) {
             val child = node.getChild(i) ?: continue
             findSkip(child, category, budget)?.let { return it }

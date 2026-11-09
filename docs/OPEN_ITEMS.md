@@ -21,6 +21,7 @@
 
 - [ ] Motion thresholds (8/11/14 m/s^2, 1.2 s cooldown) and whether walking causes false triggers.
 - [~] Watch mode (ADR 10): the real regular-video Skip button was dumped (`skip_ad_button`, 2026-10-20); the human confirmed on the phone (2026-10-20, German UI) that Watch mode skips a regular-video ad (the first attempt failed only because the mode had not been selected). Open: `ACTION_CLICK` on it, other languages/versions, other ad types.
+- [~] 2026-11-09: the Skip button is now also found by its language-independent id `skip_ad_button` (inside the ad container), with labels for all 16 UI languages as fallback. Only German was ever seen on a device; the other 8 added labels (hi, ja, ko, vi, th, fil, bn, ur) are unverified guesses, and id-based tapping is untested in other languages.
 - [ ] Skip control: verify the real Skip button label/ids and that `ACTION_CLICK` works on it. `tapsSkipOnlyWhenTheUserOptedIn` passes against the fake app only.
 
 ## Decisions

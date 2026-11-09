@@ -27,6 +27,7 @@ class YouTubeShortsAdapter(extraPackages: Set<String> = emptySet()) : PlatformAd
     override val adMonitor: AdvertisementMonitor = YouTubeAdMonitor(packageNames)
     override val skipControlCategory: String = YouTubeMatchers.Categories.SKIP_AD
     override val adContainerIds: Set<String> = YouTubeMatchers.Ids.skipContainers
+    override val skipControlIds: Set<String> = YouTubeMatchers.Ids.skipButtons
 
     override fun classify(snapshot: NodeSnapshot): ScreenState {
         if (snapshot.packageName !in packageNames) return ScreenState.Unknown
@@ -75,7 +76,8 @@ class YouTubeAdMonitor(private val packageNames: Set<String> = setOf(YouTubeMatc
         idHits.forEach { signals += "id:$it" }
         val badge = nodes.any { it.descriptionCategory == YouTubeMatchers.Categories.AD_BADGE }
         if (badge) signals += "desc:${YouTubeMatchers.Categories.AD_BADGE}"
-        val skip = nodes.any { it.descriptionCategory == YouTubeMatchers.Categories.SKIP_AD }
+        // The id works in every UI language; the label is the fallback.
+        val skip = nodes.any { it.descriptionCategory == YouTubeMatchers.Categories.SKIP_AD || it.shortId() in YouTubeMatchers.Ids.skipButtons }
         if (skip) signals += "desc:${YouTubeMatchers.Categories.SKIP_AD}"
 
         return when {

@@ -38,4 +38,10 @@ interface PlatformAdapter {
      * inside one of these subtrees, so a look-alike label elsewhere on screen can never trigger a click.
      */
     val adContainerIds: Set<String>
+
+    /**
+     * Short view-id names of nodes that ARE the platform's own Skip control, whatever language the UI is in. Only
+     * consulted inside [adContainerIds], like the label match. Empty when the platform has no such stable id.
+     */
+    val skipControlIds: Set<String> get() = emptySet()
 }
