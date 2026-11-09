@@ -104,14 +104,19 @@
     }, FALLBACK_MS);
   }
 
-  // Fallback when YouTube renames the Skip classes: a button inside the ad player whose own label is exactly a known
-  // Skip word in any supported language. Only runs while an ad is showing; the label is compared and dropped.
+  // Fallback when YouTube renames the Skip classes. Looks only inside YouTube's Skip containers of an ad that is
+  // showing, never at links or advertiser call-to-action elements, and needs a full Skip phrase as the button's own
+  // label in a supported language. The label is compared and dropped.
+  const SKIP_CONTAINERS = ".ytp-ad-skip-button-container, .ytp-ad-skip-button-slot, .ytp-skip-ad";
+  const NOT_SKIP = "a, [href], .ytp-ad-button, .ytp-ad-visit-advertiser-button, .ytp-ad-overlay-container, .ytp-ad-player-overlay-instream-info";
   function findSkipByLabel() {
-    const player = document.querySelector("#movie_player.ad-showing, .html5-video-player.ad-showing");
-    if (!player) return null;
-    for (const el of player.querySelectorAll("button, [role=button]")) {
-      if (el.offsetParent === null) continue;
-      if (E.isSkipLabel(el.getAttribute("aria-label")) || E.isSkipLabel(el.textContent) || E.isSkipLabel(el.getAttribute("title"))) return el;
+    if (!document.querySelector("#movie_player.ad-showing, .html5-video-player.ad-showing")) return null;
+    for (const box of document.querySelectorAll(SKIP_CONTAINERS)) {
+      if (box.closest(NOT_SKIP)) continue;
+      for (const el of box.querySelectorAll("button, [role=button]")) {
+        if (el.offsetParent === null || el.closest(NOT_SKIP)) continue;
+        if (E.isSkipLabel(el.getAttribute("aria-label")) || E.isSkipLabel(el.textContent) || E.isSkipLabel(el.getAttribute("title"))) return el;
+      }
     }
     return null;
   }

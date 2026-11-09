@@ -37,9 +37,9 @@ test("skipAdShorts is opt-in", () => {
   assert.equal(E.sanitize({ skipAdShorts: "yes" }).skipAdShorts, false);
 });
 
-test("skip labels: all 16 languages match, whole string only", () => {
+test("skip labels: all 16 languages match as full phrases only", () => {
   for (const t of ["Skip ad", " Skip Ad ", "Reklamı atla", "Werbung überspringen", "Omitir anuncio", "Passer l'annonce", "Pular anúncio",
     "Пропустить рекламу", "تخطي الإعلان", "Lewati iklan", "विज्ञापन छोड़ें", "広告をスキップ", "광고 건너뛰기", "Bỏ qua quảng cáo",
-    "ข้ามโฆษณา", "I-skip ang ad", "বিজ্ঞাপন এড়িয়ে যান", "اشتہار چھوڑیں", "Skip"]) assert.equal(E.isSkipLabel(t), true, t);
-  for (const t of ["Creator: skip ad now", "Skip intro and watch", "Add to playlist", "", null, undefined, 5]) assert.equal(E.isSkipLabel(t), false, String(t));
+    "ข้ามโฆษณา", "I-skip ang ad", "বিজ্ঞাপন এড়িয়ে যান", "اشتہار چھوڑیں"]) assert.equal(E.isSkipLabel(t), true, t);
+  for (const t of ["Creator: skip ad now", "Skip intro and watch", "Skip", "Atla", "Passer", "Visit advertiser", "Add to playlist", "", null, undefined, 5]) assert.equal(E.isSkipLabel(t), false, String(t));
 });
