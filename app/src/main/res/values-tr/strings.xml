@@ -15,6 +15,8 @@
     <string name="home_open_settings">Ayarlar</string>
     <string name="home_open_help">Yardım</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">Android, uygulama kapalıyken SwipeSkip\'in erişilebilirlik hizmetini kapattı. Hizmeti yeniden açın. Tekrarını önlemek için uygulama bilgisinde Pil\'i Sınırsız yapın ve SwipeSkip\'i uyuyan uygulamalar listesinden uzak tutun.</string>
+    <string name="home_open_battery">Uygulama bilgisini aç (Pil)</string>
     <string name="home_needs_setup">Başlamadan önce kurulumu tamamlamanız gerekiyor.</string>
     <string name="home_continue_setup">Kuruluma devam et</string>
     <string name="home_last_stop">Son oturum şu nedenle bitti: %1$s</string>

@@ -15,6 +15,8 @@
     <string name="home_open_settings">การตั้งค่า</string>
     <string name="home_open_help">ความช่วยเหลือ</string>
     <string name="home_open_premium">พรีเมียม</string>
+    <string name="home_service_dropped">Android ปิดบริการการช่วยเหลือพิเศษของ SwipeSkip ขณะที่แอปปิดอยู่ โปรดเปิดใหม่ หากต้องการไม่ให้เกิดซ้ำ ให้เปิดข้อมูลแอป ตั้งค่าแบตเตอรี่เป็นไม่จำกัด และอย่าให้ SwipeSkip อยู่ในรายการแอปที่พักการทำงาน</string>
+    <string name="home_open_battery">เปิดข้อมูลแอป (แบตเตอรี่)</string>
     <string name="home_needs_setup">ต้องตั้งค่าก่อนจึงจะเริ่มได้</string>
     <string name="home_continue_setup">ตั้งค่าต่อ</string>
     <string name="home_last_stop">เซสชันครั้งล่าสุดสิ้นสุดเพราะ: %1$s</string>

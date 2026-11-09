@@ -15,6 +15,8 @@
     <string name="home_open_settings">সেটিংস</string>
     <string name="home_open_help">সাহায্য</string>
     <string name="home_open_premium">প্রিমিয়াম</string>
+    <string name="home_service_dropped">অ্যাপ বন্ধ থাকার সময় Android SwipeSkip-এর অ্যাক্সেসিবিলিটি সার্ভিস বন্ধ করে দিয়েছে। আবার চালু করুন। এটি এড়াতে অ্যাপ তথ্য খুলে ব্যাটারি \'সীমাহীন\' করুন এবং SwipeSkip-কে স্লিপিং অ্যাপ তালিকার বাইরে রাখুন।</string>
+    <string name="home_open_battery">অ্যাপ তথ্য খুলুন (ব্যাটারি)</string>
     <string name="home_needs_setup">শুরু করার আগে সেটআপ প্রয়োজন।</string>
     <string name="home_continue_setup">সেটআপ চালিয়ে যান</string>
     <string name="home_last_stop">শেষ সেশন শেষ হয়েছে: %1$s</string>

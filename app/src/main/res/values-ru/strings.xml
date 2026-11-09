@@ -15,6 +15,8 @@
     <string name="home_open_settings">Настройки</string>
     <string name="home_open_help">Справка</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">Android отключил службу специальных возможностей SwipeSkip, пока приложение было закрыто. Включите её снова. Чтобы это не повторялось: откройте информацию о приложении, выберите для батареи «Без ограничений» и не добавляйте SwipeSkip в список спящих приложений.</string>
+    <string name="home_open_battery">Открыть сведения о приложении (батарея)</string>
     <string name="home_needs_setup">Перед запуском нужна настройка.</string>
     <string name="home_continue_setup">Продолжить настройку</string>
     <string name="home_last_stop">Последний сеанс завершён: %1$s</string>

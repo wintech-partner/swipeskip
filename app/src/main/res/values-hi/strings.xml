@@ -15,6 +15,8 @@
     <string name="home_open_settings">सेटिंग्स</string>
     <string name="home_open_help">सहायता</string>
     <string name="home_open_premium">प्रीमियम</string>
+    <string name="home_service_dropped">ऐप बंद होने के दौरान Android ने SwipeSkip की एक्सेसिबिलिटी सेवा बंद कर दी। इसे फिर चालू करें। दोबारा न हो, इसके लिए ऐप जानकारी खोलें, बैटरी को अप्रतिबंधित करें और SwipeSkip को स्लीपिंग ऐप्स सूची से बाहर रखें।</string>
+    <string name="home_open_battery">ऐप जानकारी खोलें (बैटरी)</string>
     <string name="home_needs_setup">शुरू करने से पहले सेटअप ज़रूरी है।</string>
     <string name="home_continue_setup">सेटअप जारी रखें</string>
     <string name="home_last_stop">पिछला सत्र समाप्त: %1$s</string>

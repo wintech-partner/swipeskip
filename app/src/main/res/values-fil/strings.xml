@@ -15,6 +15,8 @@
     <string name="home_open_settings">Mga setting</string>
     <string name="home_open_help">Tulong</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">Pinatay ng Android ang accessibility service ng SwipeSkip habang sarado ang app. I-on itong muli. Para hindi na maulit: buksan ang app info, itakda ang Battery sa Unrestricted, at huwag isama ang SwipeSkip sa listahan ng sleeping apps.</string>
+    <string name="home_open_battery">Buksan ang app info (Battery)</string>
     <string name="home_needs_setup">Kailangan ng setup bago ka makapagsimula.</string>
     <string name="home_continue_setup">Ituloy ang setup</string>
     <string name="home_last_stop">Natapos ang huling sesyon: %1$s</string>

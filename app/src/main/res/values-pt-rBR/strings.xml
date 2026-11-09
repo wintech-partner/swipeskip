@@ -15,6 +15,8 @@
     <string name="home_open_settings">Configurações</string>
     <string name="home_open_help">Ajuda</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">O Android desativou o serviço de acessibilidade do SwipeSkip enquanto o app estava fechado. Ative-o novamente. Para evitar isso: abra as informações do app, defina Bateria como Sem restrições e mantenha o SwipeSkip fora da lista de apps em suspensão.</string>
+    <string name="home_open_battery">Abrir info do app (Bateria)</string>
     <string name="home_needs_setup">É preciso concluir a configuração antes de começar.</string>
     <string name="home_continue_setup">Continuar configuração</string>
     <string name="home_last_stop">A última sessão terminou: %1$s</string>

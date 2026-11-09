@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -42,7 +43,12 @@ fun HomeScreen(
     val live = session.isActive || session is SessionState.Starting
     var notificationsAllowed by remember { mutableStateOf(vm.notificationsAllowed()) }
     // The permission is changed in system settings, so look again whenever we come back.
-    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) { notificationsAllowed = vm.notificationsAllowed() }
+    var serviceDropped by remember { mutableStateOf(vm.serviceDropped()) }
+    LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
+        notificationsAllowed = vm.notificationsAllowed()
+        serviceDropped = vm.serviceDropped()
+    }
+    val context = LocalContext.current
 
     ScreenScaffold(stringResource(R.string.app_name), onBack = null) {
         Card(Modifier.fillMaxWidth()) {
@@ -57,6 +63,20 @@ fun HomeScreen(
                 if (live) {
                     Text(pluralStringResource(R.plurals.scroll_count, state.stats.scrollCount, state.stats.scrollCount))
                     Text(stringResource(state.observation.adState.labelRes()), style = MaterialTheme.typography.bodyMedium)
+                }
+            }
+        }
+
+        if (serviceDropped && !state.serviceConnected) {
+            Card(Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text(stringResource(R.string.home_service_dropped), color = MaterialTheme.colorScheme.error)
+                    Button(onClick = { context.openAccessibilitySettings() }, Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.onb_open_accessibility))
+                    }
+                    OutlinedButton(onClick = { context.openAppInfo() }, Modifier.fillMaxWidth()) {
+                        Text(stringResource(R.string.home_open_battery))
+                    }
                 }
             }
         }

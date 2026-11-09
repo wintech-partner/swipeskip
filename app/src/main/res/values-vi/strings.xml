@@ -15,6 +15,8 @@
     <string name="home_open_settings">Cài đặt</string>
     <string name="home_open_help">Trợ giúp</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">Android đã tắt dịch vụ trợ năng của SwipeSkip khi ứng dụng đang đóng. Hãy bật lại. Để tránh lặp lại: mở thông tin ứng dụng, đặt Pin thành Không hạn chế và đừng để SwipeSkip trong danh sách ứng dụng ngủ.</string>
+    <string name="home_open_battery">Mở thông tin ứng dụng (Pin)</string>
     <string name="home_needs_setup">Cần thiết lập trước khi bạn có thể bắt đầu.</string>
     <string name="home_continue_setup">Tiếp tục thiết lập</string>
     <string name="home_last_stop">Phiên trước đã kết thúc: %1$s</string>

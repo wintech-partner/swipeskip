@@ -22,6 +22,7 @@ import io.github.wintech_partner.swipeskip.core.model.AutomationMode
 import io.github.wintech_partner.swipeskip.core.model.SessionState
 import io.github.wintech_partner.swipeskip.diagnostics.DiagnosticsInfo
 import io.github.wintech_partner.swipeskip.service.LiveObservation
+import io.github.wintech_partner.swipeskip.service.ServiceWatch
 
 data class UiState(
     val settings: AppSettings? = null,
@@ -77,6 +78,8 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
 
     fun notificationsAllowed(): Boolean = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
         ContextCompat.checkSelfPermission(getApplication(), Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
+
+    fun serviceDropped(): Boolean = ServiceWatch.wasDropped(getApplication())
 
     fun youtubeVersion(): String? = runCatching {
         @Suppress("DEPRECATION")

@@ -15,6 +15,8 @@
     <string name="home_open_settings">الإعدادات</string>
     <string name="home_open_help">المساعدة</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">أوقف أندرويد خدمة إمكانية الوصول في SwipeSkip أثناء إغلاق التطبيق. شغّلها من جديد. ولمنع تكرار ذلك: افتح معلومات التطبيق واضبط البطارية على «غير مقيّد» وأبقِ SwipeSkip خارج قائمة التطبيقات النائمة.</string>
+    <string name="home_open_battery">فتح معلومات التطبيق (البطارية)</string>
     <string name="home_needs_setup">يلزم إكمال الإعداد قبل البدء.</string>
     <string name="home_continue_setup">متابعة الإعداد</string>
     <string name="home_last_stop">انتهت آخر جلسة: %1$s</string>

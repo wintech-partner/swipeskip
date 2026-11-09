@@ -15,6 +15,8 @@
     <string name="home_open_settings">Einstellungen</string>
     <string name="home_open_help">Hilfe</string>
     <string name="home_open_premium">Premium</string>
+    <string name="home_service_dropped">Android hat den Bedienungshilfen-Dienst von SwipeSkip abgeschaltet, während die App geschlossen war. Schalten Sie ihn wieder ein. Damit das nicht erneut passiert: App-Info öffnen, Akku auf „Unbeschränkt“ stellen und SwipeSkip nicht in die Liste der schlafenden Apps aufnehmen.</string>
+    <string name="home_open_battery">App-Info öffnen (Akku)</string>
     <string name="home_needs_setup">Vor dem Start ist die Einrichtung nötig.</string>
     <string name="home_continue_setup">Einrichtung fortsetzen</string>
     <string name="home_last_stop">Letzte Sitzung beendet: %1$s</string>

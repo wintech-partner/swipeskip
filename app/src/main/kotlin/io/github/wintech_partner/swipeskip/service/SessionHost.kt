@@ -127,6 +127,7 @@ class SessionHost(
     fun attach(service: AutoScrollService) {
         this.service = service
         _serviceConnected.value = true
+        ServiceWatch.setExpected(context, true)
         context.registerReceiver(screenOffReceiver, IntentFilter(Intent.ACTION_SCREEN_OFF))
         engine.onPermissionChanged(true)
     }
@@ -135,6 +136,7 @@ class SessionHost(
         if (this.service !== service) return
         this.service = null
         _serviceConnected.value = false
+        ServiceWatch.setExpected(context, false)
         runCatching { context.unregisterReceiver(screenOffReceiver) }
         snapshotJob?.cancel()
         snapshotJob = null
