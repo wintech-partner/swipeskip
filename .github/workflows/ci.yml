@@ -15,7 +15,7 @@ jobs:
       - name: Browser extension engine tests
         run: node --test extension/test/engine.test.js
       - run: ./gradlew test lint assembleFossDebug assemblePlayDebug --stacktrace
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: foss-debug-apk
           path: app/build/outputs/apk/foss/debug/*.apk
