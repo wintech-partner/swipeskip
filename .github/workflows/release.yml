@@ -29,8 +29,11 @@ jobs:
           OUT="swipeskip-${VERSION}-foss-release.apk"
           "$APKSIGNER" sign --alignment-preserved true --ks "$RUNNER_TEMP/release.jks" --ks-key-alias "$KEY_ALIAS" --ks-pass env:KS_PASS --out "$OUT" "$IN"
           sha256sum "$OUT" > SHA256SUMS.txt
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            swipeskip-*-foss-release.apk
-            SHA256SUMS.txt
+      - name: Remove the keystore from the runner
+        if: always()
+        run: rm -f "$RUNNER_TEMP/release.jks"
+      # GitHub's own CLI instead of a third-party action: no outside code runs in the job that handles the signing key.
+      - name: Publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" swipeskip-*-foss-release.apk SHA256SUMS.txt --verify-tag --title "$GITHUB_REF_NAME" --generate-notes

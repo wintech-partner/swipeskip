@@ -2,6 +2,8 @@ name: CI
 on:
   push:
   pull_request:
+permissions:
+  contents: read   # the build only reads the code; a pull request can never write to the repository
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,6 +12,8 @@ jobs:
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: 17 }
       - uses: gradle/actions/setup-gradle@v4
+      - name: Browser extension engine tests
+        run: node --test extension/test/engine.test.js
       - run: ./gradlew test lint assembleFossDebug assemblePlayDebug --stacktrace
       - uses: actions/upload-artifact@v4
         with:
